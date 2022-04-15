@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
+
+:root{
+  --primary: #ff0000;
+  --secondary: #ffaa00;
+  --accent: #00ff62;
+}
+
+html *{
+  font-family: 'Noto Sans', sans-serif;
+}
+
+
+
+header{
+  position:absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--secondary);
+  padding: 10px;
+  display: flex;
+}
+
+header button{
+  font-weight: 600;
+  font-size:medium;
+  border: none;
+  background: none;
+}
+
+footer{
+  position:absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--secondary);
+  padding: 10px;
+  height: 90px;
+}
+
+footer .socials{
+  display: flex;
+  flex-direction: row;
+  background-color: var(--accent);
+  padding: 5px;
+  gap: 10px;
+  border-radius: 15px;
+  width: min-content;
+  height: min-content;
+  margin-top: 5px;
+}
+
+.contact-container{
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+}
+
+.facebook,.twitter,.instagram{
+  background-image: url('media/socials.png');
+  zoom: 50%;
+  object-fit: cover;
+  border-radius: 50%;
+  width: 76px;
+	height: 76px;
+}
+
+.facebook{
+  background-position: 0 -82px;
+}
+
+.twitter{
+  background-position: -79px -82px;
+}
+
+.instagram{
+  background-position: -237px -82px;
+}
+
+.popup-box{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--primary);
+  width: 500px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px;
+  border-radius: 15px;
+  box-shadow: 0px 0px 10px;
+}
+
+.popup-box .login-text{
+  font-weight: 700;
+  font-size:40px;
+  margin-bottom: 30px;
+}
+
+.login-details{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  }
+
+.login-details input{
+  font-size: medium;
+  padding: 5px;
+  width: 400px;
+}
+
+.login-details button[type='submit']{
+  padding: 5px;
+  width: min-content;
+}
