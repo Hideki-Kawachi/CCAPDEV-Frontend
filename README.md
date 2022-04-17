@@ -1,15 +1,15 @@
 # CCAPDEV
 
-To run react app:
+1. Install NodeJS LTS
 
-1.  Navigate to ROOT FOLDER (CCAPDEV folder) using console/terminal within vs code
-    1.1 Shortcut for windows is ctrl+shift+`
-    1.2 to go to folder command is
+Creating a React App
 
-             cd "folder name"
+1. npx create-react-app my-app
+2. npm install tar@6 -g
 
-2.  To run web application use command
+Installing Remote Repo to Local Repo
 
-        npm start
-
-FIGMA LINK: https://www.figma.com/file/4lugaZChWcqnCPzGvtetLW/CCAPDEV?node-id=0%3A1
+1. Clone repo
+2. Run npm i on console
+3. Run npm install --save react-browser-router on console
+   FIGMA LINK: https://www.figma.com/file/4lugaZChWcqnCPzGvtetLW/CCAPDEV?node-id=0%3A1
