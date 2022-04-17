@@ -3,6 +3,7 @@
 :root{
   --primary: #ff0000;
   --secondary: #ffaa00;
+  --secondary-highlight:#976500;
   --accent: #00ff62;
 }
 
@@ -17,15 +18,48 @@ header{
   left: 0;
   right: 0;
   background-color: var(--secondary);
-  padding: 10px;
   display: flex;
 }
 
-header button{
+.left-header{
+  display: flex;
+}
+
+.right-header{
+  margin-left: auto;
+  display: flex;
+}
+
+[id=headerHome]{
+  position: absolute;
+  left: 50%;
+  background-image: url('media/logo.png');
+  background-position: -325px -42px;
+  zoom: 7%;
+  object-fit: cover;
+  width: 541px;
+	height: 586px;
+  display: block;
+}
+
+
+a.nav-button:hover, a.nav-button:focus, a.nav-button:active{
+  text-decoration: none;
+  color: inherit;
+  background-color: var(--secondary-highlight);
+  animation-name: navBarHoverAnimation;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+}
+
+.nav-button{
   font-weight: 600;
   font-size:medium;
+  padding: 10px;
   border: none;
   background: none;
+  text-decoration: none;
+  color: inherit;
 }
 
 /*FOOTER*/
@@ -55,6 +89,10 @@ footer .socials{
   display: flex;
   flex-direction: column;
   margin-left: 20px;
+}
+
+.contact-us{
+  font-weight: 400;
 }
 
 .facebook,.twitter,.instagram{
@@ -91,6 +129,15 @@ footer .socials{
   pointer-events: all;
   opacity: 1;
   animation-name: fadeInAnimation;
+  animation-iteration-count: 1;
+  animation-duration: 1s;
+}
+
+.modal-container-closed{
+  opacity: 0;
+  pointer-events: none;
+  z-index: -1;
+  animation-name: fadeOutAnimation;
   animation-iteration-count: 1;
   animation-duration: 1s;
 }
@@ -169,6 +216,15 @@ footer .socials{
   }
   100%{
     transform: scale(0);
+  }
+}
+
+@keyframes navBarHoverAnimation {
+  0%{
+    background-color: var(--secondary);
+  }
+  100%{
+    background-color: var(--secondary-highlight);
   }
 }
 
