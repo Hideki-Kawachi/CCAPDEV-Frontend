@@ -29,6 +29,12 @@ header{
   margin-left: auto;
   display: flex;
 }
+/*
+Show profile picture of user on header
+*/
+[id=headerUser]{   
+  
+}
 
 [id=headerHome]{
   position: absolute;
