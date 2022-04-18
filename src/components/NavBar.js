@@ -1,14 +1,19 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-
-
 const NavBar = (props) =>{
+    const [isLoggedIn, setIsLoggedIn] = useState(props.isLoggedIn);
     
+    useEffect(() =>{
+        if(props.isLoggedIn !== isLoggedIn){
+            setIsLoggedIn(props.isLoggedIn);
+        }
+    }, [props.isLoggedIn,isLoggedIn])
+
     const rightNav = {
         true: (
             <div className='right-header'>
-                <p>IS LOGGED IN!</p>
+                <Link id="headerUser" className='nav-button' to={'/UserProfile'}><img src={props.profPicPath}></img></Link>
             </div>),
         false: (
             <div className='right-header'>
@@ -17,8 +22,6 @@ const NavBar = (props) =>{
             </div>
         )
     }
-
-    console.log("UPDATED NAV BAR  " + props.isLoggedIn);
 
     return(
         <header>
@@ -29,7 +32,7 @@ const NavBar = (props) =>{
             
             <Link id="headerHome" to={'/'}></Link>
 
-            {rightNav[props.isLoggedIn]}
+            {rightNav[isLoggedIn]}
         </header>
     );
 }
