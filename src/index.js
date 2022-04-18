@@ -5,20 +5,22 @@ import Home from './components/Home';
 import NavBar from "./components/NavBar";
 import Forum from "./components/Forum";
 import Post from "./components/Post";
-import LogIn from "./components/LogIn";
+import Login from "./components/Login";
 import Register from "./components/Register";
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import index from './index.css'
+import { useNavigate } from 'react-router-dom';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
         <Router>
-            <NavBar></NavBar>
+            <NavBar isLoggedIn={false}></NavBar>
             <Routes>
                 <Route path="/Forum" element={<Forum></Forum>}></Route>
                 <Route path="/Post" element={<Post></Post>}></Route>
-                <Route path="/Home" element={<Home></Home>}></Route>
-                <Route path="/LogIn" element={<LogIn></LogIn>}></Route>
+                <Route path="/" element={<Home></Home>}></Route>
+                <Route path="/Login" element={<Login></Login>}></Route>
                 <Route path="/Register" element={<Register></Register>}></Route>
             </Routes>
             <footer>
