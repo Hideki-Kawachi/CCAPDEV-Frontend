@@ -1,9 +1,15 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import UserContext from './context/UserContext'
+import Login from './Login';
 
 const NavBar = () =>{
     const user = useContext(UserContext);
+    const [isOpen, setIsOpen] = useState(false);
+
+    useEffect(()=>{
+        console.log(isOpen + "THIS IS ISOPEN VAL");
+    },[isOpen])
 
     console.log(user);
     const rightNav = {//profile pic currently not showing but correct directory/file path
@@ -13,7 +19,8 @@ const NavBar = () =>{
             </div>),
         false: (
             <div className='right-header'>
-                <Link id="headerLogin" className='nav-button' to={'/Login'}>Log in</Link>
+                <a id="headerLogin" className='nav-button' onClick={()=>setIsOpen(true)}>Log in</a>
+                <Login isOpen = {isOpen}></Login>
                 <Link id="headerRegister" className='nav-button' to={'/Register'}>Register</Link>
             </div>
         )
