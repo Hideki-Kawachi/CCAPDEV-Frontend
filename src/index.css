@@ -33,7 +33,8 @@ header{
 Show profile picture of user on header
 */
 [id=headerUser]{   
-  
+  width: 20px;
+  height: auto;
 }
 
 [id=headerHome]{

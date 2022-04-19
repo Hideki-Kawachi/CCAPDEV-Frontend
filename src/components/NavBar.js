@@ -1,19 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import UserContext from './context/UserContext'
 
-const NavBar = (props) =>{
-    const [isLoggedIn, setIsLoggedIn] = useState(props.isLoggedIn);
-    
-    useEffect(() =>{
-        if(props.isLoggedIn !== isLoggedIn){
-            setIsLoggedIn(props.isLoggedIn);
-        }
-    }, [props.isLoggedIn,isLoggedIn])
+const NavBar = () =>{
+    const user = useContext(UserContext);
 
-    const rightNav = {
+    console.log(user);
+    const rightNav = {//profile pic currently not showing but correct directory/file path
         true: (
             <div className='right-header'>
-                <Link id="headerUser" className='nav-button' to={'/UserProfile'}><img src={props.profPicPath}></img></Link>
+                <Link id="headerUser" className='nav-button' to={'/UserProfile'}><img src={user.profilePic}></img></Link>
             </div>),
         false: (
             <div className='right-header'>
@@ -32,7 +28,7 @@ const NavBar = (props) =>{
             
             <Link id="headerHome" to={'/'}></Link>
 
-            {rightNav[isLoggedIn]}
+            {rightNav[user.isLoggedIn]}
         </header>
     );
 }
