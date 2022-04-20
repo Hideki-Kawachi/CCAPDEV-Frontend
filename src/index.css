@@ -5,6 +5,7 @@
   --secondary: #ffaa00;
   --secondary-highlight:#976500;
   --accent: #00ff62;
+  --subcontainer: black;
 }
 
 div[id=root]{
@@ -297,5 +298,26 @@ input{
   100%{
     background-color: var(--secondary-highlight);
   }
+}
+
+/* Home.js contents*/
+
+.sub-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  block-size: 50px;
+  background-color: var(--subcontainer);
+}
+
+.name-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  block-size: 50px;
+  padding: 30px;
+  font-size: 64px;
+  font: "Segoe UI";
+  border: 1px solid brown; /* Delete this*/
 }
 
