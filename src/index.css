@@ -188,6 +188,22 @@ footer .socials{
   width: min-content;
 }
 
+.post-header{
+  border-radius: 10px;
+  background: #000000;
+  height: 50px;
+  margin: 10px 10px 10px 10px;
+
+}
+
+.post-header-text{
+  color: white;
+  font-size: larger;
+  vertical-align: middle;
+  margin-left: 15px;
+  padding-top: 10px;
+}
+
 /*ANIMATIONS*/
 @keyframes fadeInAnimation {
   0%{

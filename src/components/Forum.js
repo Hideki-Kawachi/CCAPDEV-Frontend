@@ -3,7 +3,8 @@ import React from 'react';
 const Forum = () => {
     return(
         <div>
-            <p>FORUM</p>
+            <p> test</p>
+            <div className = "post-header"><p className = "post-header-text"> Posts</p></div>
             <p>FORUM</p>
             <p>FORUM</p>
             <p>FORUM</p>
