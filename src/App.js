@@ -32,14 +32,14 @@ const App = () =>{
                         <Route path="/UserProfile" element={<UserProfile username={username}></UserProfile>}></Route>
                     </Routes>
                 <footer>
-                    <div className="contact-container">
-                        <span className="contact-us">Contact us</span>
-                        <div className="socials">
-                            <a className="facebook" href="https://www.facebook.com/" target="_blank" rel="noreferrer"></a>
-                            <a className="twitter" href="https://twitter.com/" target="_blank" rel="noreferrer"></a>
-                            <a className="instagram" href="https://instagram.com/" target="_blank" rel="noreferrer"></a>
+                        <div className="contact-container">
+                            <span className="contact-us">Contact us</span>
+                            <div className="socials">
+                                <a className="facebook" href="https://www.facebook.com/" target="_blank" rel="noreferrer"></a>
+                                <a className="twitter" href="https://twitter.com/" target="_blank" rel="noreferrer"></a>
+                                <a className="instagram" href="https://instagram.com/" target="_blank" rel="noreferrer"></a>
+                            </div>
                         </div>
-                    </div>
                 </footer>
             </UserProvider>
         </Router>
