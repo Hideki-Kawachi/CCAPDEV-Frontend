@@ -2,7 +2,8 @@ import React from 'react';
 
 const Home =()=> {
     return (
-    <div>
+    <div className='content-home'>
+        <p>HELLO</p>
         <p>Home</p>
         <p>Home</p>
         <p>Home</p>
