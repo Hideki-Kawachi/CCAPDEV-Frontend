@@ -41,8 +41,8 @@ const Login=(props)=>{
         return (
             <div className='modal-container' id='modal-container-login'>
                     <div className='modal'>
-                        <button className='exit-button' onClick={exit}>X</button>
-                        <span className='login-text'>Log In</span>
+                        <button className='exit-button' onClick={exit}></button>
+                        <span className='login-text'>LOG IN</span>
                         <form className='login-details'>
                             <input type={'text'} placeholder='Email' value={username} onChange={(e)=>setUsername(e.target.value)}></input>
                             <input type={'password'} placeholder='Password' value={password} onChange={(e)=>setPassword(e.target.value)}></input>
