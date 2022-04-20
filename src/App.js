@@ -17,7 +17,7 @@ const App = () =>{
     const user = {isLoggedIn,setIsLoggedIn,username,setUsername,profilePic,setProfilePic};
 
     useEffect(() =>{
-        console.log("  user  " + username + "  logged  " + isLoggedIn + "  profile  " + profilePic);        //for checking
+        console.log("  user:  " + username + "  logged in:  " + isLoggedIn + "  profile pic:  " + profilePic);        //for checking
     })
 
     return(

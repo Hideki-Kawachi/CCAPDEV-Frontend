@@ -17,6 +17,12 @@ div[id=root]{
   font-family: 'Noto Sans', sans-serif;
 }
 
+.exit-button{
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
 /*HEADER*/
 header{
   position:absolute;
@@ -45,14 +51,13 @@ Show profile picture of user on header
 
 [id=headerHome]{
   position: absolute;
-  left: 50%;
+  left: 49%;
   background-image: url('media/logo.png');
   background-position: -325px -42px;
   zoom: 7%;
   object-fit: cover;
   width: 541px;
 	height: 586px;
-  display: block;
 }
 
 
@@ -198,6 +203,52 @@ div[class^=content-]{
 .login-details button[type='submit']{
   padding: 5px;
   width: min-content;
+}
+
+/*REGISTER*/
+[id=create-account]{
+  font-size: 50px;
+  justify-content: center;
+  display: flex;
+}
+
+[id=register-submit]{
+  width: min-content;
+  font-size: 20px;
+  padding: 5px;
+  justify-content: center;
+  display: flex;
+}
+
+.content-register-right{
+  justify-content: center;
+  display: flex;
+  gap: 5%;
+}
+
+input{
+  border-radius: 5px;
+  font-size: 200%;
+}
+
+.content-register{
+  display: flex;
+  flex-direction: row;
+  height: 95vh;
+}
+
+.register-right{
+  bottom: 0;
+  flex:1;
+  background-color: var(--primary);
+  display: flex;
+  flex-direction: column;
+  padding-top: 10%;
+  max-width: 50%;
+}
+.register-left{
+  flex: 1;
+  max-width: 50%;
 }
 
 
