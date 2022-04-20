@@ -1,8 +1,54 @@
 import React from 'react';
 
 const Post = () => {
+    console.log("POST");
     return(
-        <div>
+        <div className='content-post'>
+            <p>HELLO</p>
+            <p>Post</p>
+            <p>Post</p>
+            <p>Post</p>
+            <p>Post</p>
+            <p>Post</p>
+            <p>Post</p>
+            <p>Post</p>
+            <p>Post</p>
+            <p>Post</p>
+            <p>Post</p>
+            <p>HELLO</p>
+            <p>Post</p>
+            <p>Post</p>
+            <p>Post</p>
+            <p>Post</p>
+            <p>Post</p>
+            <p>Post</p>
+            <p>Post</p>
+            <p>Post</p>
+            <p>Post</p>
+            <p>Post</p>
+            <p>HELLO</p>
+            <p>Post</p>
+            <p>Post</p>
+            <p>Post</p>
+            <p>Post</p>
+            <p>Post</p>
+            <p>Post</p>
+            <p>Post</p>
+            <p>Post</p>
+            <p>Post</p>
+            <p>Post</p>
+            <p>HELLO</p>
+            <p>Post</p>
+            <p>Post</p>
+            <p>Post</p>
+            <p>Post</p>
+            <p>Post</p>
+            <p>Post</p>
+            <p>Post</p>
+            <p>Post</p>
+            <p>Post</p>
+            <p>Post</p>
+            <p>HELLO</p>
             <p>Post</p>
             <p></p>
             <p>Post</p>

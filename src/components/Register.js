@@ -2,7 +2,8 @@ import React from 'react';
 
 const Register = () => {
     return(
-        <div>
+        <div className='content-register'>
+            <p>HELLO</p>
             <p>Register</p>
             <p>Register</p>
             <p>Register</p>

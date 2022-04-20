@@ -7,7 +7,13 @@
   --accent: #00ff62;
 }
 
-html *{
+div[id=root]{
+  position: absolute;
+  min-height: 100%;
+  min-width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
   font-family: 'Noto Sans', sans-serif;
 }
 
@@ -33,7 +39,8 @@ header{
 Show profile picture of user on header
 */
 [id=headerUser]{   
-  
+  width: 20px;
+  height: auto;
 }
 
 [id=headerHome]{
@@ -122,6 +129,11 @@ footer .socials{
   background-position: -237px -82px;
 }
 
+/*MAIN CONTENT*/
+div[class^=content-]{
+  margin-top: 42px;
+}
+
 /*MODALS*/
 .modal-container{
   position: fixed;
@@ -203,6 +215,7 @@ footer .socials{
   margin-left: 15px;
   padding-top: 10px;
 }
+
 
 /*ANIMATIONS*/
 @keyframes fadeInAnimation {
