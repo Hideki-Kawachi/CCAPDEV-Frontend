@@ -9,10 +9,9 @@ const NavBar = () =>{
     const isMounted = useRef(false);
 
     let profilePicPath = "";
+    
     useEffect(()=>{
         profilePicPath = user.profilePic;
-        //console.log(isOpen + "THIS IS ISOPEN VAL");
-        console.log("HELO" + profilePicPath)
     },[user.profilePic])
 
     const rightNav = {//profile pic currently not showing but correct directory/file path
