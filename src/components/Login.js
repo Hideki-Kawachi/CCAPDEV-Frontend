@@ -29,11 +29,19 @@ const Login=(props)=>{
         return path;
     }
 
+    
+
+    const exit=()=>{
+        props.setIsOpen(false);
+        console.log("EXIT FROM LOGIN");
+    }
+
     if(props.isOpen)
     {
         return (
             <div className='modal-container' id='modal-container-login'>
                     <div className='modal'>
+                        <button className='exit-button' onClick={exit}>X</button>
                         <span className='login-text'>Log In</span>
                         <form className='login-details'>
                             <input type={'text'} placeholder='Email' value={username} onChange={(e)=>setUsername(e.target.value)}></input>
