@@ -1,20 +1,10 @@
 import React from 'react';
 
-const UserProfile =(props)=>{
+const UserProfile =()=>{
 
     return(
         <div className='content-userProfile'>
-            <p>HELLO</p>
-            <p>{props.username}</p>
-            <p>{props.username}</p>
-            <p>{props.username}</p>
-            <p>{props.username}</p>
-            <p>{props.username}</p>
-            <p>{props.username}</p>
-            <p>{props.username}</p>
-            <p>{props.username}</p>
-            <p>{props.username}</p>
-            <p>{props.username}</p>
+            <span>USER PROFILE</span>
         </div>
     );
 }
