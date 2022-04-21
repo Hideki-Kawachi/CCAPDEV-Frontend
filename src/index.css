@@ -367,35 +367,74 @@ input{
  
 }
 
-h2{
+h4{
   margin: 0;
+  margin-left: 20px;
 }
 .post-header{
   background-color: black;
   border-radius: 10px;
   height: 45px;
   padding: 0 35px;
+  display: flex;
+  margin-left: 30px;
 }
-
 
 .post-header-text{
   color: aliceblue;
-  margin-left: 10px;
-  margin: 5px 0;
+  margin: 5px;
+  
 }
+.post-title{
+  margin-top: 10px;
+}
+.post-title-text{
+  color: rgb(54, 54, 54);
+  font-size:small;
+  margin: 5px 0;
+  margin-left: 50px;
+}
+
 a{
   text-decoration: none;
   color: black;
 }
 
-
-.post-title-text{
-  color: rgb(54, 54, 54);
-  font: 12px;
-  margin: 5px 0;
+a:hover{
+  text-decoration: none;
+  color: rgb(71, 71, 71);
 }
 
 
+.row{
+  background-color: rgb(255, 245, 245);
+  border: 1px solid gray;
+  box-shadow: 10%;
+  margin: auto;
+  width: auto;
+}
+
+li{
+    list-style-type: none;
+}
+
+[id='post-search']{
+  border: 1px solid gray;
+  width: 20%;
+  font-size: medium;
+}
+
+[id='post-search-button']{
+  font-size: medium;
+  padding: 5px;
+  margin-left: 10px;
+  border-radius: 5px;
+}
+
+[id='post-search-button']:hover{
+  cursor: pointer;
+  background-color: rgb(209, 209, 209);
+}
 
 
 /*STORE REVIEW*/
