@@ -559,10 +559,42 @@ li{
   display: flex;
   align-items: center;
   justify-content: center;
-  block-size: 50px;
+  block-size: 100px;
   padding: 30px;
   font-size: 64px;
   font: "Segoe UI";
-  border: 1px solid brown; /* Delete this*/
 }
+
+.main-section-container{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #FAF3EC;
+  block-size: 150px;
+
+}
+
+.main-section-content {
+  background-color: #5C5252;
+  color: white;
+  display: flex;
+  gap: 50px;
+  padding: 20px 20px;
+  border-radius: 10px;
+  block-size: 30px;
+  align-items: center;
+  font: 'Segoe UI', 'Times New Roman';
+  font-size: 24px;
+
+}
+
+.pcguro-build-guide-container{
+  width: 1920px;
+  height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #26231B;
+}
+
 

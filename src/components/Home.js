@@ -5,15 +5,14 @@ const Home =()=> {
     <div className='content-home'>
 
         <div className="sub-container">
-            -------------------
         </div>
 
         <div className="name-container">
             <span className="website-name">PCGuro</span>
         </div>
 
-        <div className="options-container">
-            <div className='options-bar'>
+        <div className="main-section-container">
+            <div className='main-section-content'>
                 <span>Technical Reviews</span>
                 <span>Local Store Reviews</span>
                 <span>Configuration Guide</span>
@@ -21,9 +20,17 @@ const Home =()=> {
             </div>
         </div>
 
-        <div className="">
+        <div className="pcguro-build-guide-container">
+            <div className="pcguro-builds">
+                <div>
+                    Build Guides
+                </div>
+
+
+            </div>
             
         </div>
+
         <p>HELLO</p>
         <p>Home</p>
         <p>Home</p>
