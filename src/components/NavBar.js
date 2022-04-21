@@ -2,22 +2,26 @@ import React, { useContext, useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import UserContext from './context/UserContext'
 import Login from './Login';
+import UserHeader from './UserHeader';
 
 const NavBar = () =>{
     const user = useContext(UserContext);
     const [isOpen, setIsOpen] = useState(false);
     const isMounted = useRef(false);
 
-    let profilePicPath = "";
-    
     useEffect(()=>{
-        profilePicPath = user.profilePic;
-    },[user.profilePic])
+        if(user.username.length<=0){
+            setIsOpen(false);
+        }
+    },[user.username])
+    
 
+
+    console.log(user.profilePic + "in navbar");
     const rightNav = {//profile pic currently not showing but correct directory/file path
         true: (
             <div className='right-header'>
-                <Link id="headerUser" className='nav-button' to={'/UserProfile'}><img src={profilePicPath}></img></Link>
+               <UserHeader profilePic={user.profilePic}></UserHeader>
             </div>),
         false: (
             <div className='right-header'>

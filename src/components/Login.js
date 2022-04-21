@@ -23,7 +23,7 @@ const Login=(props)=>{
     }
 
     const findProfPic=(name)=>{
-        let path = "../media/profilePictures/";
+        let path = "/profilePictures/";
         path = path.concat(name);
         path = path.concat(".jpg");
         return path;
@@ -44,7 +44,7 @@ const Login=(props)=>{
                         <button className='exit-button' onClick={exit}></button>
                         <span className='login-text'>LOG IN</span>
                         <form className='login-details'>
-                            <input type={'text'} placeholder='Email' value={username} onChange={(e)=>setUsername(e.target.value)}></input>
+                            <input type={'text'} placeholder='Username' value={username} onChange={(e)=>setUsername(e.target.value)}></input>
                             <input type={'password'} placeholder='Password' value={password} onChange={(e)=>setPassword(e.target.value)}></input>
                             <button type={'button'} id='login-submit' disabled={!validateForm()} onClick={(e)=>sendLogin(e)}>Submit</button>
                         </form>
