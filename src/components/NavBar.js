@@ -6,27 +6,26 @@ import UserHeader from './UserHeader';
 
 const NavBar = () =>{
     const user = useContext(UserContext);
-    const [isOpen, setIsOpen] = useState(false);
-    const isMounted = useRef(false);
+    const [isLoggedOpen, setIsLoggedOpen] = useState(false);
 
     useEffect(()=>{
         if(user.username.length<=0){
-            setIsOpen(false);
+            setIsLoggedOpen(false);
         }
     },[user.username])
-    
 
 
     console.log(user.profilePic + "in navbar");
     const rightNav = {//profile pic currently not showing but correct directory/file path
         true: (
             <div className='right-header'>
-               <UserHeader profilePic={user.profilePic}></UserHeader>
+                <span className='username-header'>{user.username}</span>
+                <UserHeader profilePic={user.profilePic} isLoggedOpen={isLoggedOpen}></UserHeader>
             </div>),
         false: (
             <div className='right-header'>
-                <a id="headerLogin" className='nav-button' onClick={()=>setIsOpen(true)}>Log in</a>
-                <Login setIsOpen = {setIsOpen} isOpen = {isOpen}></Login>
+                <a id="headerLogin" className='nav-button' onClick={()=>setIsLoggedOpen(true)}>Log in</a>
+                <Login setIsLoggedOpen = {setIsLoggedOpen} isLoggedOpen = {isLoggedOpen}></Login>
                 <Link id="headerRegister" className='nav-button' to={'/Register'}>Register</Link>
             </div>
         )

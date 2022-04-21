@@ -50,6 +50,7 @@ header{
   right: 0;
   background-color: var(--secondary);
   display: flex;
+  padding: 5px;
 }
 
 .left-header{
@@ -59,6 +60,13 @@ header{
 .right-header{
   margin-left: auto;
   display: flex;
+}
+
+.username-header{
+  color: var(--primary);
+  font-size: medium;
+  font-weight: 600;
+  padding: 10px;
 }
 
 [id=headerHome]{
@@ -126,9 +134,9 @@ a.nav-button:hover, a.nav-button:focus, a.nav-button:active{
   border-radius:var(--radius);
   box-shadow: 0 0 10px;
   padding: 10px;
-  animation-name: bounce;
+  animation-name: zoomIn;
   animation-iteration-count: 1;
-  animation-duration: 1s;
+  animation-duration: 0.3s;
 }
 
 a.user-dropdown-button:hover, a.user-dropdown-button:active{
@@ -198,7 +206,7 @@ footer .socials{
 
 /*MAIN CONTENT*/
 div[class^=content-]{
-  margin-top: 42px;
+  margin-top: 52px;
   margin-bottom: 94px;
 }
 
@@ -371,24 +379,6 @@ input{
   }
 }
 
-@keyframes zoomInAnimation {
-  0%{
-    transform: scale(0);
-  }
-  100%{
-    transform: scale(1);
-  }
-}
-
-@keyframes zoomOutAnimation {
-  0%{
-    transform: scale(1);
-  }
-  100%{
-    transform: scale(0);
-  }
-}
-
 @keyframes navBarHoverAnimation {
   0%{
     background-color: var(--secondary);
@@ -431,6 +421,13 @@ input{
 @keyframes userDropdownHover {
   0%{background-color: var(--primary);}
   100%{background-color: var(--primary-highlight);}
+}
+
+@keyframes zoomIn {
+  0%{transform: scale(0%);}
+  10%{transform: scale(90%)}
+  100%{transform: scale(100%);}
+  
 }
 
 /* Home.js contents*/

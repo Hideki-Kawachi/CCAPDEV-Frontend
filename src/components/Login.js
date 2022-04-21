@@ -32,11 +32,11 @@ const Login=(props)=>{
     
 
     const exit=()=>{
-        props.setIsOpen(false);
+        props.setIsLoggedOpen(false);
         console.log("EXIT FROM LOGIN");
     }
 
-    if(props.isOpen)
+    if(props.isLoggedOpen)
     {
         return (
             <div className='modal-container' id='modal-container-login'>

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import UserContext from './context/UserContext'
 
@@ -14,6 +14,20 @@ function UserHeader(props) {
         user.setProfilePic("");
     }
 
+    useEffect(()=>{
+        const checkOutsideClick=(e)=>{
+            if(e.target!==document.getElementById('profile-pic-header')){
+                setIsOpen(false);
+            }
+        }
+
+        document.addEventListener("click", checkOutsideClick);
+        
+        return ()=>{
+            document.removeEventListener("click",checkOutsideClick);
+        }
+    },[isOpen])
+
     const openDropdown = {
         true: (
             <div className='user-dropdown-container'>
@@ -27,7 +41,7 @@ function UserHeader(props) {
 
     return (
     <>
-        <img className='profile-pic'src={props.profilePic} onClick={()=>setIsOpen(!isOpen)}></img>
+        <img className='profile-pic'src={props.profilePic} id='profile-pic-header'onClick={()=>setIsOpen(!isOpen)}></img>
         {openDropdown[isOpen]}
     </>
     );
