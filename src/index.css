@@ -358,6 +358,43 @@ input{
   animation-iteration-count: 1;
   animation-timing-function: ease;
 }
+/* FORUMS */
+
+.content-forum{
+  margin: 10px;
+ 
+}
+
+h2{
+  margin: 0;
+}
+.post-header{
+  background-color: black;
+  border-radius: 10px;
+  height: 45px;
+  padding: 0 35px;
+}
+
+
+.post-header-text{
+  color: aliceblue;
+  margin-left: 10px;
+  margin: 5px 0;
+}
+a{
+  text-decoration: none;
+  color: black;
+}
+
+
+.post-title-text{
+  color: rgb(54, 54, 54);
+  font: 12px;
+  margin: 5px 0;
+}
+
+
+
 
 
 /*ANIMATIONS*/

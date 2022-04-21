@@ -4,18 +4,14 @@ const Forum = () => {
     return(
       
         <div className='content-forum'>
-        <div className = "post-header"><p className = "post-header-text"> Posts</p></div>
-            <p>HELLO</p>
-            <p>FORUM</p>
-            <p>FORUM</p>
-            <p>FORUM</p>
-            <p>FORUM</p>
-            <p>FORUM</p>
-            <p>FORUM</p>
-            <p>FORUM</p>
-            <p>FORUM</p>
-            <p>FORUM</p>
-            <p>FORUM</p>
+        <br></br>
+        
+        <div className = "post-header"><h2 className = "post-header-text"> Posts</h2></div>
+        <ol>
+            <li class = "row">
+            </li>
+        </ol>
+    
         </div>
     );
 }
