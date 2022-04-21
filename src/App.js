@@ -9,6 +9,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import index from './index.css'
 import UserProfile from './components/UserProfile';
 import UserContext, { UserProvider } from './components/context/UserContext';
+import StoreReview from './components/StoreReview';
 
 const App = () =>{
     const [isLoggedIn,setIsLoggedIn] = useState(false);
@@ -28,6 +29,7 @@ const App = () =>{
                     <Routes>
                         <Route path="/Forum" element={<Forum></Forum>}></Route>
                         <Route path="/Post" element={<Post></Post>}></Route>
+                        <Route path="/StoreReview" element={<StoreReview></StoreReview>}></Route>
                         <Route path="/" element={<Home></Home>}></Route>
                         <Route path="/Register" element={<Register></Register>}></Route>
                         <Route path="/UserProfile" element={<UserProfile username={username}></UserProfile>}></Route>

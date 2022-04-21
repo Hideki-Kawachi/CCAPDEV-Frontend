@@ -55,11 +55,13 @@ header{
 
 .left-header{
   display: flex;
+  gap:10px;
 }
 
 .right-header{
   margin-left: auto;
   display: flex;
+  gap:10px;
 }
 
 .username-header{
@@ -359,6 +361,43 @@ input{
   animation-timing-function: ease;
 }
 
+/*STORE REVIEW*/
+.content-store-review{
+  background-color: var(--primary);
+  padding: 10px;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+[id='store-review-search']{
+  border: 1px solid gray;
+  width: 35%;
+  font-size: medium;
+}
+
+[id='store-review-search-button']{
+  font-size: medium;
+  padding: 5px;
+  margin-left: 10px;
+  border-radius: 5px;
+}
+
+[id='store-review-search-button']:hover{
+  cursor: pointer;
+  background-color: rgb(209, 209, 209);
+}
+
+[id='store-review-title']{
+  font-size: 35px;
+  font-weight: 700;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+[id='store-review-header']{
+  margin-top: 60px;
+}
 
 /*ANIMATIONS*/
 @keyframes fadeInAnimation {
