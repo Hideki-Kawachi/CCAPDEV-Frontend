@@ -13,11 +13,12 @@ import UserContext, { UserProvider } from './components/context/UserContext';
 const App = () =>{
     const [isLoggedIn,setIsLoggedIn] = useState(false);
     const [username, setUsername] = useState("");
-    const [profilePic, setProfilePic] = useState("");
-    const user = {isLoggedIn,setIsLoggedIn,username,setUsername,profilePic,setProfilePic};
+    const [email, setEmail] = useState("");
+    const [profilePic, setProfilePic] = useState("/profilePictures/default.jpg");
+    const user = {isLoggedIn,setIsLoggedIn,username,setUsername,profilePic,setProfilePic,email,setEmail};
 
     useEffect(() =>{
-        console.log("  user:  " + username + "  logged in:  " + isLoggedIn + "  profile pic:  " + profilePic);        //for checking
+        console.log("  user:  " + username + "  logged in:  " + isLoggedIn + "  profile pic:  " + profilePic + "  email:  " + email);        //for checking
     })
 
     return(
