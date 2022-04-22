@@ -21,37 +21,51 @@ const Home =()=> {
         </div>
 
         <div className="pcguro-build-guide-container">
-            <div className="pcguro-builds">
+            <div className="pcguro-builds-section">
                 <div className="span-box">
                     Build Guides
                 </div>
-                <div className="pcbuild-box">
-                    Hi
+                <div className="pc-build-box">
+                    <div className='build-title'>
+                        <span class='title-text'>Entry-Level Build</span>
+                        <div>
+                            <span class='title-text'>P30,000</span>
+                        </div>
+                    </div>
+                    <div className='pic-container'>
+                        <img class="pc-image" src={require('../media/pc-image.png')} alt="pic" />
+                    </div>
                 </div>
-                <div className="pcbuild-box">
-                Hi
+
+                <div className="pc-build-box">
+                    <div className='build-title'>
+                        <span class='title-text'>Entry-Level Build</span>
+                        <div>
+                            <span class='title-text'>P30,000</span>
+                        </div>
+                    </div>
+                    <div className='pic-container'>
+                        <img class="pc-image" src={require('../media/pc-image.png')} alt="pic" />
+                    </div>
                 </div>
-                <div className="pcbuild-box">
-                Hi  
+
+                <div className="pc-build-box">
+                    <div className='build-title'>
+                        <span class='title-text'>Entry-Level Build</span>
+                        <div>
+                            <span class='title-text'>P30,000</span>
+                        </div>
+                    </div>
+                    <div className='pic-container'>
+                        <img class="pc-image" src={require('../media/pc-image.png')} alt="pic" />
+                    </div>
                 </div>
+
+
             </div>
             
         </div>
-
-        <p>HELLO</p>
-        <p>Home</p>
-        <p>Home</p>
-        <p>Home</p>
-        <p>Home</p>
-        <p>Home</p>
-        <p>Home</p>
-        <p>Home</p>
-        <p>Home</p>
-        <p>Home</p>
-        <p>Home</p>
-        <p>Home</p>
-        <p>Home</p>
-        <p>Home</p>
+        
     </div>
     );
     }

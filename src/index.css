@@ -589,13 +589,51 @@ li{
 }
 
 .pcguro-build-guide-container{
-  direction: row;
-  width: 1920px;
+  width: auto;
   height: 350px;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: #26231B;
+  color: white;
+}
+
+.pcguro-builds-section{
+  display: flex;
+  gap: 50px;
+}
+
+.pc-build-box{
+  background-color: #C4C4C4;
+  width: 250px;
+  height: 300px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 
+.build-title{
+  margin-top: -40px;
+  margin-bottom: 30px;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  align-content: left;
+  
+}
+
+.title-text{
+  text-align: left;
+}
+
+.pic-container{
+  background-color: white;
+  width: 182px;
+  height: 188px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
