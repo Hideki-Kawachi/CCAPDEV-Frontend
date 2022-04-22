@@ -589,6 +589,7 @@ li{
 }
 
 .pcguro-build-guide-container{
+  direction: row;
   width: 1920px;
   height: 350px;
   display: flex;

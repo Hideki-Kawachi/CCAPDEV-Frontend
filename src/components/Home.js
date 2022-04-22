@@ -22,11 +22,18 @@ const Home =()=> {
 
         <div className="pcguro-build-guide-container">
             <div className="pcguro-builds">
-                <div>
+                <div className="span-box">
                     Build Guides
                 </div>
-
-
+                <div className="pcbuild-box">
+                    Hi
+                </div>
+                <div className="pcbuild-box">
+                Hi
+                </div>
+                <div className="pcbuild-box">
+                Hi  
+                </div>
             </div>
             
         </div>
