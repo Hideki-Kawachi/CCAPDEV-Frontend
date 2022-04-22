@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import Home from './components/Home';
 import NavBar from "./components/NavBar";
 import Forum from "./components/Forum";
-import Post from "./components/Post";
+import PostCreate from "./components/PostCreate";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -28,7 +28,7 @@ const App = () =>{
                 <NavBar></NavBar>
                     <Routes>
                         <Route path="/Forum" element={<Forum></Forum>}></Route>
-                        <Route path="/Post" element={<Post></Post>}></Route>
+                        <Route path="/PostCreate" element={<PostCreate></PostCreate>}></Route>
                         <Route path="/StoreReview" element={<StoreReview></StoreReview>}></Route>
                         <Route path="/" element={<Home></Home>}></Route>
                         <Route path="/Register" element={<Register></Register>}></Route>

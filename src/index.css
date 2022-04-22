@@ -90,6 +90,7 @@ a.nav-button:hover, a.nav-button:focus, a.nav-button:active{
   animation-name: navBarHoverAnimation;
   animation-duration: 0.5s;
   animation-iteration-count: 1;
+  cursor: pointer;
 }
 
 .nav-button{

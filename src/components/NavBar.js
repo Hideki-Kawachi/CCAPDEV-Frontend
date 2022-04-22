@@ -35,7 +35,7 @@ const NavBar = () =>{
         <header>
             <div className='left-header'>
                 <Link id="headerForum" className='nav-button' to={'/Forum'}>Forums</Link>
-                <Link id="headerCreatePost" className='nav-button' to={'/Post'}>Create a Post</Link>
+                <Link id="headerCreatePost" className='nav-button' to={'/PostCreate'}>Create a Post</Link>
                 <Link id="headerStoreReview" className='nav-button' to={'/StoreReview'}>Store Reviews</Link>
             </div>
             

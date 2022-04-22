@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Post = () => {
+const PostCreate = () => {
     console.log("POST");
     return(
-        <div className='content-post'>
+        <div className='content-post-create'>
             <p>HELLO</p>
             <p>Post</p>
             <p>Post</p>
@@ -64,4 +64,4 @@ const Post = () => {
     );
 }
 
-export default Post;
+export default PostCreate;
