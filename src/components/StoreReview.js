@@ -27,14 +27,18 @@ function StoreReview() {
                 <button id = 'store-review-search-button'>Search</button>
             </div>
             <div id='store-review-sort-container'>
-                <div className='store-review-sort-button'>
-                    <span>Date Posted</span>
-                </div>
-                <div className='store-review-sort-button'>
-                    <span >User Rating</span>
+                <div id='store-review-sort-right'>
+                    <div className='store-review-sort-button'>
+                        <span>Date Posted</span>
+                    </div>
+                    <div className='store-review-sort-button'>
+                        <span >User Rating</span>
+                    </div>
                 </div>
             </div>
-            <StoreReviewBar title={"PC EXPRESS"} description={"This shop is good! Excellent service"} date={"5 hours ago"} rating={5} user={"Hideki123"}></StoreReviewBar>
+            <StoreReviewBar title={"PC EXPRESS"} description={"This shop is good! Excellent service."} date={"5 hours ago"} rating={4} user={"Hideki123"}></StoreReviewBar>
+            <StoreReviewBar title={"PC corner"} description={"Okay products but very slow customer service.  Not recommended"} date={"16 hours ago"} rating={2} user={"CarloC"}></StoreReviewBar>
+            <StoreReviewBar title={"DynaQuest"} description={"Great products, friendly staff, good prices.  Perfect!"} date={"2 days ago"} rating={5} user={"MartinJ"}></StoreReviewBar>
         </div> 
 
     );
