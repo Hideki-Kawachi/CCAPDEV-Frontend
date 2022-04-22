@@ -27,37 +27,37 @@ const Home =()=> {
                 </div>
                 <div className="pc-build-box">
                     <div className='build-title'>
-                        <span class='title-text'>Entry-Level Build</span>
+                        <span className='title-text'>Entry-Level Build</span>
                         <div>
-                            <span class='title-text'>P30,000</span>
+                            <span className='title-text'>P30,000</span>
                         </div>
                     </div>
                     <div className='pic-container'>
-                        <img class="pc-image" src={require('../media/pc-image.png')} alt="pic" />
+                        <img className="pc-image" src={require('../media/pc-image.png')} alt="pic" />
                     </div>
                 </div>
 
                 <div className="pc-build-box">
                     <div className='build-title'>
-                        <span class='title-text'>Entry-Level Build</span>
+                        <span className='title-text'>Entry-Level Build</span>
                         <div>
-                            <span class='title-text'>P30,000</span>
+                            <span className='title-text'>P30,000</span>
                         </div>
                     </div>
                     <div className='pic-container'>
-                        <img class="pc-image" src={require('../media/pc-image.png')} alt="pic" />
+                        <img className="pc-image" src={require('../media/pc-image.png')} alt="pic" />
                     </div>
                 </div>
 
                 <div className="pc-build-box">
                     <div className='build-title'>
-                        <span class='title-text'>Entry-Level Build</span>
+                        <span className='title-text'>Entry-Level Build</span>
                         <div>
-                            <span class='title-text'>P30,000</span>
+                            <span className='title-text'>P30,000</span>
                         </div>
                     </div>
                     <div className='pic-container'>
-                        <img class="pc-image" src={require('../media/pc-image.png')} alt="pic" />
+                        <img className="pc-image" src={require('../media/pc-image.png')} alt="pic" />
                     </div>
                 </div>
 

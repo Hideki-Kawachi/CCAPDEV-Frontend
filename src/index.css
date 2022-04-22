@@ -459,7 +459,7 @@ li{
   border-radius: 5px;
 }
 
-[id='store-review-search-button']:hover{
+[id='store-review-search-button']:hover, [id='store-review-sort-button']:hover{
   cursor: pointer;
   background-color: rgb(209, 209, 209);
 }
@@ -474,6 +474,7 @@ li{
 
 [id='store-review-header']{
   margin-top: 60px;
+  display: flex;
 }
 
 /*ANIMATIONS*/
