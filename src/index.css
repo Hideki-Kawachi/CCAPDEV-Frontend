@@ -687,7 +687,7 @@ li{
   display:flex;
   align-items: center;
   justify-content: center;
-  background-color: #FAF3EC;
+  background-color: var(--primary);
   block-size: 150px;
 
 }
@@ -722,7 +722,7 @@ li{
 }
 
 .pc-build-box{
-  background-color: #C4C4C4;
+  background-color: var(--secondary);
   width: 250px;
   height: 300px;
   border-radius: 10px;
@@ -735,12 +735,14 @@ li{
 
 .build-title{
   margin-top: -40px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+  padding-right: 40px;
+  padding-top: 30px;
   font-size: 18px;
   display: flex;
   flex-direction: column;
-  align-content: left;
-  
+  align-items: left;
+  justify-content: left;
 }
 
 .title-text{
