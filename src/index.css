@@ -305,6 +305,13 @@ div[class^=content-]{
   margin-bottom: 20px;
   margin-left: 50%;
   transform: translateX(-50%);
+  border-radius: 10px;
+  box-shadow: 0 0 5px;
+}
+
+[id=register-submit]:hover{
+  cursor: pointer;
+  background-color: rgb(209, 209, 209);
 }
 
 .inside-register-right{
@@ -320,7 +327,7 @@ input{
   font-size: 140%;
   padding: 5px;
   overflow: hidden;
-  border-style: hidden;
+  border: 1px solid var(--primary-highlight)
 }
 
 .content-register{
@@ -628,7 +635,7 @@ li{
 }
 
 @keyframes slideRight {
-  0%{transform: translateX(1000%);}
+  0%{transform: translateX(100%);}
   70%{transform: translateX(-53%);}
   80%{transform: translateX(-49%);}
   90%{transform: translateX(-51%);}
@@ -636,7 +643,7 @@ li{
 }
 
 @keyframes slideLeft {
-  0%{transform: translateX(-1000%);}
+  0%{transform: translateX(-100%);}
   70%{transform: translateX(4%);}
   80%{transform: translateX(-3%);}
   90%{transform: translateX(2%);}
@@ -644,7 +651,7 @@ li{
 }
 
 @keyframes slideTop {
-  0%{transform: translateY(-1000%);}
+  0%{transform: translateY(-100%);}
   70%{transform: translateY(4%);}
   80%{transform: translateY(-3%);}
   90%{transform: translateY(2%);}
