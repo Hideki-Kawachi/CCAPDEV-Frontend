@@ -13,10 +13,9 @@ const Home =()=> {
 
         <div className="main-section-container">
             <div className='main-section-content'>
-                <span>Technical Reviews</span>
-                <span>Local Store Reviews</span>
-                <span>Configuration Guide</span>
-                <span>PC Build Help</span>
+                <a href="./Post.js"><span>Technical Reviews</span></a>
+                <a href="./Post.js"><span>Configuration Guide</span></a>
+                <a href="./Post.js"><span>PC Build Help</span></a>
             </div>
         </div>
 
@@ -26,39 +25,48 @@ const Home =()=> {
                     Build Guides
                 </div>
                 <div className="pc-build-box">
+                    <a href="./Post.js">
                     <div className='build-title'>
                         <span className='title-text'>Entry-Level Build</span>
                         <div>
                             <span className='title-text'>P30,000</span>
                         </div>
+                        
                     </div>
                     <div className='pic-container'>
                         <img className="pc-image" src={require('../media/pc-image.png')} alt="pic" />
                     </div>
+                    </a>
                 </div>
 
                 <div className="pc-build-box">
+                    <a href="./Post.js">
                     <div className='build-title'>
                         <span className='title-text'>Entry-Level Build</span>
                         <div>
                             <span className='title-text'>P30,000</span>
                         </div>
+                        
                     </div>
                     <div className='pic-container'>
                         <img className="pc-image" src={require('../media/pc-image.png')} alt="pic" />
                     </div>
+                    </a>
                 </div>
 
                 <div className="pc-build-box">
+                    <a href="./Post.js">
                     <div className='build-title'>
                         <span className='title-text'>Entry-Level Build</span>
                         <div>
                             <span className='title-text'>P30,000</span>
                         </div>
+                        
                     </div>
                     <div className='pic-container'>
                         <img className="pc-image" src={require('../media/pc-image.png')} alt="pic" />
                     </div>
+                    </a>
                 </div>
 
 
