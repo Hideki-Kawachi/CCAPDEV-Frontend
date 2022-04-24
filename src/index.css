@@ -457,10 +457,12 @@ li{
   border: 1px solid gray;
   width: 35%;
   font-size: medium;
+  margin-top: 10px;
 }
 
 [id='store-review-search-button']{
   font-size: medium;
+  margin-top: 10px;
   padding: 5px;
   margin-left: 10px;
   border-radius: 5px;
@@ -477,6 +479,11 @@ li{
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+  background-color: black;
+  color: var(--primary);
+  border-radius: var(--radius);
+  padding: 5px;
+  letter-spacing: -1px;
 }
 
 [id='store-review-header']{

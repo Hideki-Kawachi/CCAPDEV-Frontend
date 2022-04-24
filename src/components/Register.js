@@ -54,7 +54,7 @@ const Register = () => {
                         <span className='font-shadow'>CREATE ACCOUNT</span>
                     </div>
                     <div className='inside-register-right'>
-                        <input type={'firstName'} placeholder='First Name' value={firstName} onChange={(e)=>setFirstName(e.target.value)} style={firstNameError ? {borderColor:'red'}:{}}></input>
+                        <input type={'firstName'} placeholder='First Name' value={firstName} onChange={(e)=>setFirstName(e.target.value)}></input>
                         <input type={'lasttName'} placeholder='Last Name' value={lastName} onChange={(e)=>setLastName(e.target.value)}></input>
                     </div>
                     <div className='inside-register-right'>

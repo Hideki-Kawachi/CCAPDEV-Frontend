@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import StarRating from './StarRating';
 
 function StoreReviewBar(props) {
@@ -19,10 +20,10 @@ function StoreReviewBar(props) {
     return (  
         <div className='store-review-bar-container'>
             <div className='store-review-bar-left'>
-                <div className='store-review-bar-top-container'>
+                <Link className='store-review-bar-top-container' to={'/StoreReviewView'} state={{title: title, description: description, date: date, user: user, rating: rating}}>
                     <span className='store-review-bar-title'>{title}</span>
                     <span className='store-review-bar-user'>by: {user}</span>
-                </div>
+                </Link>
                 <hr className='store-review-bar-line'></hr>
                 <div className='store-review-bar-description-container'>
                     <span className='store-review-bar-description'>{description}</span>

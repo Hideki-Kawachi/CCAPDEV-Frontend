@@ -10,6 +10,7 @@ import index from './index.css'
 import UserProfile from './components/UserProfile';
 import UserContext, { UserProvider } from './components/context/UserContext';
 import StoreReview from './components/StoreReview';
+import StoreReviewView from './components/StoreReviewView';
 
 const App = () =>{
     const [isLoggedIn,setIsLoggedIn] = useState(false);
@@ -30,6 +31,7 @@ const App = () =>{
                         <Route path="/Forum" element={<Forum></Forum>}></Route>
                         <Route path="/PostCreate" element={<PostCreate></PostCreate>}></Route>
                         <Route path="/StoreReview" element={<StoreReview></StoreReview>}></Route>
+                        <Route path="/StoreReviewView" element={<StoreReviewView></StoreReviewView>}></Route>
                         <Route path="/" element={<Home></Home>}></Route>
                         <Route path="/Register" element={<Register></Register>}></Route>
                         <Route path="/UserProfile" element={<UserProfile username={username}></UserProfile>}></Route>
