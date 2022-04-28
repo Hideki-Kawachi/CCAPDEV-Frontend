@@ -58,7 +58,7 @@ function StarRating(props) {
             </>
         )
     }
-    console.log(props.rating + "RATING");
+
     return (
         <div>
             {starDisplay[props.rating]}

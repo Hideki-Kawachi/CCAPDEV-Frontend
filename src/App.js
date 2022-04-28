@@ -11,6 +11,7 @@ import UserProfile from './components/UserProfile';
 import UserContext, { UserProvider } from './components/context/UserContext';
 import StoreReview from './components/StoreReview';
 import StoreReviewView from './components/StoreReviewView';
+import StoreReviewPost from './components/StoreReviewPost';
 
 const App = () =>{
     const [isLoggedIn,setIsLoggedIn] = useState(false);
@@ -32,6 +33,7 @@ const App = () =>{
                         <Route path="/PostCreate" element={<PostCreate></PostCreate>}></Route>
                         <Route path="/StoreReview" element={<StoreReview></StoreReview>}></Route>
                         <Route path="/StoreReviewView" element={<StoreReviewView></StoreReviewView>}></Route>
+                        <Route path="/StoreReviewPost" element={<StoreReviewPost></StoreReviewPost>}></Route>
                         <Route path="/" element={<Home></Home>}></Route>
                         <Route path="/Register" element={<Register></Register>}></Route>
                         <Route path="/UserProfile" element={<UserProfile username={username}></UserProfile>}></Route>
