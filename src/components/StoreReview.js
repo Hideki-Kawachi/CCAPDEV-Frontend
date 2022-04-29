@@ -1,25 +1,28 @@
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useEffect, useState, useContext, useRef } from 'react';
 import StoreReviewBar from './StoreReviewBar';
 import { Link } from 'react-router-dom';
 import Login from './Login';
 import UserContext from './context/UserContext';
+import StoreReviewContext from './context/StoreReviewContext';
 
 function StoreReview() {
-    const [search, setSearch] = useState("");
-    const [sort, setSort] = useState("Date posted");
-    const [isSortReverse, setIsSortReverse] = useState(false);
-    const [reviewList, setReviewList] = useState([]);
-    const [isLoggedOpen, setIsLoggedOpen] = useState(false);
-
-    const user = useContext(UserContext);
-
     let tempList=[];
     let reviewPost1 = new reviewPost("PC EXPRESS", "This shop is good! Excellent service.", new Date('April 28, 2022 15:47:00'), 4, "Hideki123");
     let reviewPost2 = new reviewPost("PC CORNER", "This shop is good! Excellent service.", new Date('April 25, 2022 14:32:00'), 3, "CarloC");
     let reviewPost3 = new reviewPost("Desktop Workshop", "This shop is good! Excellent service.", new Date('Febuary 22, 2022 2:45:00'), 5, "MartinA");
     let reviewPost4 = new reviewPost("PC Gilmore", "This shop is good! Excellent service.", new Date('January 24, 2022 15:40:00'), 2, "GinoGGG");
     let reviewPost5 = new reviewPost("EasyPc", "This shop is good! Excellent service.", new Date('December 25, 2021 23:31:00'), 4, "SirN");
-    const reviews=[reviewPost1,reviewPost2,reviewPost3,reviewPost4,reviewPost5];
+
+    const [search, setSearch] = useState("");
+    const [sort, setSort] = useState("Date posted");
+    const [isSortReverse, setIsSortReverse] = useState(false);
+    const [reviewList, setReviewList] = useState([]);
+    const [reviews, setReviews] = useState([reviewPost1,reviewPost2,reviewPost3,reviewPost4,reviewPost5]);
+    const [isLoggedOpen, setIsLoggedOpen] = useState(false);
+
+    const user = useContext(UserContext);
+
+    const storeReview = useContext(StoreReviewContext);
 
     function reviewPost(title, description, date, rating, username){
         this.title = title;
@@ -28,6 +31,14 @@ function StoreReview() {
         this.rating = rating;
         this.username = username;
     }
+
+    
+    
+    useEffect(()=>{
+        if(storeReview.title.length>0 && storeReview.description.length>0 && storeReview.username.length>0){
+            setReviews(oldReviews=>[new reviewPost(storeReview.title, storeReview.description, storeReview.date, storeReview.rating, storeReview.username),...oldReviews])
+        }
+    },[storeReview]);
 
     useEffect(()=>{
         if(sort=="Date posted")
@@ -52,23 +63,17 @@ function StoreReview() {
             tempList.push(<StoreReviewBar key={index} title={review.title} description={review.description} date={review.date} rating={review.rating} username={review.username}></StoreReviewBar>)
         })
         setReviewList(tempList);
+        console.log("SET");
     },[sort,isSortReverse])
 
     useEffect(()=>{
-        console.log("review list updated");
-    })
-
-
-   /* useEffect(()=>{
-        if(sort=="rating"){
-            console.log("RATE");
-        }
-        else{
-            console.log("DATE");
-        }
-
-    },[sort])
-    */
+        tempList = [];
+            reviews.forEach((review,index)=>{
+                tempList.push(<StoreReviewBar key={index} title={review.title} description={review.description} date={review.date} rating={review.rating} username={review.username}></StoreReviewBar>)
+            })
+            setReviewList(tempList);
+            console.log("SET");
+    },[reviews])
 
     function sortDateClick()
     {
@@ -125,8 +130,6 @@ function StoreReview() {
             
         )
     }
-
-    console.log("store list enter");
 
     return (
         <div className='content-store-review'>

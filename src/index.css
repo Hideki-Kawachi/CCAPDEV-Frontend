@@ -569,7 +569,7 @@ li{
 
 [id='store-review-post-button']{
     padding: 10px;
-    background-color: var(--secondary);
+    background-color: var(--accent);
     color: var(--primary);
     font-size: medium;
     font-weight: 600;
@@ -578,11 +578,11 @@ li{
 }
 
 [id='store-review-post-button']:hover{
-  background-color: var(--secondary-highlight);
   color: white;
-  animation-name: navBarHoverAnimation;
-  animation-duration: 0.5s;
+  animation-name: focusSize;
+  animation-duration: 0.2s;
   animation-iteration-count: 1;
+  animation-fill-mode: forwards;
   cursor: pointer;
   text-decoration: none;
   box-shadow: 0 0 5px gray;
@@ -739,14 +739,13 @@ li{
   }
   
   .store-review-post-description{
-    border: 1px solid gray;
-    border-radius: var(--radius);
     padding: 10px;
     margin-top: 10px;
     min-height: 50px;
+    margin-bottom: 20px;
   }
 
-  .store-review-description{
+  .store-review-post-description-input{
     font-size: medium;
     width: 98.5%;
     height: 250px;
@@ -757,6 +756,27 @@ li{
     border: 1px solid var(--primary-highlight)
   }
 
+  .store-review-post-submit{
+    position: absolute;
+    right: 30px;
+    bottom: 5px;
+    font-size: medium;
+    font-family: 'Noto Sans', sans-serif;
+    border-radius: 5px;
+    border: 1px solid black;
+    background-color: var(--accent);
+    color: white;
+    padding: 5px;
+    cursor: pointer;
+  }
+
+  .store-review-post-submit:hover{
+    animation-name: focusSize;
+    animation-duration: 0.15s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    box-shadow: 0 0 5px gray;
+  }
 
 
 /*STAR RATING*/
@@ -850,7 +870,11 @@ button.star-checked, button.star-unchecked{
   0%{transform: scale(0%);}
   10%{transform: scale(90%)}
   100%{transform: scale(100%);}
-  
+}
+
+@keyframes focusSize {
+    0%{transform: scale(100%);}
+    100%{transform: scale(103%);}
 }
 
 /* Home.js contents*/
