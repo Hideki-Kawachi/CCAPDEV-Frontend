@@ -16,7 +16,7 @@ const NavBar = () =>{
 
 
     console.log(user.profilePic + "in navbar");
-    const rightNav = {//profile pic currently not showing but correct directory/file path
+    const rightNav = {
         true: (
             <div className='right-header'>
                 <span className='username-header'>{user.username}</span>

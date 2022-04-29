@@ -8,7 +8,7 @@ function StoreReviewBar(props) {
     const [datePosted, setDatePosted] = useState(new Date());
     const [dateShow, setDateShow] = useState("");
     const [rating, setRating] = useState(1);
-    const [user, setUser] = useState("");
+    const [username, setUsername] = useState("");
     
     const currentDate = new Date();
     let finalDate;
@@ -18,7 +18,7 @@ function StoreReviewBar(props) {
         setTitle(props.title);
         setDescription(props.description);
         setRating(props.rating);
-        setUser(props.user);
+        setUsername(props.username);
     });
 
 
@@ -77,9 +77,9 @@ function StoreReviewBar(props) {
     return (  
         <div className='store-review-bar-container'>
             <div className='store-review-bar-left'>
-                <Link className='store-review-bar-top-container' to={'/StoreReviewView'} state={{title: title, description: description, date: dateShow, user: user, rating: rating}}>
+                <Link className='store-review-bar-top-container' to={'/StoreReviewView'} state={{title: title, description: description, date: dateShow, username: username, rating: rating}}>
                     <span className='store-review-bar-title'>{title}</span>
-                    <span className='store-review-bar-user'>by: {user}</span>
+                    <span className='store-review-bar-user'>by: {username}</span>
                 </Link>
                 <hr className='store-review-bar-line'></hr>
                 <div className='store-review-bar-description-container'>
@@ -89,7 +89,7 @@ function StoreReviewBar(props) {
             <div className='store-review-bar-right'>
                 <span className='store-review-bar-date'>{dateShow}</span>
                 <div className='store-review-bar-rating'>
-                    <StarRating rating = {rating}></StarRating>
+                    <StarRating rating = {rating} edit= {false}></StarRating>
                 </div>
             </div>
         </div>

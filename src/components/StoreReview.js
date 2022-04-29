@@ -1,12 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import StoreReviewBar from './StoreReviewBar';
 import { Link } from 'react-router-dom';
+import Login from './Login';
+import UserContext from './context/UserContext';
 
 function StoreReview() {
     const [search, setSearch] = useState("");
-    const [sort, setSort] = useState("Date Posted");
+    const [sort, setSort] = useState("Date posted");
     const [isSortReverse, setIsSortReverse] = useState(false);
     const [reviewList, setReviewList] = useState([]);
+    const [isLoggedOpen, setIsLoggedOpen] = useState(false);
+
+    const user = useContext(UserContext);
 
     let tempList=[];
     let reviewPost1 = new reviewPost("PC EXPRESS", "This shop is good! Excellent service.", new Date('April 28, 2022 15:47:00'), 4, "Hideki123");
@@ -16,12 +21,12 @@ function StoreReview() {
     let reviewPost5 = new reviewPost("EasyPc", "This shop is good! Excellent service.", new Date('December 25, 2021 23:31:00'), 4, "SirN");
     const reviews=[reviewPost1,reviewPost2,reviewPost3,reviewPost4,reviewPost5];
 
-    function reviewPost(title, description, date, rating, user){
+    function reviewPost(title, description, date, rating, username){
         this.title = title;
         this.description = description;
         this.date = date;
         this.rating = rating;
-        this.user = user;
+        this.username = username;
     }
 
     useEffect(()=>{
@@ -44,10 +49,9 @@ function StoreReview() {
         }
         tempList = [];
         reviews.forEach((review,index)=>{
-            tempList.push(<StoreReviewBar key={index} title={review.title} description={review.description} date={review.date} rating={review.rating} user={review.user}></StoreReviewBar>)
+            tempList.push(<StoreReviewBar key={index} title={review.title} description={review.description} date={review.date} rating={review.rating} username={review.username}></StoreReviewBar>)
         })
         setReviewList(tempList);
-        console.log(reviewList);
     },[sort,isSortReverse])
 
     useEffect(()=>{
@@ -107,13 +111,28 @@ function StoreReview() {
             return null;
     }
 
+    const buttonRoute = {
+        true:(
+            <Link id='store-review-post-button' to={'/StoreReviewPost'}>
+                <span>Post a Review</span>
+            </Link>
+        ),
+        false:(
+            <>
+            <a id='store-review-post-button'onClick={()=>setIsLoggedOpen(true)}>Post a Review</a>
+            <Login setIsLoggedOpen = {setIsLoggedOpen} isLoggedOpen = {isLoggedOpen}></Login>
+            </>
+            
+        )
+    }
+
+    console.log("store list enter");
+
     return (
         <div className='content-store-review'>
             <span id='store-review-title'>LOCAL STORE REVIEWS</span>
             <div id='store-review-header'>
-                <Link id='store-review-post-button' to={'/StoreReviewPost'} >
-                    <span>Post a Review</span>
-                </Link>
+                {buttonRoute[user.isLoggedIn]}
             </div>
 
             <div id='store-review-container'>

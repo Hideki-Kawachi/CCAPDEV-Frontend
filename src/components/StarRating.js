@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
 function StarRating(props) {
+    const [rating, setRating] = useState(0);
+    const [hover, setHover] = useState(0);
 
     const starDisplay={
         0:(
@@ -46,7 +48,7 @@ function StarRating(props) {
             <span className='star-checked'></span>
             <span className='star-checked'></span>
             <span className='star-unchecked'></span>
-            </>
+            </> 
         ),
         5:(
             <>
@@ -57,11 +59,36 @@ function StarRating(props) {
             <span className='star-checked'></span>
             </>
         )
+    };
+
+    const starEdit={
+        true: (
+            <>
+                {[...Array(5)].map((star, index)=>{
+                    index +=1;
+                    return(
+                        <button type='button' key={index} className={index <= (hover || rating) ? "star-checked" : "star-unchecked"} onClick={()=>clickStar(index)} onMouseEnter={()=>setHover(index)} onMouseLeave={()=>setHover(rating)}>
+                        </button>
+                        
+                    );
+                })}
+            </>
+        ),
+        false: (
+            <>
+            {starDisplay[props.rating]}
+            </>
+        )
+    }
+
+    function clickStar(index){
+        setRating(index);
+        props.setRating(index);
     }
 
     return (
         <div>
-            {starDisplay[props.rating]}
+            {starEdit[props.edit]}
         </div>
       );
 }

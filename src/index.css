@@ -699,6 +699,64 @@ li{
   min-height: 50px;
 }
 
+/*STORE REVIEW POST*/
+
+.content-store-review-post{
+    background-color: var(--primary);
+    margin-left: 20%;
+    margin-right: 20%;
+    height: fit-content;
+    position: relative;
+    top: 20px;
+    padding: 10px;
+    border-radius: var(--radius);
+    border: 2px solid black;
+  }
+  
+  .store-review-post-header{
+    display: flex;
+    align-items: center;
+  }
+  
+  .store-review-post-sub-header{
+    color: gray;
+  }
+  
+  .store-review-post-title{
+    font-size: 30px;
+    font-weight: 700;
+    margin-right: 10px;
+  }
+  
+  .store-review-post-user:hover{
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  
+  .store-review-post-date{
+    margin-left: 20px;
+    font-size: small;
+  }
+  
+  .store-review-post-description{
+    border: 1px solid gray;
+    border-radius: var(--radius);
+    padding: 10px;
+    margin-top: 10px;
+    min-height: 50px;
+  }
+
+  .store-review-description{
+    font-size: medium;
+    width: 98.5%;
+    height: 250px;
+    border-radius: 5px;
+    font-size: 100%;
+    font-family: 'Noto Sans', sans-serif;
+    padding: 5px;
+    border: 1px solid var(--primary-highlight)
+  }
+
 
 
 /*STAR RATING*/
@@ -717,6 +775,10 @@ li{
   display: inline-block;
   height: 20px;
   width: 20px;
+}
+
+button.star-checked, button.star-unchecked{
+    cursor: pointer;
 }
 
 
