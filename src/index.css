@@ -490,7 +490,22 @@ li{
   background-color: rgb(209, 209, 209);
 }
 
-
+#dropdown-border{
+  border-radius:36px;
+  display:inline-block;
+  overflow:hidden;
+  background:#cccccc;
+  border:1px solid #cccccc
+}
+#dropdown{
+  position: relative;
+  display: inline-block;
+  width:140px;
+  height:40px;
+  border:0px;
+  outline:none;
+  display: none;
+}
 /*STORE REVIEW HOME*/
 .content-store-review{
   background-color: var(--primary);
