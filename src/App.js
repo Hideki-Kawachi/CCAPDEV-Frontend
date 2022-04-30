@@ -13,6 +13,7 @@ import StoreReview from './components/StoreReview';
 import StoreReviewView from './components/StoreReviewView';
 import StoreReviewPost from './components/StoreReviewPost';
 import { StoreReviewProvider } from './components/context/StoreReviewContext';
+import SystemBuilder from './components/SystemBuilder';
 
 const App = () =>{
     const [isLoggedIn,setIsLoggedIn] = useState(false);
@@ -42,6 +43,7 @@ const App = () =>{
                             <Route path="/StoreReview" element={<StoreReview></StoreReview>}></Route>
                             <Route path="/StoreReviewView" element={<StoreReviewView></StoreReviewView>}></Route>
                             <Route path="/StoreReviewPost" element={<StoreReviewPost></StoreReviewPost>}></Route>
+                            <Route path="/SystemBuilder" element={<SystemBuilder></SystemBuilder>}></Route>
                             <Route path="/" element={<Home></Home>}></Route>
                             <Route path="/Register" element={<Register></Register>}></Route>
                             <Route path="/UserProfile" element={<UserProfile username={username}></UserProfile>}></Route>

@@ -92,7 +92,7 @@ function StoreReview() {
     function directionDate(){
         if(sort=="Date posted")
         {
-            if(isSortReverse){
+            if(!isSortReverse){
                 return <span> ↓</span>;
             }
             else{
@@ -105,7 +105,7 @@ function StoreReview() {
 
     function directionRate(){
         if(sort=="User rating"){
-            if(isSortReverse){
+            if(!isSortReverse){
                 return <span> ↓</span>;
             }
             else{

@@ -37,6 +37,7 @@ const NavBar = () =>{
                 <Link id="headerForum" className='nav-button' to={'/Forum'}>Forums</Link>
                 <Link id="headerCreatePost" className='nav-button' to={'/PostCreate'}>Create a Post</Link>
                 <Link id="headerStoreReview" className='nav-button' to={'/StoreReview'}>Store Reviews</Link>
+                <Link id="headerSystemBuilder" className='nav-button' to={'/SystemBuilder'}>System Builder</Link>
             </div>
             
             <Link id="headerHome" to={'/'}></Link>
