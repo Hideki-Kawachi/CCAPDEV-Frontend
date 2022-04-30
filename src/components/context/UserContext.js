@@ -3,7 +3,7 @@ import React, { createContext } from 'react';
 const UserContext = createContext({
     isLoggedIn: false, setIsLoggedIn: ()=>({}),
     username: "",   setUsername: ()=>({}),
-    profilePic: "", setProfilePic: ()=>({}),
+    profilePic: "/profilePictures/default.jpg", setProfilePic: ()=>({}),
     email: "", setEmail: ()=>({})
     });
 

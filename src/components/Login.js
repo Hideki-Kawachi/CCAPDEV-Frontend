@@ -46,7 +46,7 @@ const Login=(props)=>{
                         <form className='login-details'>
                             <input type={'text'} placeholder='Username' value={username} onChange={(e)=>setUsername(e.target.value)}></input>
                             <input type={'password'} placeholder='Password' value={password} onChange={(e)=>setPassword(e.target.value)}></input>
-                            <button type={'button'} id='login-submit' disabled={!validateForm()} onClick={(e)=>sendLogin(e)}>Submit</button>
+                            <button type={'button'} disabled={!validateForm()} onClick={(e)=>sendLogin(e)}>Submit</button>
                         </form>
                     </div>
             </div>
