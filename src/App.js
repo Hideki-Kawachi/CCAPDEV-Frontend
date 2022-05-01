@@ -15,6 +15,7 @@ import StoreReviewPost from './components/StoreReviewPost';
 import StoreReviewContext, { StoreReviewProvider } from './components/context/StoreReviewContext';
 import SystemBuilder from './components/SystemBuilder';
 import { SystemBuilderProvider } from './components/context/SystemBuilderContext';
+import { PostProvider } from './components/context/PostContext';
 
 const App = () =>{
     
@@ -28,7 +29,10 @@ const App = () =>{
     const [date,setDate] = useState(new Date());
     const [rating,setRating] = useState(0);
     const [description,setDescription] = useState("");
-    const storeReview = {title,setTitle,username,setUsername,date,setDate,rating,setRating,description,setDescription};
+    const [media,setMedia] = useState("");
+    const storeReview = {title,setTitle,username,setUsername,date,setDate,rating,setRating,description,setDescription,media,setMedia};
+
+    const post = {title,setTitle,username,setUsername,date,setDate,description,setDescription,media,setMedia};
 
     const [build,setBuild] = useState("");
     const [cpu, setCpu] = useState("default---0");
@@ -48,18 +52,19 @@ const App = () =>{
             <UserProvider value = {user}>
                 <StoreReviewProvider value={storeReview}>
                     <SystemBuilderProvider value={systemBuild}>
-                        <NavBar></NavBar>
-                                <Routes>
-                                    <Route path="/Forum" element={<Forum></Forum>}></Route>
-                                    <Route path="/PostCreate" element={<PostCreate></PostCreate>}></Route>
-                                    <Route path="/StoreReview" element={<StoreReview></StoreReview>}></Route>
-                                    <Route path="/StoreReviewView" element={<StoreReviewView></StoreReviewView>}></Route>
-                                    <Route path="/StoreReviewPost" element={<StoreReviewPost></StoreReviewPost>}></Route>
-                                    <Route path="/SystemBuilder" element={<SystemBuilder></SystemBuilder>}></Route>
-                                    <Route path="/" element={<Home></Home>}></Route>
-                                    <Route path="/Register" element={<Register></Register>}></Route>
-                                    <Route path="/UserProfile" element={<UserProfile></UserProfile>}></Route>
-                                </Routes>
+                        <PostProvider value={post}>
+                            <NavBar></NavBar>
+                            <Routes>
+                                <Route path="/Forum" element={<Forum></Forum>}></Route>
+                                <Route path="/PostCreate" element={<PostCreate></PostCreate>}></Route>
+                                <Route path="/StoreReview" element={<StoreReview></StoreReview>}></Route>
+                                <Route path="/StoreReviewView" element={<StoreReviewView></StoreReviewView>}></Route>
+                                <Route path="/StoreReviewPost" element={<StoreReviewPost></StoreReviewPost>}></Route>
+                                <Route path="/SystemBuilder" element={<SystemBuilder></SystemBuilder>}></Route>
+                                <Route path="/" element={<Home></Home>}></Route>
+                                <Route path="/Register" element={<Register></Register>}></Route>
+                                <Route path="/UserProfile" element={<UserProfile></UserProfile>}></Route>
+                            </Routes>
                             <footer>
                                     <div className="contact-container">
                                         <span className="contact-us">Contact us</span>
@@ -70,6 +75,7 @@ const App = () =>{
                                         </div>
                                     </div>
                             </footer>
+                        </PostProvider>
                     </SystemBuilderProvider>
                 </StoreReviewProvider>
             </UserProvider>

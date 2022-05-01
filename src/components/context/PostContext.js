@@ -1,15 +1,14 @@
 import React, { createContext } from 'react';
 
-const StoreReviewContext = createContext({
+const PostContext = createContext({
     title: "", setTitle: ()=>({}),
     username: "",   setUsername: ()=>({}),
     date: "", setDate: ()=>({}),
-    rating: 0, setRating: ()=>({}),
     description: "", setDescription: ()=>({}),
     media: "", setMedia: ()=>({})
     });
 
-export const StoreReviewProvider = StoreReviewContext.Provider;
-export const StoreReviewConsumer = StoreReviewContext.Consumer;
+export const PostProvider = PostContext.Provider;
+export const PostConsumer = PostContext.Consumer;
 
-export default StoreReviewContext;
+export default PostContext;

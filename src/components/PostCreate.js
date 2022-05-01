@@ -1,18 +1,16 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import UserContext from './context/UserContext';
-import StarRating from './StarRating';
 import Login from './Login';
-import StoreReviewContext from './context/StoreReviewContext';
+import PostContext from './context/PostContext';
 
 function PostCreate() {
     const user = useContext(UserContext);
-    const forumPost = useContext(StoreReviewContext);
+    const forumPost = useContext(PostContext);
 
     const [title, setTitle] = useState("");
     const [date, setDate] = useState(new Date());
     const [description, setDescription] = useState("");
-    const [rating, setRating] = useState(0);
     const [images, setImages] = useState("");
     const [username, setUsername] = useState(user.username);
     
@@ -28,6 +26,7 @@ function PostCreate() {
         forumPost.setUsername(username);
         forumPost.setDate(date);
         forumPost.setDescription(description);
+        //forumPost.setImages(images);
         navigate("/Forum");
     }
 

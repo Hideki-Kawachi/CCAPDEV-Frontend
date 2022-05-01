@@ -13,7 +13,7 @@ function StoreReviewPost() {
     const [date, setDate] = useState(new Date());
     const [description, setDescription] = useState("");
     const [rating, setRating] = useState(0);
-    const [images, setImages] = useState("");
+    const [media, setMedia] = useState("");
     const [username, setUsername] = useState(user.username);
     
 
@@ -29,6 +29,7 @@ function StoreReviewPost() {
         storeReview.setDate(date);
         storeReview.setDescription(description);
         storeReview.setRating(rating);
+        //storeReview.setMedia(media);
         navigate("/StoreReview");
     }
 
