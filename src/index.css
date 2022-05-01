@@ -890,7 +890,7 @@ button.star-checked, button.star-unchecked{
 
 .system-builder-total{
   position: absolute;
-  right: 6.5vw;
+  right: 4vw;
   font-size: x-large;
   font-weight: 600;
 }
