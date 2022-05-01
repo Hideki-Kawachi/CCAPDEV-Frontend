@@ -59,14 +59,5 @@ const ForumBar = (props) => {
     );
 }
 
-const UpVote = (props) => {
-    return(
-    <figure display = "inline-block" float = "left" margin = "auto"> 
-        <img className="icon" src={require('../media/upvote-icon.png')} alt="pic" />
-        <figcaption> 1 </figcaption>
-    </figure>
-   
-    );
-}
 
 export default ForumBar;

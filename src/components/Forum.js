@@ -1,5 +1,6 @@
 import React from 'react';
 import ForumBar from "./ForumBar";
+
 const Forum = () => {
     let forumPost1 = new forumPost();
     let forumPost2 = new forumPost();
@@ -30,6 +31,16 @@ const Forum = () => {
         <div classname  ="forum-body">
             <input type={"search"} id='post-search' placeholder='Search a post...'></input>
              <button id = 'post-search-button'>Search</button>
+
+             <div id='store-review-sort-right'>
+                    <div className='store-review-sort-button'>
+                        <span>Date Posted</span>
+                        </div>
+                    <div className='store-review-sort-button'>
+                        <span >Upvotes <img className="icon" src='./images/upvote-icon.png' alt="Up"/></span>
+                    </div>
+                </div>
+                    
          
         
                 <ForumBar Title="Is this build good enough?" username= "Hidekiii" Flair = "Rate My Build" datePosted = "April 27, 2022" Upvote = "5"/>
