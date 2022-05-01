@@ -21,8 +21,6 @@ const NavBar = () =>{
         console.log(systemBuild);
     })
 
-
-    console.log(user.profilePic + "in navbar");
     const rightNav = {
         true: (
             <div className='right-header'>

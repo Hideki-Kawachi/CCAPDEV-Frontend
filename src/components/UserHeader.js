@@ -1,10 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import UserContext from './context/UserContext'
 
 function UserHeader(props) {
     const [isOpen,setIsOpen] = useState(false);
     const user = useContext(UserContext);
+
+    const navigate = useNavigate();
 
     const logOut=()=>{
         setIsOpen(false);
@@ -12,6 +14,7 @@ function UserHeader(props) {
         user.setIsLoggedIn(false);
         user.setUsername("");
         user.setProfilePic("");
+        navigate("/");
     }
 
     useEffect(()=>{
