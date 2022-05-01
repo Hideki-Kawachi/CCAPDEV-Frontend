@@ -33,7 +33,6 @@ function PostCreate() {
     return (
         <div className='content-store-review-post'>
             <form>
-                <>
                     <div  className='store-review-post-header'>
                     <button className='back-button' onClick={back}></button>
                         <span>Title: </span>
@@ -43,6 +42,8 @@ function PostCreate() {
                         <select classname='dropdown'id='flair'>
                             <option value="Technical Issues">Technical Issues</option>
                             <option value="Rate My Build">Rate My Build</option>
+                            <option value="Rate My Build">Build Suggestions</option>
+                            <option value="Rate My Build">Tips and Tricks</option>
                             <option value="General Discussion and Trends">General Discussion and Trends</option>
                             <option value="News">News</option>
                       </select>
@@ -53,7 +54,7 @@ function PostCreate() {
                         <span className='store-review-post-user'>{username}</span>
                         <span className='store-review-post-date'>{date.toDateString().substring(4)}</span>
                     </div>
-                </>
+         
                 <div className='store-review-post-description'>
                     <span>Description:</span>
                     <textarea className='store-review-post-description-input' type={'textarea'} value={description} placeholder={"..."} onChange={(e)=>setDescription(e.target.value)}></textarea>

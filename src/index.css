@@ -428,14 +428,32 @@ h4{
 }
 .post-title{
   margin-top: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  margin-right: 10px;
+  margin-left: 20px;
 }
-.post-title-text{
+.post-user-text{
   color: rgb(54, 54, 54);
   font-size:small;
   margin: 5px 0;
   margin-left: 50px;
+  
 }
 
+.forum-bar-flair{
+  font-size: x-small;
+  color: white;
+  border-radius: 15px;
+  font-weight: normal;
+  width: fit-content;
+  height: fit-content;
+  block-size: fit-content;
+  background-color: rgb(37, 37, 37);
+  margin-left: 20px;
+  padding-left: 7px;
+  padding-right: 7px;
+}
 a{
   text-decoration: none;
   color: black;
@@ -460,12 +478,14 @@ a:hover{
  margin: 30px;
  
 }
-.row{
+.forum-bar-container{
   background-color: rgb(255, 245, 245);
   border: 1px solid gray;
   box-shadow: 10%;
-  margin: auto;
+  margin: 2px;
+  display: flex;
   max-width: auto;
+  overflow: hidden;
 }
 
 li{
@@ -505,6 +525,12 @@ li{
   border:0px;
   outline:none;
   display: none;
+}
+
+.forum-bar-date{
+  margin-top: 10px;
+  font-size: medium;
+ 
 }
 /*STORE REVIEW HOME*/
 .content-store-review{
