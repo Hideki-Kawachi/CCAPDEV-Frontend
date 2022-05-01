@@ -5,7 +5,8 @@ const PostContext = createContext({
     username: "",   setUsername: ()=>({}),
     date: "", setDate: ()=>({}),
     description: "", setDescription: ()=>({}),
-    media: "", setMedia: ()=>({})
+    media: "", setMedia: ()=>({}),
+    Upvote: '', setUpvote: ()=>({})
     });
 
 export const PostProvider = PostContext.Provider;

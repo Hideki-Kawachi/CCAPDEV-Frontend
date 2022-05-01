@@ -1,1 +1,1 @@
-<div id='store-review-search-container'>
+<hr className='store-review-bar-line'></hr>
