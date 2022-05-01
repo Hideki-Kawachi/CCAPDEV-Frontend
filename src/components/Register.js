@@ -22,7 +22,6 @@ const Register = () => {
                 return true;
             }
         }
-        firstNameError=true;
         setUsername("");
         setEmail("");
         setPassword("");
@@ -35,8 +34,12 @@ const Register = () => {
     const sendRegister =()=>{
         let isValid = validateForm();
         if(isValid){
+            user.setUsername(username);
+            user.setEmail(email);
+            user.setProfilePic("/profilePictures/default.jpg");
+            user.setIsLoggedIn(true);
+            user.setBio("Hello World! :)")
             navigate("/");
-            console.log("SENT");
         }
         else{
             console.log("error message "+firstNameError);

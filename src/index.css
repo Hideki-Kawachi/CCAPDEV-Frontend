@@ -129,14 +129,14 @@ a.nav-button:hover, a.nav-button:focus, a.nav-button:active{
   padding: 0;   
 }
 
-.profile-pic{
+[id=profile-pic-header]{
   width: 40px;
   height: auto;
   object-fit: cover;
   border-radius: 50%;
 }
 
-.profile-pic:hover{
+[id=profile-pic-header]:hover{
   cursor: pointer;
   animation-name: bounce;
   animation-duration: 1s;
@@ -935,6 +935,59 @@ button.star-checked, button.star-unchecked{
   background-color: gray;
   animation: none;
   box-shadow: none;
+}
+
+/*USER PROFILE*/
+.content-user-profile{
+
+}
+
+.user-profile-container{
+  min-width: fit-content;
+  width: 800px;
+  min-height: fit-content;
+  height: 600px;
+  background-color: var(--primary);
+  position: absolute;
+  left: 50%;
+  top: 45%;
+  transform: translate(-50%,-50%);
+  border-radius: var(--radius);
+  border: 1px solid black;
+  padding: 20px;
+}
+
+.user-profile-username{
+  position: relative;
+  font-size: 40px;
+  color: black;
+  top: -60px;
+  left: 120px;
+}
+
+.user-profile-pic-container{
+  width: 100px;
+  height: 100px;
+  background-color: white;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+[id=user-profile-pic]{
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid gray;
+}
+
+.user-profile-bio-container{
+  background-color: white;
+  width: calc(100% - 20px);
+  height: 50%;
+  border: 1px solid black;
+  border-radius: var(--radius);
+  padding: 10px;
 }
 
 

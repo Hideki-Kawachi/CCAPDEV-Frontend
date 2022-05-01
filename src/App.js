@@ -23,7 +23,8 @@ const App = () =>{
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
     const [profilePic, setProfilePic] = useState("/profilePictures/default.jpg");
-    const user = {isLoggedIn,setIsLoggedIn,username,setUsername,profilePic,setProfilePic,email,setEmail};
+    const [bio,setBio] = useState("");
+    const user = {isLoggedIn,setIsLoggedIn,username,setUsername,profilePic,setProfilePic,email,setEmail,bio,setBio};
 
     const [title,setTitle] = useState("");
     const [date,setDate] = useState(new Date());
