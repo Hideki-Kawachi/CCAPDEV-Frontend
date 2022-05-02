@@ -1,5 +1,5 @@
 import React from 'react';
-import ForumComment from "/ForumComment";
+import ForumComment from ".//ForumComment";
 import { Link, useNavigate } from 'react-router-dom';
 
 const ForumPost = () => {

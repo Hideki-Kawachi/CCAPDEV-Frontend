@@ -16,6 +16,7 @@ import StoreReviewContext, { StoreReviewProvider } from './components/context/St
 import SystemBuilder from './components/SystemBuilder';
 import { SystemBuilderProvider } from './components/context/SystemBuilderContext';
 import { PostProvider } from './components/context/PostContext';
+import ForumPost from './components/ForumPost'
 
 const App = () =>{
     
@@ -65,6 +66,7 @@ const App = () =>{
                                 <Route path="/" element={<Home></Home>}></Route>
                                 <Route path="/Register" element={<Register></Register>}></Route>
                                 <Route path="/UserProfile" element={<UserProfile></UserProfile>}></Route>
+                                <Route path="/ForumPost" element={<ForumPost></ForumPost>}></Route>
                             </Routes>
                             <footer>
                                     <div className="contact-container">
