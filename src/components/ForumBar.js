@@ -44,16 +44,22 @@ const ForumBar = (props) => {
                 <div className='store-review-bar-left'>
                     <Link className='store-review-bar-top-container' to={'/StoreReviewView'} state={{title: Title, date: dateShow, username: username}}>
                     <span className='post-title'>{props.Title}</span>
+
                     </Link>
                     <br></br>
                     <span className='post-user-text'>by: {props.username}</span> 
+                   
+                   
                     <span class ="forum-bar-flair">{props.Flair}</span> 
+                    <img className="comment" src={require('../media/comments-icon.png')} alt="Comments"/> 
+                    <span class= "comment-icon-forum">{props.commentCount}  </span>
             </div>
             
 
 
             <div className='store-review-bar-right'>
                 <span className='forum-bar-date'>{props.datePosted}</span>
+                <span className='forum-bar-upvotes'>{props.Upvotes}</span>
                 </div>
             </div>
     );

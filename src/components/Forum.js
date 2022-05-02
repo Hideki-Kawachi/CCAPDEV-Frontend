@@ -28,26 +28,26 @@ const Forum = () => {
         <div className = "post-header"><p className = "post-header-text"> FORUMS AND DISCUSSIONS </p></div>
         
         <br></br><br></br><br></br><br></br><br></br>
-        <div classname  ="forum-body">
-            <input type={"search"} id='post-search' placeholder='Search a post...'></input>
-             <button id = 'post-search-button'>Search</button>
+        <div classname  ="store-review-container">
+            
+            <div id='store-review-search-container'>
+                <input type={"search"} id='store-review-search' placeholder='Search a post...'></input>
+                <button id = 'store-review-search-button'>Search</button>
+            </div>
 
              <div id='store-review-sort-right'>
-                    <div className='store-review-sort-button'>
-                        <span>Date Posted</span>
-                        </div>
-                    <div className='store-review-sort-button'>
-                        <span >Upvotes <img className="icon" src='./images/upvote-icon.png' alt="Up"/></span>
-                    </div>
+                <div className='store-review-sort-button'>
+                     <span>Date Posted</span>
                 </div>
-                    
-         
-        
-                <ForumBar Title="Is this build good enough?" username= "Hidekiii" Flair = "Rate My Build" datePosted = "April 27, 2022" Upvote = "5"/>
-                <ForumBar Title="Are two fans enough?" username = "lol12345" Flair = "Build Suggestions" datePosted = "April 27, 2022" Upvote = "5"/>
-                <ForumBar Title="My PC's CPU exploded :( Any suggestions?" username= "BennyBouken" Flair = "Tips and Tricks" datePosted = "April 27, 2022" Upvote = "5"/>
-                <ForumBar Title="GPU prices are in an All-Time-High" username = "ElonStoinks" Flair = "General Discussions and Trends" datePosted = "April 27, 2022" Upvote = "5"/>
-                <ForumBar Title="Any recommendations for a P40k budget PC build?" username = "byCarloC" Flair = "Tips and Tricks" datePosted = "April 27, 2022" Upvote = "5"/>
+                <div className='store-review-sort-button'>
+                    <span >Upvotes <img className="icon" src={require('../media/upvote-icon.png')} alt="Up"/></span>
+                </div>
+            </div>
+                <ForumBar Title="Is this build good enough?" username= "Hidekiii" Flair = "Rate My Build" datePosted = "April 27, 2022" Upvotes = "5" commentCount = "0"/>
+                <ForumBar Title="Are two fans enough?" username = "lol12345" Flair = "Build Suggestions" datePosted = "April 27, 2022" Upvotes = "11" commentCount = "0"/>
+                <ForumBar Title="My PC's CPU exploded :( Any suggestions?" username= "BennyBouken" Flair = "Tips and Tricks" datePosted = "April 27, 2022" Upvotes = "3" commentCount = "0"/>
+                <ForumBar Title="GPU prices are in an All-Time-High" username = "ElonStoinks" Flair = "General Discussions and Trends" datePosted = "April 27, 2022" Upvotes = "2" commentCount = "0"/>
+                <ForumBar Title="Any recommendations for a P40k budget PC build?" username = "CarloC" Flair = "Tips and Tricks" datePosted = "April 27, 2022" Upvotes = "0" commentCount = "0"/>
             </div>
         </div>
     );
