@@ -24,27 +24,10 @@ const ForumBar = (props) => {
 
     return(
 
-        /*
-            <div className ="row">   
-               
-                <a href="./PostView"> 
-                
-                <span class = "post-title"> {props.Title} </span> 
-                </a>
-                <span className='store-review-view-date'>{props.datePosted}</span> <span>{props.Upvote}</span>
-                <div class ="post-bottom">
-                    <span class ="post-title-text">{"by: " + props.username}</span>
-                    
-                </div>
-                
-                
-            </div>
-        */
             <div className='forum-bar-container'>
                 <div className='store-review-bar-left'>
-                    <Link className='store-review-bar-top-container' to={'/StoreReviewView'} state={{title: Title, date: dateShow, username: username}}>
+                    <Link className='store-review-bar-top-container' to={'/ForumPost'} state={{title: Title, date: dateShow, username: username}}>
                     <span className='post-title'>{props.Title}</span>
-
                     </Link>
                     <br></br>
                     <span className='post-user-text'>by: {props.username}</span> 
