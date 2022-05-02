@@ -31,12 +31,15 @@ const UserProfile =()=>{
         setEditOpen(false);
     }
 
-    function picChange(fileString){
-        console.log(fileString + "-----asdsadadsadsad");
-        if(fileString.length >0){
-            setProfilePic(fileString);
+    function picChange(e){
+        if(e.target.value.length>0){
+            setProfilePic(URL.createObjectURL(e.target.files[0]));
         }
     }
+    
+    useEffect(()=>{
+        console.log(profilePic + "asdadsadasdas");
+    })
 
     const saved={
         true:(
@@ -81,7 +84,7 @@ const UserProfile =()=>{
                     <button className='back-button' onClick={()=>setModalOpen(true)}></button>
                         <div className='user-profile-pic-container'>   
                             <img src={profilePic} id='user-profile-pic'></img>
-                            <input type={'file'} accept={'image/*'} id='file-upload' onChange={(e)=>picChange(e.target.value)}></input>
+                            <input type={'file'} accept={'image/*'} id='file-upload' onChange={(e)=>picChange(e)}></input>
                         </div>
                         <span className='user-profile-username'>{user.username}</span>
                         <span style={{position: 'absolute', left: '25px', top: '145px'}}>About me: </span>

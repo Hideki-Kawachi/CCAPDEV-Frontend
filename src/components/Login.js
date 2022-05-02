@@ -19,10 +19,10 @@ const Login=(props)=>{
         else if(password.length==0){
             setError("password");
         }
-        else if(username.length==0){
+        else if(username.length==0 || username!=="default"|| username!=="user1"){
             setError("username");
         }
-        return (password.length>0 && username.length>0);
+        return (password.length>0 && username.length>0 && (username=="default" || username=="user1"));
     };
  
     const sendLogin=(e)=>{
