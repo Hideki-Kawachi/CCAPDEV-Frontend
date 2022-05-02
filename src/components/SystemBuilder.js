@@ -89,10 +89,7 @@ function SystemBuilder() {
     }
 
     function validatePost(){
-        if((cpu,cpuCooler,motherboard,ram,storage,gpu,pcCase,powerSupply) === "default---0" || build.length<=0){
-            return false
-        }
-        return true;
+        return(!((cpu,cpuCooler,motherboard,ram,storage,gpu,pcCase,powerSupply) === "default---0" || build.length==0));
     }
 
     return (  

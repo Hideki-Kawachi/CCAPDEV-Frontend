@@ -60,6 +60,26 @@ div[id=root]{
     animation-iteration-count: 1;
   }
 
+.submit-button{
+  margin-top: 15px;
+  padding: 5px;
+  font-size: 20px;
+  font-weight: 600;
+  background-color: var(--accent);
+  color: white;
+  font-family: 'Noto Sans', sans-serif;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+}
+
+.submit-button:hover{
+  animation: focusUp;
+  animation-duration: 0.2s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+}
+
 
 
 /*HEADER*/
@@ -234,7 +254,7 @@ footer .socials{
 /*MAIN CONTENT*/
 div[class^=content-]{
   margin-top: 52px;
-  margin-bottom: 94px;
+  margin-bottom: 90px;
 }
 
 /*MODALS*/
@@ -251,7 +271,7 @@ div[class^=content-]{
   opacity: 1;
   animation-name: fadeInAnimation;
   animation-iteration-count: 1;
-  animation-duration: 1s;
+  animation-duration: 0.3s;
 }
 
 .modal-container-closed{
@@ -300,10 +320,9 @@ div[class^=content-]{
   width: 400px;
 }
 
-.login-details .login-submit{
-  margin-top: 15px;
-  padding: 5px;
-  font-size: 15px;
+.login-error{
+  color: rgb(201, 0, 0);
+  margin-top: 10px;
 }
 
 /*REGISTER*/
@@ -323,19 +342,23 @@ div[class^=content-]{
 }
 
 [id=register-submit]{
-  width: min-content;
   font-size: 20px;
-  padding: 5px;
+  padding: 10px;
+  margin-top: 10px;
   margin-bottom: 20px;
-  margin-left: 50%;
-  transform: translateX(-50%);
+  margin-left: calc(50% - 40px);
   border-radius: 10px;
-  box-shadow: 0 0 5px;
+  border:none;
+  color: white;
+  background-color: var(--accent);
 }
 
 [id=register-submit]:hover{
   cursor: pointer;
-  background-color: rgb(209, 209, 209);
+  animation-name: focusUp;
+  animation-duration: 0.2s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
 }
 
 .inside-register-right{
@@ -392,6 +415,15 @@ input{
   animation-iteration-count: 1;
   animation-timing-function: ease;
 }
+
+.register-error{
+  color: rgb(201, 0, 0);
+  position: absolute;
+  top: 270px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 /* FORUMS */
 
 .content-forum{
@@ -537,11 +569,18 @@ li{
 }
 /*STORE REVIEW HOME*/
 .content-store-review{
+  min-height: 100%;
+}
+
+.store-review-main{
   background-color: var(--primary);
   padding: 10px;
   margin-left: 50%;
   transform: translateX(-50%);
   min-width: 800px;
+  min-height: calc(100vh - 166px);
+  height: fit-content;
+  border: 1px solid black;
 }
 
 [id='store-review-search']{
@@ -577,7 +616,7 @@ li{
   letter-spacing: -1px;
 }
 
-[id='store-review-header']{
+.store-review-header{
   margin-top: 60px;
   display: flex;
 }

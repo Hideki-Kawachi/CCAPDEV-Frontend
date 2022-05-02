@@ -31,6 +31,13 @@ const UserProfile =()=>{
         setEditOpen(false);
     }
 
+    function picChange(fileString){
+        console.log(fileString + "-----asdsadadsadsad");
+        if(fileString.length >0){
+            setProfilePic(fileString);
+        }
+    }
+
     const saved={
         true:(
             <span className='user-profile-saved'>Saved!</span>
@@ -74,7 +81,7 @@ const UserProfile =()=>{
                     <button className='back-button' onClick={()=>setModalOpen(true)}></button>
                         <div className='user-profile-pic-container'>   
                             <img src={profilePic} id='user-profile-pic'></img>
-                            <input type={'file'} accept={'image/*'} id='file-upload' onChange={(e)=>setProfilePic(e.target.value)}></input>
+                            <input type={'file'} accept={'image/*'} id='file-upload' onChange={(e)=>picChange(e.target.value)}></input>
                         </div>
                         <span className='user-profile-username'>{user.username}</span>
                         <span style={{position: 'absolute', left: '25px', top: '145px'}}>About me: </span>

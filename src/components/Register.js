@@ -9,31 +9,53 @@ const Register = () => {
     const [confirmPassword, setConfirmPassword] = useState("");
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
-
-    let firstNameError = false;
+    const [error, setError] = useState("");
 
     const user = useContext(UserContext);
     const navigate = useNavigate();
 
     const validateForm=()=>{
-        if(password.length>0 && username.length>0 && firstName.length>0 && lastName.length>0 && (password===confirmPassword)){
-            let regEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-            if (regEmail.test(email)) {
-                return true;
-            }
+        let errors = 0;
+        let regEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        if(password.length==0 || confirmPassword.length==0 || (password!==confirmPassword)){
+            setError("password");
+            errors++;
         }
-        setUsername("");
-        setEmail("");
-        setPassword("");
-        setConfirmPassword("");
-        setFirstName("");
-        setLastName("");
-        return false;
+        
+        if(firstName==0){
+            setError("firstName");
+            errors++;
+        }
+        
+        if(lastName==0){
+            setError("lastName");
+            errors++;
+        }
+        
+        if(username==0){
+            setError("username");
+            errors++;
+        }
+        
+        if(email==0 || !regEmail.test(email)){
+            setError("email");
+            errors++;
+        }
+        
+        if(errors>1){
+            console.log("invalid registration")
+            setError("multiple");
+            return false;
+        }
+        else if(error==0){
+            console.log("registration complete");
+            return true;
+        }
     }
 
     const sendRegister =()=>{
-        let isValid = validateForm();
-        if(isValid){
+        setError("");
+        if(validateForm()){
             user.setUsername(username);
             user.setEmail(email);
             user.setProfilePic("/profilePictures/default.jpg");
@@ -41,9 +63,27 @@ const Register = () => {
             user.setBio("Hello World! :)")
             navigate("/");
         }
-        else{
-            console.log("error message "+firstNameError);
-        }
+    }
+
+    const errorMessage={
+        "password":(
+            <span className='register-error'>Invalid Password</span>
+        ),
+        "firstName":(
+            <span className='register-error'>Input First Name</span>
+        ),
+        "lastName":(
+            <span className='register-error'>Input Last Name</span>
+        ),
+        "username":(
+            <span className='register-error'>Input Username</span>
+        ),
+        "email":(
+            <span className='register-error'>Invalid Email</span>
+        ),
+        "multiple":(
+            <span className='register-error'>Multiple Invalid Fields</span>
+        )
     }
     
     return(
@@ -69,6 +109,7 @@ const Register = () => {
                         <input type={'Password'} placeholder='Confirm Password' value={confirmPassword} onChange={(e)=>setConfirmPassword(e.target.value)}></input>
                     </div>
                     <button type={'button'} id='register-submit' onClick={sendRegister}>Submit</button>
+                    {errorMessage[error]}
                 </div>
             </div>
         </div>
