@@ -430,9 +430,10 @@ input{
   background-color: var(--primary);
   margin-left: 20%;
   margin-right: 20%;
- 
+  margin-top: 100px;
+  display: flex;
   top: 20px;
-  padding: 10px;
+  padding: auto;
   border-radius: var(--radius);
   border: 2px solid black;
 }
@@ -485,7 +486,7 @@ h4{
 .forum-bar-flair{
   font-size: x-small;
   color: white;
-  border-radius: 15px;
+  border-radius: 50px;
   font-weight: normal;
   width: fit-content;
   height: fit-content;
@@ -494,6 +495,43 @@ h4{
   margin-left: 20px;
   padding-left: 7px;
   padding-right: 7px;
+}
+
+.forum-post-flair{
+  font-size: small;
+  color: white;
+  border-radius: 10px;
+  font-weight: normal;
+  width: fit-content;
+  height: fit-content;
+  block-size: fit-content;
+  background-color: rgb(37, 37, 37);
+  padding: 4px;
+  padding-left: 7px;
+  padding-right: 7px;
+  margin-left: 5px;
+  display:
+}
+
+.forum-post-date{
+    margin-left: 50px;
+    font-size: small;
+    margin-top: 0px;
+    margin-bottom: 5px;
+}
+
+.forum-post-view-user{
+  margin-left: 7px;
+  font-size: medium;
+  margin-top: 5px;
+}
+
+.forum-view-description{
+  border: 1px solid gray;
+  
+  padding: 10px;
+  margin-top: 10px;
+  min-height: 50px;
 }
 a{
   text-decoration: none;
@@ -770,6 +808,15 @@ li{
   min-width: 300px;
 }
 
+.forum-post-left{
+  width: 4%; 
+  float:left;
+  margin-left:10px;
+}
+.forum-post-right{
+  width: 90%; 
+  float:right;
+}
 .store-review-bar-right{
   display: grid;
   grid-template-columns: 140px 130px;
@@ -1099,6 +1146,17 @@ button.star-checked, button.star-unchecked{
   border: 1px solid gray;
 }
 
+[id=post-user-profile-pic]{
+  max-width: 40px;
+  max-height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid gray;
+  float: left;
+  margin-top:5px;
+  margin-right:0px;
+  margin-left: 2px;
+}
 .user-profile-bio-container{
   background-color: white;
   width: calc(100% - 20px);
