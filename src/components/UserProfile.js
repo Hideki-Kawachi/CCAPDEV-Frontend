@@ -32,10 +32,14 @@ const UserProfile =()=>{
     }
 
     function picChange(e){
-        if(e.target.value>0){
+        if(e.target.value.length>0){
             setProfilePic(URL.createObjectURL(e.target.files[0]));
         }
     }
+    
+    useEffect(()=>{
+        console.log(profilePic + "asdadsadasdas");
+    })
 
     const saved={
         true:(
