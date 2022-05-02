@@ -590,6 +590,11 @@ li{
   margin-right: 10px;
   text-align: center;
 }
+
+.forum-post-text{
+  font-size: large;
+  
+}
 /*STORE REVIEW HOME*/
 .content-store-review{
   min-height: 100%;
@@ -689,7 +694,30 @@ li{
   cursor: pointer;
   text-decoration: none;
 }
+/* FORUM POST */
+.upvote-post{
+  width: 30px;
+  height: 30px;
+  margin-bottom: -25px;
+  margin-top: 0px;
+}
 
+.downvote-post{
+  width: 30px;
+  height: 30px;
+  transform: rotate(180deg);
+  margin-top: -7px;
+}
+
+.upvotes-count{
+  margin-bottom: 5px;
+  margin-left: 6px;
+  font-size: large;
+}
+
+.upvote-post:hover,.downvote-post:hover{
+  opacity: 20%;
+}
 
 /*STORE REVIEW BAR*/
 .store-review-bar-container{
