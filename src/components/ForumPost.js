@@ -23,7 +23,7 @@ return (
         <p className = "post-header-text"> FORUMS AND DISCUSSIONS </p>
     </div>
     <br></br>
-    <div className='content-forum'>
+    <div className='content-forum-post'>
         <div className = "forum-post-left">
             <div className = "below-post-section"> 
                 <img className="upvote-post" src={require('../media/upvote-icon.png')} alt="Comments"/> 
@@ -31,10 +31,11 @@ return (
             </div>
             </div>
         <div  className='store-review-view-header'>
-                    <button className='back-button' onClick={back}></button>               
+                                   
         </div>
 
         <div className = "forum-post-right">
+        <button className='back-button-forum' onClick={back}></button>
             <div className='store-review-view-title'> Test Title{info.state.title}</div>  
             <div class ="forum-post-flair">Flair Name</div>
 
@@ -50,7 +51,13 @@ return (
                 Otherwise it's a Twitch/Netflix/Reddit machine.
                 I've been thinking of upgrading to a 4K monitor or 1400p ultrawide. (so I can sneak the current ultrawide into work and use it there)
                 </p>
+                
             </div>
+                <form>
+                <p><img className="icon" src={require('../media/comments-icon.png')} alt="Comments"/> Leave a Comment: </p>
+                <textarea type={"text"} id='comment-box' placeholder='  ...'></textarea>
+                <button id = "comment-button">Comment</button>
+                </form>
         </div>
     </div>
 </div>
