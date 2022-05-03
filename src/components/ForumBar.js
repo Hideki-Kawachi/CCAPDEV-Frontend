@@ -43,14 +43,14 @@ const ForumBar = (props) => {
                    
                     <span className ="forum-bar-flair">{props.flair}</span> 
                     <img className="comment" src={require('../media/comments-icon.png')} alt="Comments"/> 
-                    <span className= "comment-icon-forum">2</span>
+                    <span className= "comment-icon-forum">{props.comments.length}</span>
             </div>
             
 
 
             <div className='store-review-bar-right'>
                 <span className='forum-bar-date'>{props.date.toDateString().substring(4)}</span>
-                <span className='forum-bar-upvotes'>{props.upvotes}</span>
+                <span className='forum-bar-upvotes' >{props.upvotes}</span>
                 </div>
             </div>
     );

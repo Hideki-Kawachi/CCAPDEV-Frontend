@@ -99,8 +99,8 @@ const ForumPost = () => {
         <div className='content-forum-post'>
             <div className = "forum-post-left">
                 <div className = "below-post-section"> 
-                    <img className="upvote-post" src={require('../media/upvote-icon.png')} alt="Comments"/> 
-                    <p className = 'upvotes-count'>{postContext.postUpvotes}</p><img className="downvote-post" src={require('../media/upvote-icon.png')} alt="Comments"/> 
+                    <img className="upvote-post" onClick={()=>postContext.setPostUpvotes(upvotes + 1)} src={require('../media/upvote-icon.png')} alt="Comments"/> 
+                    <p className = 'upvotes-count'>{postContext.postUpvotes}</p><img className="downvote-post" onClick={()=>postContext.setPostUpvotes(upvotes - 1)} src={require('../media/upvote-icon.png')} alt="Comments"/> 
                 </div>
                 </div>
             <div  className='store-review-view-header'>

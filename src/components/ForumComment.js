@@ -6,6 +6,13 @@ import UserContext from './context/UserContext';
 const ForumComment = (props) => {
     const user = useContext(UserContext); 
     const [profilePic, setProfilePic] = useState(user.profilePic);
+    const [upvotes, setUpvotes] = useState(props.upvotes)
+
+    function upvoteChange(){
+        console.log("initial: " + props.upvotes);
+        props.upvotes = upvotes + 1;
+        console.log("after: "+ props.upvotes);
+    }   
 
 
 return (  
@@ -16,9 +23,9 @@ return (
                     <span className='forum-post-view-user'>{props.username}</span>
                     <p className='forum-post-date'> {props.date.toDateString().substring(4)}</p>
                 <p className= 'forum-post-commeent'>{props.comment}</p>
-            <img className="upvote-comment" src={require('../media/upvote-icon.png')} alt="Comments"/> 
-            <span className = 'upvotes-count-comm'>{props.upvotes}</span>
-            <img className="downvote-comment" src={require('../media/upvote-icon.png')} alt="Comments"/> 
+            <img className="upvote-comment" onClick={()=>setUpvotes(props.upvotes + 1)} src={require('../media/upvote-icon.png')} alt="Comments" /> 
+            <span className = 'upvotes-count-comm'>{upvotes}</span>
+            <img className="downvote-comment" onClick={()=>setUpvotes(props.upvotes - 1)} src={require('../media/upvote-icon.png')} alt="Comments"/> 
             </div>
 
         </div>

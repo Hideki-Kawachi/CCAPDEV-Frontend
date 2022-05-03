@@ -51,11 +51,23 @@ const NavBar = () =>{
         )
     };
 
+    const createPostRoute = {
+        true: (
+            <Link id="headerCreatePost" className='nav-button' to={'/PostCreate'}>Create a Post</Link>
+        ),
+        false:(
+            <>
+            <a className='nav-button' onClick={()=>setIsLoggedOpen(true)}>Create a Post</a>
+            <Login setIsLoggedOpen = {setIsLoggedOpen} isLoggedOpen = {isLoggedOpen}></Login>
+            </>
+        )
+    };
+
     return(
         <header>
             <div className='left-header'>
                 <Link id="headerForum" className='nav-button' to={'/Forum'}>Forums</Link>
-                <Link id="headerCreatePost" className='nav-button' to={'/PostCreate'}>Create a Post</Link>
+                {createPostRoute[user.isLoggedIn]}
                 <Link id="headerStoreReview" className='nav-button' to={'/StoreReview'}>Store Reviews</Link>
                 {systemBuilderRoute[user.isLoggedIn]}
             </div>

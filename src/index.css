@@ -874,6 +874,7 @@ li{
 }
 .downvote-comment:hover, .upvote-comment:hover,.upvote-post:hover,.downvote-post:hover{
   opacity: 20%;
+  cursor: pointer;
 }
 
 /*STORE REVIEW BAR*/
