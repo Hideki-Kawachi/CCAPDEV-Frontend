@@ -9,14 +9,14 @@ const ForumComment = (props) => {
     const [profilePic, setProfilePic] = useState(user.profilePic);
 return (  
     <div className='comment-containers'>
+        <hr></hr>
             <div className='store-review-view-sub-header'>
                 <img src={profilePic} id='post-user-profile-pic'></img> 
-                    <span className='forum-post-view-user'>User1 {info.state.user}</span>
-                    <p className='forum-post-date'> May 21, 2022 {info.state.date}</p>
-                <p classname= 'forum-post-commeent'>I think a GPU upgrade to something like a 5700XT would serve you well if you wanna go 1440p ultrawide. That should be enough
-                </p>
+                    <span className='forum-post-view-user'>{props.username}</span>
+                    <p className='forum-post-date'> {props.date}</p>
+                <p classname= 'forum-post-commeent'>{props.comment}</p>
             <img className="upvote-comment" src={require('../media/upvote-icon.png')} alt="Comments"/> 
-            <span classname = 'upvotes-count-comm'>10</span>
+            <span classname = 'upvotes-count-comm'>{props.upvotes}</span>
             <img className="downvote-comment" src={require('../media/upvote-icon.png')} alt="Comments"/> 
             </div>
 

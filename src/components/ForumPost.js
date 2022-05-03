@@ -60,8 +60,9 @@ return (
                 </form>
                
                 <p> Comments: </p>
-                <hr></hr>
-                <ForumComment></ForumComment>
+                
+                <ForumComment username ="CarloC" date = "May 03, 2022" upvotes = "11" comment = "I think a GPU upgrade to something like a 5700XT would serve you well if you wanna go 1440p ultrawide. That should be enough"/>                
+                <ForumComment username ="Hidekiii" date = "May 22, 2022" upvotes = "5" comment = "I think a GPU upgrade to something like a 5700XT would serve you well if you wanna go 1440p ultrawide. That should be enough"/>
         </div>
     </div>
 </div>
