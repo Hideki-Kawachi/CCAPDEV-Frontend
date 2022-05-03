@@ -1,14 +1,14 @@
 import React, { createContext } from 'react';
 
 const PostContext = createContext({
-    title: "", setTitle: ()=>({}),
+    postTitle: "", setPostTitle: ()=>({}),
     flair: 0, setFlair: ()=>({}),
-    username: "",   setUsername: ()=>({}),
-    date: new Date(), setDate: ()=>({}),
-    description: "", setDescription: ()=>({}),
-    comments: [], setComments: ()=>({}),
-    media: "", setMedia: ()=>({}),
-    upvote: 0, setUpvote: ()=>({})
+    postUsername: "",   setPostUsername: ()=>({}),
+    postDate: new Date(), setPostDate: ()=>({}),
+    postDescription: "", setPostDescription: ()=>({}),
+    postComments: [], setPostComments: ()=>({}),
+    postMedia: "", setPostMedia: ()=>({}),
+    postUpvotes: 0, setPostUpvotes: ()=>({})
     });
 
 export const PostProvider = PostContext.Provider;

@@ -3,7 +3,7 @@ import React, { createContext } from 'react';
 const SystemBuilderContext = createContext({
     build: "", setBuild: ()=>({}),
     username: "", setUsername: ()=>({}),
-    date: "", setDate: ()=>({}),
+    buildDate: "", setBuildDate: ()=>({}),
     cpu: "", setCpu: ()=>({}),
     cpuCooler: "", setCpuCooler: ()=>({}),
     motherboard: "", setMotherboard: ()=>({}),

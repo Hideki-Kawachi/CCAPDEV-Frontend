@@ -15,7 +15,7 @@ import StoreReviewPost from './components/StoreReviewPost';
 import StoreReviewContext, { StoreReviewProvider } from './components/context/StoreReviewContext';
 import SystemBuilder from './components/SystemBuilder';
 import { SystemBuilderProvider } from './components/context/SystemBuilderContext';
-import { PostProvider } from './components/context/PostContext';
+import PostContext, { InitialPostContext, PostProvider } from './components/context/PostContext';
 import ForumPost from './components/ForumPost'
 import ForumComment from './components/ForumComment'
 
@@ -28,16 +28,23 @@ const App = () =>{
     const [bio,setBio] = useState("This is the standard bio");
     const user = {isLoggedIn,setIsLoggedIn,username,setUsername,profilePic,setProfilePic,email,setEmail,bio,setBio};
 
-    const [title,setTitle] = useState("");
-    const [date,setDate] = useState(new Date());
+    const [reviewTitle,setReviewTitle] = useState("");
+    const [reviewUsername,setReviewUsername] = useState("");
+    const [reviewDate,setReviewDate] = useState(new Date());
     const [rating,setRating] = useState(0);
-    const [description,setDescription] = useState("");
-    const [media,setMedia] = useState("");
-    const storeReview = {title,setTitle,username,setUsername,date,setDate,rating,setRating,description,setDescription,media,setMedia};
+    const [reviewDescription,setReviewDescription] = useState("");
+    const [reviewMedia,setReviewMedia] = useState("");
+    const storeReview = {reviewTitle,setReviewTitle,reviewUsername,setReviewUsername,reviewDate,setReviewDate,rating,setRating,reviewDescription,setReviewDescription,reviewMedia,setReviewMedia};
     
-    const [comments,setComments] = useState([]);
-    const [upvote,setUpvote] = useState(0);
-    const post = {title,setTitle,username,setUsername,date,setDate,description,setDescription,media,setMedia,upvote,setUpvote,comments,setComments};
+    const [postComments,setPostComments] = useState([]);
+    const [postUpvotes,setPostUpvotes] = useState(0);
+    const [postTitle, setPostTitle] = useState("");
+    const [postUsername, setPostUsername] = useState("");
+    const [postDate, setPostDate] = useState(new Date());
+    const [postDescription, setPostDescription] = useState("");
+    const [postMedia, setPostMedia] = useState("");
+    const [flair, setFlair] = useState("")
+    const post = {postTitle,setPostTitle,flair,setFlair,postUsername,setPostUsername,postDate,setPostDate,postDescription,setPostDescription,postMedia,setPostMedia,postUpvotes,setPostUpvotes,postComments,setPostComments};
 
     const [build,setBuild] = useState("");
     const [cpu, setCpu] = useState("default---0");
@@ -49,7 +56,8 @@ const App = () =>{
     const [pcCase, setPcCase] = useState("default---0");
     const [powerSupply, setPowerSupply] = useState("default---0");
     const [total, setTotal] = useState(0);
-    const systemBuild = {build,setBuild,username,setUsername,date,setDate,cpu,setCpu,cpuCooler,setCpuCooler,motherboard,setMotherboard,ram,setRam,storage,setStorage,
+    const [buildDate, setBuildDate] = useState(new Date());
+    const systemBuild = {build,setBuild,username,setUsername,buildDate,setBuildDate,cpu,setCpu,cpuCooler,setCpuCooler,motherboard,setMotherboard,ram,setRam,storage,setStorage,
                         gpu,setGpu,pcCase,setPcCase,powerSupply,setPowerSupply,total,setTotal};
 
     return(

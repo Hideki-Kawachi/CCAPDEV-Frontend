@@ -1,12 +1,12 @@
 import React, { createContext } from 'react';
 
 const StoreReviewContext = createContext({
-    title: "", setTitle: ()=>({}),
-    username: "",   setUsername: ()=>({}),
-    date: "", setDate: ()=>({}),
+    reviewTitle: "", setReviewTitle: ()=>({}),
+    reviewUsername: "",   setReviewUsername: ()=>({}),
+    reviewDate: "", setReviewDate: ()=>({}),
     rating: 0, setRating: ()=>({}),
-    description: "", setDescription: ()=>({}),
-    media: "", setMedia: ()=>({})
+    reviewDescription: "", setReviewDescription: ()=>({}),
+    reviewMedia: "", setReviewMedia: ()=>({})
     });
 
 export const StoreReviewProvider = StoreReviewContext.Provider;
