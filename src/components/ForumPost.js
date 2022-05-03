@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import ForumComment from ".//ForumComment";
+import ForumComment from "./ForumComment";
 import { Link, useNavigate } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import UserContext from './context/UserContext';
@@ -58,6 +58,8 @@ return (
                 <textarea type={"text"} id='comment-box' placeholder='  ...'></textarea>
                 <button id = "comment-button">Comment</button>
                 </form>
+                <ForumComment></ForumComment>
+           
         </div>
     </div>
 </div>

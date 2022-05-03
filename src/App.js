@@ -17,6 +17,7 @@ import SystemBuilder from './components/SystemBuilder';
 import { SystemBuilderProvider } from './components/context/SystemBuilderContext';
 import { PostProvider } from './components/context/PostContext';
 import ForumPost from './components/ForumPost'
+import ForumComment from './components/ForumComment'
 
 const App = () =>{
     
@@ -67,6 +68,7 @@ const App = () =>{
                                 <Route path="/Register" element={<Register></Register>}></Route>
                                 <Route path="/UserProfile" element={<UserProfile></UserProfile>}></Route>
                                 <Route path="/ForumPost" element={<ForumPost></ForumPost>}></Route>
+                                <Route path="/ForumComment" element={<ForumComment></ForumComment>}></Route>
                             </Routes>
                             <footer>
                                     <div className="contact-container">
