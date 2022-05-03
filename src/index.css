@@ -1608,7 +1608,12 @@ button.star-checked, button.star-unchecked{
 }
 
 .description-container{
-  block-size: 100px;
   background-color: var(--accent);
+  padding: 1px 30px;
+  color: white;
+}
 
+.cmpnt-name{
+  color: black;
+  block-size: 15px;
 }
