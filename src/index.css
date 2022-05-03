@@ -1620,17 +1620,21 @@ button.star-checked, button.star-unchecked{
 
 .img-container{
   display: flex;
-  height: 100px;  
+  height: 150px;  
+  margin: 10px;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;  
 }
 
 .img-block{
   border-color: black;
-  border: 5px solid black;
+  border: 1px solid black;
 }
 
-.cmpnt-image{
+.cmpnt-img{
   height: auto; 
   width: auto; 
   max-width: 100px; 
-  max-height: 100px;
+  max-height: 300px;
 }

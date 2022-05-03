@@ -9,9 +9,20 @@ const BuildGuidePost =()=> {
                 <div class='img-block'>
                     <img className='cmpnt-img' src={require('../media/5600g.jpg')} />
                 </div>
-
                 <div class='img-block'>
-                    <img className='cmpnt-img' src={require('../media/5600g.jpg')} />
+                    <img className='cmpnt-img' src={require('../media/b450-mortar-max.jpg')} />
+                </div>
+                <div class='img-block'>
+                    <img className='cmpnt-img' src={require('../media/vulcan-tuf-16gb.jpg')} />
+                </div>
+                <div class='img-block'>
+                    <img className='cmpnt-img' src={require('../media/kingston-nv1-500gb.jpg')} />
+                </div>
+                <div class='img-block'>
+                    <img className='cmpnt-img' src={require('../media/rakk-haliya.jpg')} />
+                </div>
+                <div class='img-block'>
+                    <img className='cmpnt-img' src={require('../media/corsair-cv550.jpg')} />
                 </div>
             </div>
             <div className='description-container'>
