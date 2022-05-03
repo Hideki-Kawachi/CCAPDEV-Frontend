@@ -29,9 +29,7 @@ const Home =()=> {
                     <Link id="bGuide" className='nav-button' to={'/BuildGuidePost'}> 
                         <div className='build-title'>
                             <span className='title-text'>Entry-Level Build</span>
-                            <div>
-                                <span className='title-text'>P30,000</span>
-                            </div>  
+                            <div> <span className='title-text'>P30,000</span>   </div>  
                         </div>
                         <div className='pic-container'>
                             <img className="pc-image" src={require('../media/pc-image.png')} alt="pic" />

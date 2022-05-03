@@ -1617,3 +1617,20 @@ button.star-checked, button.star-unchecked{
   color: black;
   block-size: 15px;
 }
+
+.img-container{
+  display: flex;
+  height: 100px;  
+}
+
+.img-block{
+  border-color: black;
+  border: 5px solid black;
+}
+
+.cmpnt-image{
+  height: auto; 
+  width: auto; 
+  max-width: 100px; 
+  max-height: 100px;
+}

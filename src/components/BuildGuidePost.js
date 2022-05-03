@@ -5,6 +5,15 @@ const BuildGuidePost =()=> {
         <div classNameName="content-">
             <div className='sub-container'>Guide</div>
             <div className='header-container'>Entry-Level Build</div>
+            <div className='img-container'>
+                <div class='img-block'>
+                    <img className='cmpnt-img' src={require('../media/5600g.jpg')} />
+                </div>
+
+                <div class='img-block'>
+                    <img className='cmpnt-img' src={require('../media/5600g.jpg')} />
+                </div>
+            </div>
             <div className='description-container'>
                 <h2 className='cmpnt-name'>CPU</h2>
                 <p classname='cmpnt-desc'>
