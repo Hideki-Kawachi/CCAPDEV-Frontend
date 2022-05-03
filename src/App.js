@@ -18,6 +18,7 @@ import { SystemBuilderProvider } from './components/context/SystemBuilderContext
 import { PostProvider } from './components/context/PostContext';
 import ForumPost from './components/ForumPost'
 import ForumComment from './components/ForumComment'
+import BuildGuidePost from './components/BuildGuidePost';
 
 const App = () =>{
     
@@ -71,6 +72,7 @@ const App = () =>{
                                 <Route path="/UserProfile" element={<UserProfile></UserProfile>}></Route>
                                 <Route path="/ForumPost" element={<ForumPost></ForumPost>}></Route>
                                 <Route path="/ForumComment" element={<ForumComment></ForumComment>}></Route>
+                                <Route path="/BuildGuidePost" element={<BuildGuidePost></BuildGuidePost>}></Route>
                             </Routes>
                             <footer>
                                     <div className="contact-container">

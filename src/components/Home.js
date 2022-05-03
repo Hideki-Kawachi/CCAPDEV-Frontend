@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Home =()=> {
     return (
@@ -25,18 +26,17 @@ const Home =()=> {
                     Build Guides
                 </div>
                 <div className="pc-build-box">
-                    <a href="./Post.js">
-                    <div className='build-title'>
-                        <span className='title-text'>Entry-Level Build</span>
-                        <div>
-                            <span className='title-text'>P30,000</span>
+                    <Link id="bGuide" className='nav-button' to={'/BuildGuidePost'}> 
+                        <div className='build-title'>
+                            <span className='title-text'>Entry-Level Build</span>
+                            <div>
+                                <span className='title-text'>P30,000</span>
+                            </div>  
                         </div>
-                        
-                    </div>
-                    <div className='pic-container'>
-                        <img className="pc-image" src={require('../media/pc-image.png')} alt="pic" />
-                    </div>
-                    </a>
+                        <div className='pic-container'>
+                            <img className="pc-image" src={require('../media/pc-image.png')} alt="pic" />
+                        </div>
+                    </Link>
                 </div>
 
                 <div className="pc-build-box">
