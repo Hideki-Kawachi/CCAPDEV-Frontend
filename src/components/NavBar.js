@@ -23,10 +23,8 @@ const NavBar = () =>{
 
     const rightNav = {
         true: (
-            <div className='right-header'>
-                <span className='username-header'>{user.username}</span>
-                <UserHeader profilePic={user.profilePic} isLoggedOpen={isLoggedOpen}></UserHeader>
-            </div>),
+                <UserHeader profilePic={user.profilePic} isLoggedOpen={isLoggedOpen}>{user.username}</UserHeader>
+                ),
         false: (
             <div className='right-header'>
                 <a id="headerLogin" className='nav-button' onClick={()=>setIsLoggedOpen(true)}>Log in</a>

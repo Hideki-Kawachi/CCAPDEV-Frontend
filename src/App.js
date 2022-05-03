@@ -16,6 +16,8 @@ import StoreReviewContext, { StoreReviewProvider } from './components/context/St
 import SystemBuilder from './components/SystemBuilder';
 import { SystemBuilderProvider } from './components/context/SystemBuilderContext';
 import { PostProvider } from './components/context/PostContext';
+import ForumPost from './components/ForumPost'
+import ForumComment from './components/ForumComment'
 
 const App = () =>{
     
@@ -32,8 +34,10 @@ const App = () =>{
     const [description,setDescription] = useState("");
     const [media,setMedia] = useState("");
     const storeReview = {title,setTitle,username,setUsername,date,setDate,rating,setRating,description,setDescription,media,setMedia};
-
-    const post = {title,setTitle,username,setUsername,date,setDate,description,setDescription,media,setMedia};
+    
+    const [comments,setComments] = useState([]);
+    const [upvote,setUpvote] = useState(0);
+    const post = {title,setTitle,username,setUsername,date,setDate,description,setDescription,media,setMedia,upvote,setUpvote,comments,setComments};
 
     const [build,setBuild] = useState("");
     const [cpu, setCpu] = useState("default---0");
@@ -65,6 +69,8 @@ const App = () =>{
                                 <Route path="/" element={<Home></Home>}></Route>
                                 <Route path="/Register" element={<Register></Register>}></Route>
                                 <Route path="/UserProfile" element={<UserProfile></UserProfile>}></Route>
+                                <Route path="/ForumPost" element={<ForumPost></ForumPost>}></Route>
+                                <Route path="/ForumComment" element={<ForumComment></ForumComment>}></Route>
                             </Routes>
                             <footer>
                                     <div className="contact-container">

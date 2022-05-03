@@ -44,7 +44,10 @@ function UserHeader(props) {
 
     return (
     <>
-        <img className='profile-pic'src={props.profilePic} id='profile-pic-header'onClick={()=>setIsOpen(!isOpen)}></img>
+     <div className='right-header-login'>
+        <span className='username-header'>{user.username}</span>
+        <img className='profile-pic'src={props.profilePic} id='profile-pic-header' onClick={()=>setIsOpen(!isOpen)}></img>
+    </div>
         {openDropdown[isOpen]}
     </>
     );
