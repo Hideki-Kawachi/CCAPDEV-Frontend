@@ -37,8 +37,8 @@ function StoreReview() {
     
     
     useEffect(()=>{
-        if(storeReview.title.length>0 && storeReview.description.length>0 && storeReview.username.length>0){
-            setReviews(oldReviews=>[new reviewPost(storeReview.title, storeReview.description, storeReview.date, storeReview.rating, storeReview.username),...oldReviews])
+        if(storeReview.reviewTitle.length>0 && storeReview.reviewDescription.length>0 && storeReview.reviewUsername.length>0){
+            setReviews(oldReviews=>[new reviewPost(storeReview.reviewTitle, storeReview.reviewDescription, storeReview.reviewDate, storeReview.rating, storeReview.reviewUsername),...oldReviews])
         }
     },[storeReview]);
 

@@ -713,7 +713,7 @@ li{
 }
 [id='comment-box']{
   border: 1px solid gray;
-  min-width: 790px;
+  min-width: 100%;
   min-height: 100px;
   font-size: medium;
   font-family: 'Noto Sans', sans-serif;
@@ -721,11 +721,24 @@ li{
 }
 
 [id='comment-button']{
-
   font-size: small;
   font-family: 'Noto Sans', sans-serif;
-  border-radius: 5px;
+  border-radius: 10px;
+  padding: 5px;
+  border: 1px solid black;
+  background-color: var(--accent);
+  color: white;
   float: right;
+}
+
+[id='comment-button']:hover{
+  color: white;
+  animation-name: focusUp;
+  animation-duration: 0.2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 [id='store-review-search']{

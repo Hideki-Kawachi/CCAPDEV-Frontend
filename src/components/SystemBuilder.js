@@ -75,7 +75,7 @@ function SystemBuilder() {
 
     function sendPost(){
         systemBuild.setBuild(build);
-        systemBuild.setDate(date);
+        systemBuild.setBuildDate(date);
         systemBuild.setUsername(username);
         systemBuild.setCpu(cpu);
         systemBuild.setCpuCooler(cpuCooler);

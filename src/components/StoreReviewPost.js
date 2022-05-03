@@ -24,12 +24,12 @@ function StoreReviewPost() {
     }
     
     function sendPost(){
-        storeReview.setTitle(title);
-        storeReview.setUsername(username);
-        storeReview.setDate(date);
-        storeReview.setDescription(description);
+        storeReview.setReviewTitle(title);
+        storeReview.setReviewUsername(username);
+        storeReview.setReviewDate(date);
+        storeReview.setReviewDescription(description);
         storeReview.setRating(rating);
-        //storeReview.setMedia(media);
+        //storeReview.setReviewMedia(media);
         navigate("/StoreReview");
     }
 

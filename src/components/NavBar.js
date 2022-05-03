@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
+import PostContext from './context/PostContext';
 import SystemBuilderContext from './context/SystemBuilderContext';
 import UserContext from './context/UserContext'
 import Login from './Login';
@@ -8,6 +9,7 @@ import UserHeader from './UserHeader';
 const NavBar = () =>{
     const user = useContext(UserContext);
     const systemBuild = useContext(SystemBuilderContext);
+    const forumContext = useContext(PostContext);
 
     const [isLoggedOpen, setIsLoggedOpen] = useState(false);
 
@@ -17,10 +19,13 @@ const NavBar = () =>{
         }
     },[user.username])
 
+    /*  FOR CHECKING CONTEXT
     useEffect(()=>{
+        console.log(user);
+        console.log(forumContext);
         console.log(systemBuild);
     })
-
+    */
     const rightNav = {
         true: (
                 <UserHeader profilePic={user.profilePic} isLoggedOpen={isLoggedOpen}>{user.username}</UserHeader>
