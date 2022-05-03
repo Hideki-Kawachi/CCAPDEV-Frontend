@@ -53,6 +53,19 @@ div[id=root]{
   border-radius: 50%;
 }
 
+.back-button-forum{
+  float: right;
+  top: -100px;
+  right: -100px;
+  background-image: url(./media/back-icon.jpg);
+  background-position: -5px -6px;
+  width: 500px;
+  height: 500px;
+  object-fit: cover;
+  zoom: 10%;
+  border-radius: 50%;
+}
+
 .back-button:hover{
     cursor: pointer;
     animation-name: bounce;
@@ -435,17 +448,28 @@ input{
 
 /* FORUMS */
 
-.content-forum{
+.content-forum-post{
   background-color: var(--primary);
   margin-left: 20%;
   margin-right: 20%;
- 
+  margin-top: 100px;
+  display: flex;
   top: 20px;
-  padding: 10px;
+  padding: 7px;
   border-radius: var(--radius);
   border: 2px solid black;
 }
 
+.content-forum{
+  background-color: var(--primary);
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 20px;
+  top: 20px;
+  padding: 7px;
+  border-radius: var(--radius);
+  border: 2px solid black;
+}
 h4{
   margin: 0;
   margin-left: 20px;
@@ -494,7 +518,7 @@ h4{
 .forum-bar-flair{
   font-size: x-small;
   color: white;
-  border-radius: 15px;
+  border-radius: 50px;
   font-weight: normal;
   width: fit-content;
   height: fit-content;
@@ -503,6 +527,43 @@ h4{
   margin-left: 20px;
   padding-left: 7px;
   padding-right: 7px;
+}
+
+.forum-post-flair{
+  font-size: small;
+  color: white;
+  border-radius: 10px;
+  font-weight: normal;
+  width: fit-content;
+  height: fit-content;
+  block-size: fit-content;
+  background-color: rgb(37, 37, 37);
+  padding: 4px;
+  padding-left: 7px;
+  padding-right: 7px;
+  margin-left: 5px;
+  display:
+}
+
+.forum-post-date{
+    margin-left: 50px;
+    font-size: small;
+    margin-top: 0px;
+    margin-bottom: 5px;
+}
+
+.forum-post-view-user{
+  margin-left: 7px;
+  font-size: medium;
+  margin-top: 5px;
+}
+
+.forum-view-description{
+  border: 1px solid gray;
+  
+  padding: 10px;
+  margin-top: 10px;
+  min-height: 50px;
 }
 a{
   text-decoration: none;
@@ -599,6 +660,11 @@ li{
   margin-right: 10px;
   text-align: center;
 }
+
+.forum-post-text{
+  font-size: large;
+  
+}
 /*STORE REVIEW HOME*/
 .content-store-review{
   min-height: 100%;
@@ -613,6 +679,22 @@ li{
   min-height: calc(100vh - 166px);
   height: fit-content;
   border: 1px solid black;
+}
+[id='comment-box']{
+  border: 1px solid gray;
+  min-width: 790px;
+  min-height: 100px;
+  font-size: medium;
+  font-family: 'Noto Sans', sans-serif;
+  margin-top: -10px;
+}
+
+[id='comment-button']{
+
+  font-size: small;
+  font-family: 'Noto Sans', sans-serif;
+  border-radius: 5px;
+  float: right;
 }
 
 [id='store-review-search']{
@@ -698,7 +780,30 @@ li{
   cursor: pointer;
   text-decoration: none;
 }
+/* FORUM POST */
+.upvote-post{
+  width: 30px;
+  height: 30px;
+  margin-bottom: -25px;
+  margin-top: 0px;
+}
 
+.downvote-post{
+  width: 30px;
+  height: 30px;
+  transform: rotate(180deg);
+  margin-top: -7px;
+}
+
+.upvotes-count{
+  margin-bottom: 5px;
+  margin-left: 6px;
+  font-size: large;
+}
+
+.upvote-post:hover,.downvote-post:hover{
+  opacity: 20%;
+}
 
 /*STORE REVIEW BAR*/
 .store-review-bar-container{
@@ -751,6 +856,15 @@ li{
   min-width: 300px;
 }
 
+.forum-post-left{
+  width: 4%; 
+  float:left;
+  margin-left:10px;
+}
+.forum-post-right{
+  width: 90%; 
+  float:right;
+}
 .store-review-bar-right{
   display: grid;
   grid-template-columns: 140px 130px;
@@ -1079,6 +1193,17 @@ button.star-checked, button.star-unchecked{
   object-fit: cover;
 }
 
+[id=post-user-profile-pic]{
+  max-width: 40px;
+  max-height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid gray;
+  float: left;
+  margin-top:5px;
+  margin-right:0px;
+  margin-left: 2px;
+}
 .user-profile-bio-container{
   background-color: white;
   width: calc(100% - 20px);
