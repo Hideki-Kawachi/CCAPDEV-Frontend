@@ -58,7 +58,10 @@ return (
                 <textarea type={"text"} id='comment-box' placeholder='  ...'></textarea>
                 <button id = "comment-button">Comment</button>
                 </form>
-           
+               
+                <p> Comments: </p>
+                <hr></hr>
+                <ForumComment></ForumComment>
         </div>
     </div>
 </div>
