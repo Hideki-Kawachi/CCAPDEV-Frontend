@@ -66,6 +66,13 @@ div[id=root]{
   border-radius: 50%;
 }
 
+.back-button-forum:hover{
+    cursor: pointer;
+    animation-name: bounce;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+}
+
 .back-button:hover{
     cursor: pointer;
     animation-name: bounce;
@@ -460,6 +467,26 @@ input{
   border: 2px solid black;
 }
 
+[id='forum-sort-right']{
+  display: flex;
+  flex-direction: row;
+  min-width: 290px;
+  gap: 40px;
+  justify-content: right;
+  margin-right: 33px;
+}
+
+.forum-sort-button{
+  padding: 10px;
+  border-radius: var(--radius);
+  border: 1px solid var(--primary-highlight);
+}
+
+.forum-sort-button:hover{
+  cursor: pointer;
+  box-shadow: 0 0 10px rgb(119, 119, 119);
+}
+
 .content-forum{
   background-color: var(--primary);
   margin-left: 20%;
@@ -542,7 +569,6 @@ h4{
   padding-left: 7px;
   padding-right: 7px;
   margin-left: 5px;
-  display:
 }
 
 .forum-post-date{

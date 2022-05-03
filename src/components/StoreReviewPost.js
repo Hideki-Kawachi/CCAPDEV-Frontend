@@ -41,7 +41,7 @@ function StoreReviewPost() {
                     <button className='back-button' onClick={back}></button>
                         <span>Title: </span>
                         <input className='store-review-post-title' type={'text'} value={title} onChange={(e)=>setTitle(e.target.value)}></input>
-                        <StarRating setRating = {setRating} edit = {true}></StarRating>
+                        <StarRating setRating = {setRating} edit = {true}></StarRating>  
                     </div>
                     <div className='store-review-post-sub-header'>
                         <span>posted by: </span>

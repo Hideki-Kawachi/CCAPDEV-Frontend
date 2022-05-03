@@ -33,8 +33,10 @@ const App = () =>{
     const [description,setDescription] = useState("");
     const [media,setMedia] = useState("");
     const storeReview = {title,setTitle,username,setUsername,date,setDate,rating,setRating,description,setDescription,media,setMedia};
-
-    const post = {title,setTitle,username,setUsername,date,setDate,description,setDescription,media,setMedia};
+    
+    const [comments,setComments] = useState([]);
+    const [upvote,setUpvote] = useState(0);
+    const post = {title,setTitle,username,setUsername,date,setDate,description,setDescription,media,setMedia,upvote,setUpvote,comments,setComments};
 
     const [build,setBuild] = useState("");
     const [cpu, setCpu] = useState("default---0");
