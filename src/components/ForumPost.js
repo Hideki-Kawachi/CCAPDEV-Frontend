@@ -14,9 +14,23 @@ const navigate = useNavigate();
 const info = useLocation();
 const user = useContext(UserContext);
 const [profilePic, setProfilePic] = useState(user.profilePic);
+const [comment, setComment] = useState('');
+
+var today = new Date(),
+datePost = today.toLocaleString('default', { month: 'long' }) + ' ' + today.getDate() +  ', '  + today.getFullYear()
+
+const handleSubmit = (e) => {
+
+    e.preventDefault();
+    const newcomment = (user.username, datePost, comment);
+    console.log(user.username, datePost, comment);
+    return <ForumComment username = {user.username} date = {datePost} upvotes = "0" comment = {newcomment} />
+}
+
 
 return (
-    
+
+
 <div className='content-post-view'>
     <br></br>
     <div className = "post-header">
@@ -49,9 +63,9 @@ return (
                     {info.state.description}
                 </p>
                 </div>
-                <form>
+                <form onSubmit ={handleSubmit}>
                 <p><img className="icon" src={require('../media/comments-icon.png')} alt="Comments"/> Leave a Comment: </p>
-                <textarea type={"text"} id='comment-box' placeholder='  ...'></textarea>
+                <textarea name="submitcomment" type={"text"} id='comment-box' value={comment} onChange={(e) => setComment(e.target.value)} placeholder='  ...'></textarea>
                 <button id = "comment-button">Comment</button>
                 </form>
                
