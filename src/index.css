@@ -691,6 +691,11 @@ li{
   font-size: large;
   
 }
+
+.forum-post-comment{
+  font-size: medium;
+  
+}
 /*STORE REVIEW HOME*/
 .content-store-review{
   min-height: 100%;
@@ -787,6 +792,12 @@ li{
   box-shadow: 0 0 10px rgb(119, 119, 119);
 }
 
+[id='comment-containers']{
+  display: flex;
+  margin-bottom: 10px;
+  justify-content: space-between;
+}
+
 [id='store-review-post-button']{
     padding: 10px;
     background-color: var(--accent);
@@ -821,13 +832,34 @@ li{
   margin-top: -7px;
 }
 
+.upvote-comment{
+  width: 20px;
+  height: 20px;
+  display: inline;
+  margin-bottom: -3px;
+}
+
+.downvote-comment{
+  width: 20px;
+  height: 20px;
+  transform: rotate(180deg);
+  display: inline;
+  margin-bottom: -3px;
+}
+
 .upvotes-count{
   margin-bottom: 5px;
   margin-left: 6px;
   font-size: large;
+  display: inline-block;
 }
 
-.upvote-post:hover,.downvote-post:hover{
+.upvotes-count-comm{
+  font-size: xx-small;
+  margin-top: 5px;
+  display: inline-block;
+}
+.downvote-comment:hover, .upvote-comment:hover,.upvote-post:hover,.downvote-post:hover{
   opacity: 20%;
 }
 

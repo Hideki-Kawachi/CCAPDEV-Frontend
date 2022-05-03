@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import ForumComment from ".//ForumComment";
+import ForumComment from "./ForumComment";
 import { Link, useNavigate } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import UserContext from './context/UserContext';
@@ -54,6 +54,11 @@ return (
                 <textarea type={"text"} id='comment-box' placeholder='  ...'></textarea>
                 <button id = "comment-button">Comment</button>
                 </form>
+               
+                <p> Comments: </p>
+                
+                <ForumComment username ="CarloC" date = "May 03, 2022" upvotes = "11" comment = "I think a GPU upgrade to something like a 5700XT would serve you well if you wanna go 1440p ultrawide. That should be enough"/>                
+                <ForumComment username ="Hidekiii" date = "May 22, 2022" upvotes = "5" comment = "I think a GPU upgrade to something like a 5700XT would serve you well if you wanna go 1440p ultrawide. That should be enough"/>
         </div>
     </div>
 </div>
