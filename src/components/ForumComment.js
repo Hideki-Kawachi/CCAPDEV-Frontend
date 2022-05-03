@@ -8,12 +8,6 @@ const ForumComment = (props) => {
     const [profilePic, setProfilePic] = useState(user.profilePic);
     const [upvotes, setUpvotes] = useState(props.upvotes)
 
-    function upvoteChange(){
-        console.log("initial: " + props.upvotes);
-        props.upvotes = upvotes + 1;
-        console.log("after: "+ props.upvotes);
-    }   
-
 
 return (  
     <div className='comment-containers'>

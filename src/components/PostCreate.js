@@ -6,13 +6,14 @@ import PostContext from './context/PostContext';
 
 function PostCreate() {
     const user = useContext(UserContext);
-    const forumPost = useContext(PostContext);
+    const postContext = useContext(PostContext);
 
     const [title, setTitle] = useState("");
     const [date, setDate] = useState(new Date());
     const [description, setDescription] = useState("");
     const [images, setImages] = useState("");
     const [username, setUsername] = useState(user.username);
+    const [flair, setFlair] = useState("");
     
 
     const navigate = useNavigate();
@@ -22,11 +23,13 @@ function PostCreate() {
     }
     
     function sendPost(){
-        forumPost.setPostTitle(title);
-        forumPost.setPostUsername(username);
-        forumPost.setPostDate(date);
-        forumPost.setPostDescription(description);
-        //forumPost.setImages(images);
+        console.log(flair);
+        postContext.setPostTitle(title);
+        postContext.setPostUsername(username);
+        postContext.setPostDate(date);
+        postContext.setPostDescription(description);
+        postContext.setFlair(flair);
+        //postContext.setImages(images);
         navigate("/Forum");
     }
 
@@ -38,12 +41,12 @@ function PostCreate() {
                         <span>Title: </span>
                         <input type={'text'} value={title} onChange={(e)=>setTitle(e.target.value)}></input>
                         <span>Flair: </span>
-                        <span classname ='dropdown-border'>
-                        <select classname='dropdown'id='flair'>
+                        <span className ='dropdown-border'>
+                        <select className='dropdown'id='flair' onChange={(e)=>setFlair(e.target.value)}>
                             <option value="Technical Issues">Technical Issues</option>
                             <option value="Rate My Build">Rate My Build</option>
-                            <option value="Rate My Build">Build Suggestions</option>
-                            <option value="Rate My Build">Tips and Tricks</option>
+                            <option value="Build Suggestions">Build Suggestions</option>
+                            <option value="Tips and Tricks">Tips and Tricks</option>
                             <option value="General Discussion and Trends">General Discussion and Trends</option>
                             <option value="News">News</option>
                       </select>

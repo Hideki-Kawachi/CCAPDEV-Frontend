@@ -18,8 +18,20 @@ const ForumBar = (props) => {
     const postContext = useContext(PostContext);
 
     const navigate = useNavigate();
+
+    useEffect(()=>{
+        setTitle(props.title);
+        setDescription(props.description);
+        setFlair(props.flair);
+        setMedia(props.media);
+        setDate(props.date);
+        setUsername(props.username);
+        setUpvotes(props.upvotes);
+        setComments(props.comments);
+    },[props])
     
     function sendPost(){
+        console.log("title is when pressing bar: " + title);
         postContext.setPostComments(comments);
         postContext.setPostTitle(title);
         postContext.setPostDescription(description);

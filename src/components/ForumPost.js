@@ -41,7 +41,6 @@ const ForumPost = () => {
     }
 
     const back=()=>{
-        console.log("BACKBACKBACK");
         postContext.setPostComments([]);
         postContext.setPostTitle("");
         postContext.setPostDescription("");
@@ -68,7 +67,6 @@ const ForumPost = () => {
 
     function postComment(){
         if(user.username.length==0 && !user.isLoggedIn){
-            console.log("navigating here");
             navigate("/Login");
         }
         console.log("this is new comment: " + newComment);
