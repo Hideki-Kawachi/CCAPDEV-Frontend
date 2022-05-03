@@ -22,10 +22,10 @@ function PostCreate() {
     }
     
     function sendPost(){
-        forumPost.setTitle(title);
-        forumPost.setUsername(username);
-        forumPost.setDate(date);
-        forumPost.setDescription(description);
+        forumPost.setPostTitle(title);
+        forumPost.setPostUsername(username);
+        forumPost.setPostDate(date);
+        forumPost.setPostDescription(description);
         //forumPost.setImages(images);
         navigate("/Forum");
     }

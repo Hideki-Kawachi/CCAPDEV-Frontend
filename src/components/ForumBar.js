@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import ForumComment from './ForumComment';
+import PostContext from './context/PostContext';
 
 const ForumBar = (props) => {
-
 
     const [title, setTitle] = useState(props.title);
     const [description, setDescription] = useState(props.description);
@@ -14,13 +15,26 @@ const ForumBar = (props) => {
     const [upvotes, setUpvotes] = useState(props.upvotes);
     const [comments, setComments] = useState(props.comments);
 
+    const postContext = useContext(PostContext);
+
     const navigate = useNavigate();
+    
+    function sendPost(){
+        postContext.setPostComments(comments);
+        postContext.setPostTitle(title);
+        postContext.setPostDescription(description);
+        postContext.setFlair(flair);
+        postContext.setPostMedia(media);
+        postContext.setPostDate(date);
+        postContext.setPostUpvotes(upvotes);
+        postContext.setPostUsername(username);
+    }
 
     return(
 
             <div className='forum-bar-container'>
                 <div className='store-review-bar-left'>
-                    <Link className='store-review-bar-top-container' to={'/ForumPost'} state={{title: title, date: date, username: username, flair: flair, description: description, comments: comments, upvotes: upvotes, media: media}}>
+                    <Link className='store-review-bar-top-container' to={'/ForumPost'} onClick={sendPost}>
                     <span className='post-title'>{props.title}</span>
                     </Link>
                     <br></br>
@@ -35,7 +49,7 @@ const ForumBar = (props) => {
 
 
             <div className='store-review-bar-right'>
-                <span className='forum-bar-date'>{props.date}</span>
+                <span className='forum-bar-date'>{props.date.toDateString().substring(4)}</span>
                 <span className='forum-bar-upvotes'>{props.upvotes}</span>
                 </div>
             </div>
