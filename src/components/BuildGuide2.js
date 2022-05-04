@@ -5,15 +5,15 @@ const BuildGuide2 =()=> {
     return (
         <div classNameName="content-">
             <div className='sub-container'>Guide</div>
-            <div className='header-container'>Entry-Level Build</div>
+            <div className='header-container'>Mid-Range Build</div>
             <div className='img-container'>
-                <div class='img-block'> <img className='cmpnt-img' src={require('../media/5600g.jpg')} />               </div>
-                <div class='img-block'> <img className='cmpnt-img' src={require('../media/b450-mortar-max.jpg')} />     </div>
+                <div class='img-block'> <img className='cmpnt-img' src={require('../media/3600.jpeg')} />               </div>
+                <div class='img-block'> <img className='cmpnt-img' src={require('../media/msi-b550m-wifi.png')} />     </div>
                 <div class='img-block'> <img className='cmpnt-img' src={require('../media/vulcan-tuf-16gb.jpg')} />      </div>
                 <div class='img-block'> <img className='cmpnt-img' src={require('../media/kingston-nv1-500gb.jpg')} />   </div>
-                <div class='img-block'> </div>
-                <div class='img-block'> <img className='cmpnt-img' src={require('../media/rakk-haliya.jpg')} />         </div>
-                <div class='img-block'> <img className='cmpnt-img' src={require('../media/corsair-cv550.jpg')} />       </div>
+                <div class='img-block'>    <img className='cmpnt-img' src={require('../media/gigabyte-1650oc.jpeg')} /> </div>
+                <div class='img-block'> <img className='cmpnt-img' src={require('../media/fd-meshify2.jpg')} />         </div>
+                <div class='img-block'> <img className='cmpnt-img' src={require('../media/msi-a650bn.jpeg')} />       </div>
             </div>
             <div className='description-container'>
                 <PCcomponent name='CPU' desc='Ryzen 5 3600'></PCcomponent>
@@ -26,9 +26,7 @@ const BuildGuide2 =()=> {
                     or higher depending on your needs. The Kingston NV1 500GB NVME is a great option for budget
                     users and can be a great starter especially for bootup times"></PCcomponent>
                 <PCcomponent name='GPU' desc='GTX 1650'></PCcomponent>
-                <PCcomponent name='PC Case' desc='      Rakk is known for its local components and peripherals here in the Philippines. 
-                    We think that its fit especially for those who want to go with black or white
-                    budget builds. '></PCcomponent>
+                <PCcomponent name='PC Case' desc=' '></PCcomponent>
                 <PCcomponent name='PSU' desc=" MSI MAG-A650BN, 650W 80+ Bronze"></PCcomponent>   
             </div>
 

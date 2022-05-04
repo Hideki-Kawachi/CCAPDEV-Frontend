@@ -1617,6 +1617,7 @@ button.star-checked, button.star-unchecked{
   background-color: var(--accent);
   padding: 1px 30px;
   color: white;
+  margin-bottom: 100px;
 }
 
 .cmpnt-name{

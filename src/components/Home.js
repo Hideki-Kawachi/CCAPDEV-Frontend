@@ -43,7 +43,7 @@ const Home =()=> {
                 <div className="pc-build-box">
                     <Link id="bGuide2" className='nav-button' to={'/BuildGuide2'}> 
                         <div className='build-title'>
-                            <span className='title-text'>Build 2</span>
+                            <span className='title-text'>Midrange Build</span>
                             <div> <span className='title-text'>P50,000</span>   </div>  
                         </div>
                         <div className='pic-container'>
@@ -55,7 +55,7 @@ const Home =()=> {
                 <div className="pc-build-box">
                     <Link id="bGuide3" className='nav-button' to={'/BuildGuide3'}> 
                         <div className='build-title'>
-                            <span className='title-text'>Build 3</span>
+                            <span className='title-text'>High-End Build</span>
                             <div> <span className='title-text'>P70,000</span>   </div>  
                         </div>
                         <div className='pic-container'>
