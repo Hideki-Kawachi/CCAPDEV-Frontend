@@ -12,11 +12,11 @@ const Forum = () => {
 
     let forumPost1 = new forumPost("Is this build good enough????dsa", "Rate My Build", "Hideki1", new Date('April 28, 2022 15:47:00'), "DESCRIPTION ASHDJKASHKJDA", 5, commentListPost1,"");
     let forumPost2 = new forumPost("Is this build good enough??sada", "Technical Issues", "Hidekidsadii2", new Date('April 22, 2022 15:47:00'), "DESCRIasdsadsaPTION ASHDJKASHKJDA", 2, commentListPost1,"");
-    let forumPost3 = new forumPost("Is this build good enough??????asd", "Build Suggestions", "Hidekasiii3", new Date('April 25, 2022 15:47:00'), "DESCRIN ASHDJKASHKJDA", 10, commentListPost1,"");
+    let forumPost3 = new forumPost("Is this build good enough??????asd", "Build Suggestions", "Hidekasiii3", new Date('April 25, 2022 15:47:00'), "DESCRIN ASHDJKASHKJDA", 8, commentListPost1,"");
     let forumPost4 = new forumPost("Is this build good enough??dsad", "Tips and Tricks", "Hidddekiii4", new Date('April 24, 2022 15:47:00'), "DESCRIPTIsdaON ASHDJKASHKJDA", 4, commentListPost1,"");
     let forumPost5 = new forumPost("Is this build goodads", "General Discussion and Trends", "Hidekaasiii5", new Date('April 23, 2022 15:47:00'), "DESCRI ASHDJKASHKJDA", 2, commentListPost1,"");
     let forumPost6 = new forumPost("Is this build good weeeeeew2@", "General Discussion and Trends", "Hidekwd2dadii5", new Date('May 23, 2020 15:47:00'), "DESCRI ASHDJKASHKJDA", 1, commentListPost1,"");
-    let forumPost7 = new forumPost("Is this build gaaaddddddddddddd", "News", "HiCsdii5", new Date('June 02, 2022 15:47:00'), "DESCRI ASHDJKASHKJDA", 104, commentListPost1,"");
+    let forumPost7 = new forumPost("Is this build gaaaddddddddddddd", "News", "HiCsdii5", new Date('June 02, 2022 15:47:00'), "DESCRI ASHDJKASHKJDA", 7, commentListPost1,"");
 
     const [sort, setSort] = useState("Date posted");
     const [isSortReverse, setIsSortReverse] = useState(false);
