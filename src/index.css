@@ -139,14 +139,20 @@ header{
 
 [id=headerHome]{
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  left: calc(50% - 200px);
   background-image: url('media/logo.png');
   background-position: -325px -42px;
   zoom: 7%;
   object-fit: cover;
   width: 541px;
 	height: 586px;
+}
+
+#headerHome:hover{
+  animation-name: focusUp;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  animation-duration: 1s;
 }
 
 
@@ -177,7 +183,7 @@ a.nav-button:hover, a.nav-button:focus, a.nav-button:active{
 
 [id=profile-pic-header]{
   width: 40px;
-  height: auto;
+  height: 40px;
   object-fit: cover;
   border-radius: 50%;
   position: relative;
@@ -1638,3 +1644,180 @@ button.star-checked, button.star-unchecked{
   max-width: 100px; 
   max-height: 300px;
 }
+
+/*USER BUILDS*/
+
+.content-user-builds{
+  display: flex;
+  justify-content: center;
+}
+
+.user-builds-container{
+  background-color: var(--primary);
+  width: fit-content;
+  height: calc(100vh - 145px);
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 100px 10px 10px 10px;
+}
+
+.user-builds-header{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 80px;
+  padding: 5px;
+  border: 1px solid black;
+  width: fit-content;
+  height: fit-content;
+  background-color: black;
+  border-radius: var(--radius);
+}
+
+.user-builds-title{
+  font-size: 30px;
+  font-weight: 700;
+  color: white;
+}
+
+.user-builds-error{
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+/*USER BUILDS BAR*/
+.user-builds-bar-container{
+  border:1px solid black;
+  border-radius: var(--radius);
+  padding: 10px;
+  width: 500px;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+}
+
+.user-builds-bar-name{
+  font-size: 25px;
+  font-weight: 600;
+  color: black;
+}
+
+.user-builds-bar-name:hover{
+  text-decoration: underline;
+}
+
+.user-builds-bar-date{
+  font-size: medium;
+}
+
+/*USER BUILDS VIEW*/
+.content-user-builds-view{
+  display: flex;
+  justify-content: center;
+  background-color: aqua;
+}
+
+.user-builds-view-title{
+  font-size: 30px;
+  font-weight: 700;
+  color: white;
+}
+
+.user-builds-view-header{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 80px;
+  padding: 5px;
+  border: 1px solid black;
+  width: fit-content;
+  height: fit-content;
+  background-color: black;
+  border-radius: var(--radius);
+}
+
+.user-builds-view-container{
+  margin-left: 40px;
+  background-color: var(--primary);
+  width: fit-content;
+  height: calc(100vh - 145px);
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  padding: 100px 10px 10px 10px;
+}
+
+.user-builds-view-list{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border: 1px solid black;
+  width: fit-content;
+  height: fit-content;
+  border-radius: var(--radius);
+  padding: 10px;
+}
+
+.user-builds-view-list-left{
+  font-weight: 600;
+}
+
+.user-builds-view-list-right{
+  margin-left: 30px;
+}
+
+.user-builds-view-list-right p{
+  margin-left: 56px
+}
+
+.user-builds-view-total{
+  float: left;
+  font-size: larger;
+  font-weight: 600;
+}
+
+.back-button-user-builds-view{
+  position: relative;
+  left: -700px;
+  top: 300px;
+  background-image: url(./media/back-icon.jpg);
+  background-position: -5px -6px;
+  width: 500px;
+  height: 500px;
+  object-fit: cover;
+  zoom: 10%;
+  border-radius: 50%;
+}
+
+.back-button-user-builds-view:hover{
+  cursor: pointer;
+  animation-name: bounce;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+}
+
+.delete-button-user-builds-view{
+  display: block;
+  margin-left: -440px;
+  width: min-content;
+  height: min-content;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: var(--radius);
+  font-size: medium;
+  font-weight: 800;
+  color: white;
+  background-color: rgb(202, 0, 0);
+}
+
+.delete-button-user-builds-view:hover{
+  animation-name: focusUp;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  animation-duration: 0.2s;
+  cursor: pointer;
+}
+

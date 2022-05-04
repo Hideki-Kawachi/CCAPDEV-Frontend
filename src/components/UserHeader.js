@@ -45,6 +45,7 @@ function UserHeader(props) {
     return (
     <>
      <div className='right-header-login'>
+        <Link id="headerUserBuilds" className='nav-button' to={'/UserBuilds'}>Manage Builds</Link>
         <span className='username-header'>{user.username}</span>
         <img className='profile-pic'src={props.profilePic} id='profile-pic-header' onClick={()=>setIsOpen(!isOpen)}></img>
     </div>

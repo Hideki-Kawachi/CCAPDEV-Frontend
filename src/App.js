@@ -19,6 +19,8 @@ import PostContext, { InitialPostContext, PostProvider } from './components/cont
 import ForumPost from './components/ForumPost'
 import ForumComment from './components/ForumComment'
 import BuildGuidePost from './components/BuildGuidePost';
+import UserBuilds from './components/UserBuilds';
+import UserBuildsView from './components/UserBuildsView';
 
 const App = () =>{
     
@@ -27,7 +29,8 @@ const App = () =>{
     const [email, setEmail] = useState("");
     const [profilePic, setProfilePic] = useState("/profilePictures/default.jpg");
     const [bio,setBio] = useState("This is the standard bio");
-    const user = {isLoggedIn,setIsLoggedIn,username,setUsername,profilePic,setProfilePic,email,setEmail,bio,setBio};
+    const [userBuilds, setUserBuilds] = useState([{build: "", date: new Date, cpu: "default---0",cpuCooler: "default---0", motherboard: "default---0", ram: "default---0", storage: "default---0", gpu: "default---0", pcCase: "default---0", powerSupply: "default---0", total: 0}]);
+    const user = {isLoggedIn,setIsLoggedIn,username,setUsername,profilePic,setProfilePic,email,setEmail,bio,setBio,userBuilds,setUserBuilds};
 
     const [reviewTitle,setReviewTitle] = useState("");
     const [reviewUsername,setReviewUsername] = useState("");
@@ -78,6 +81,8 @@ const App = () =>{
                                 <Route path="/" element={<Home></Home>}></Route>
                                 <Route path="/Register" element={<Register></Register>}></Route>
                                 <Route path="/UserProfile" element={<UserProfile></UserProfile>}></Route>
+                                <Route path="/UserBuilds" element={<UserBuilds></UserBuilds>}></Route>
+                                <Route path="/UserBuildsView" element={<UserBuildsView></UserBuildsView>}></Route>
                                 <Route path="/ForumPost" element={<ForumPost></ForumPost>}></Route>
                                 <Route path="/ForumComment" element={<ForumComment></ForumComment>}></Route>
                                 <Route path="/BuildGuidePost" element={<BuildGuidePost></BuildGuidePost>}></Route>

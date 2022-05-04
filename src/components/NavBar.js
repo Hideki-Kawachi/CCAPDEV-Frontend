@@ -18,12 +18,19 @@ const NavBar = () =>{
             setIsLoggedOpen(false);
         }
     },[user.username])
-
-    /*  FOR CHECKING CONTEXT
+    /*
+    //FOR CHECKING CONTEXT
     useEffect(()=>{
-        console.log(user);
-        console.log(forumContext);
-        console.log(systemBuild);
+        console.log("user context: ");
+        console.log("build length: " + user.userBuilds.length);
+        user.userBuilds.forEach(currentBuild=>{
+            Object.keys(currentBuild).forEach(key=>{
+                console.log("key: "+key+"--build: "+currentBuild[key]);
+            })
+        });
+        
+        console.log("forum context: "+ forumContext);
+        console.log("system builds context: "+ systemBuild);
     })
     */
     const rightNav = {

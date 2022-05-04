@@ -5,7 +5,7 @@ import SystemBuilderContext from './context/SystemBuilderContext';
 
 function SystemBuilder() {
     const user = useContext(UserContext);
-    const systemBuild = useContext(SystemBuilderContext);
+    let currentBuild = [];
 
     const navigate = useNavigate();
 
@@ -74,19 +74,16 @@ function SystemBuilder() {
     }
 
     function sendPost(){
-        systemBuild.setBuild(build);
-        systemBuild.setBuildDate(date);
-        systemBuild.setUsername(username);
-        systemBuild.setCpu(cpu);
-        systemBuild.setCpuCooler(cpuCooler);
-        systemBuild.setMotherboard(motherboard);
-        systemBuild.setRam(ram);
-        systemBuild.setStorage(storage);
-        systemBuild.setGpu(gpu);
-        systemBuild.setPcCase(pcCase);
-        systemBuild.setPowerSupply(powerSupply);
-        navigate("/");  //navigate to where system builder posts are shown
+        currentBuild = {build: build, date: date, cpu: cpu,cpuCooler: cpuCooler,motherboard: motherboard,ram: ram,storage: storage,gpu: gpu,pcCase: pcCase,powerSupply: powerSupply, total: total};
+        if(user.userBuilds.length==1 && user.userBuilds[0].cpu=="default---0"){
+            user.setUserBuilds([currentBuild]);
+        }
+        else{
+            user.setUserBuilds(oldBuild=>[currentBuild,...oldBuild]);
+        }
+        navigate("/");
     }
+
 
     function validatePost(){
         return(!((cpu,cpuCooler,motherboard,ram,storage,gpu,pcCase,powerSupply) === "default---0" || build.length==0));
