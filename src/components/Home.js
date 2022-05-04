@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Forum from "./Forum";
 
 const Home =()=> {
     return (
@@ -14,9 +15,11 @@ const Home =()=> {
 
         <div className="main-section-container">
             <div className='main-section-content'>
-                <a href="./Post.js"><span>Technical Reviews</span></a>
-                <a href="./Post.js"><span>Configuration Guide</span></a>
-                <a href="./Post.js"><span>PC Build Help</span></a>
+            <Link to={'/Forum'}>
+                <span onClick = {("Technical Issues")} >Technical Reviews</span>
+            </Link>
+            <Link to={'/Forum'}><span onClick = {("Technical Issues")}> Configuration Guide</span></Link>
+            <Link to={'/Forum'}><span onClick = {("Technical Issues")}> PC Build Help</span></Link>
             </div>
         </div>
 
