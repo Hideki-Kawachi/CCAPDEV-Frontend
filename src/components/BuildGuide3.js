@@ -15,10 +15,9 @@ const BuildGuide3 =()=> {
                 <div class='img-block'> <img className='cmpnt-img' src={require('../media/corsair-cv550.jpg')} />       </div>
             </div>
             <div className='description-container'>
-                <PCcomponent name='CPU' desc='The Ryzen 5 5600G is known for its decent performance without discrete graphics'></PCcomponent>
-                <PCcomponent name='Motherboard' desc='Meeting the price criteria, We chose the MSI B450M Mortar Max for its better thermal solution
-                    and it can also support DDR4 RAM upto 4133Mhz. The only catch of this budget board is that
-                    you would need to update the BIOS for Ryzen 5000 series.'></PCcomponent>
+                <PCcomponent name='CPU' desc='AMD Ryzen 7 5800X'></PCcomponent>
+                <PCcomponent name='CPU-Cooler' desc='Cooler Master ML240L aRGB v2'></PCcomponent>
+                <PCcomponent name='Motherboard' desc='Cooler Master'></PCcomponent>
                 <PCcomponent name='RAM' desc='We think that the Team Elite Vulcan TUF 16GB 2x8 3200mhz has enough power to match
                     the 5000 series CPU, even though that most users think that 3600mhz handles 5600G
                     in most applications and because Ryzen CPUs perform better in higher frequency.'></PCcomponent>
