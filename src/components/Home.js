@@ -38,33 +38,27 @@ const Home =()=> {
                 </div>
 
                 <div className="pc-build-box">
-                    <a href="./Post.js">
-                    <div className='build-title'>
-                        <span className='title-text'>Entry-Level Build</span>
-                        <div>
-                            <span className='title-text'>P30,000</span>
+                    <Link id="bGuide2" className='nav-button' to={'/BuildGuide2'}> 
+                        <div className='build-title'>
+                            <span className='title-text'>Build 2</span>
+                            <div> <span className='title-text'>P50,000</span>   </div>  
                         </div>
-                        
-                    </div>
-                    <div className='pic-container'>
-                        <img className="pc-image" src={require('../media/pc-image.png')} alt="pic" />
-                    </div>
-                    </a>
+                        <div className='pic-container'>
+                            <img className="pc-image" src={require('../media/pc-image.png')} alt="pic" />
+                        </div>
+                    </Link>
                 </div>
 
                 <div className="pc-build-box">
-                    <a href="./Post.js">
-                    <div className='build-title'>
-                        <span className='title-text'>Entry-Level Build</span>
-                        <div>
-                            <span className='title-text'>P30,000</span>
+                    <Link id="bGuide3" className='nav-button' to={'/BuildGuide3'}> 
+                        <div className='build-title'>
+                            <span className='title-text'>Build 3</span>
+                            <div> <span className='title-text'>P70,000</span>   </div>  
                         </div>
-                        
-                    </div>
-                    <div className='pic-container'>
-                        <img className="pc-image" src={require('../media/pc-image.png')} alt="pic" />
-                    </div>
-                    </a>
+                        <div className='pic-container'>
+                            <img className="pc-image" src={require('../media/pc-image.png')} alt="pic" />
+                        </div>
+                    </Link>
                 </div>
 
 

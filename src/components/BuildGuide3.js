@@ -1,9 +1,8 @@
 import React from 'react';
 import PCcomponent from './PCcomponent';
 
-const BuildGuidePost =()=> {
+const BuildGuide3 =()=> {
     return (
-        
         <div classNameName="content-">
             <div className='sub-container'>Guide</div>
             <div className='header-container'>Entry-Level Build</div>
@@ -40,4 +39,4 @@ const BuildGuidePost =()=> {
     );
 }
 
-export default BuildGuidePost;
+export default BuildGuide3;

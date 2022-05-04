@@ -21,6 +21,9 @@ import ForumComment from './components/ForumComment'
 import BuildGuidePost from './components/BuildGuidePost';
 import UserBuilds from './components/UserBuilds';
 import UserBuildsView from './components/UserBuildsView';
+import BuildGuide2 from './components/BuildGuide2';
+import BuildGuide3 from './components/BuildGuide3';
+
 
 const App = () =>{
     
@@ -86,6 +89,8 @@ const App = () =>{
                                 <Route path="/ForumPost" element={<ForumPost></ForumPost>}></Route>
                                 <Route path="/ForumComment" element={<ForumComment></ForumComment>}></Route>
                                 <Route path="/BuildGuidePost" element={<BuildGuidePost></BuildGuidePost>}></Route>
+                                <Route path="/BuildGuide2" element={<BuildGuide2></BuildGuide2>}></Route>
+                                <Route path="/BuildGuide3" element={<BuildGuide3></BuildGuide3>}></Route>
                             </Routes>
                             <footer>
                                     <div className="contact-container">
