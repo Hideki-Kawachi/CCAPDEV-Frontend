@@ -14,12 +14,13 @@ const Home =()=> {
         </div>
 
         <div className="main-section-container">
-            <div className='main-section-content'>
-            <Link to={'/Forum'}>
-                <span onClick = {("Technical Issues")} >Technical Reviews</span>
-            </Link>
-            <Link to={'/Forum'}><span onClick = {("Technical Issues")}> Configuration Guide</span></Link>
-            <Link to={'/Forum'}><span onClick = {("Technical Issues")}> PC Build Help</span></Link>
+            <div className='main-section-text'>
+                <Link className='main-section-nav-button' to={'/Forum'} state={"Technical Issues"}>Technical Issues</Link>
+                <Link className='main-section-nav-button' to={'/Forum'} state={"Rate My Build"}>Rate My Build</Link>
+                <Link className='main-section-nav-button' to={'/Forum'} state={"Build Suggestions"}>Build Suggestions</Link>
+                <Link className='main-section-nav-button' to={'/Forum'} state={"Tips and Tricks"}>Tips and Tricks</Link>
+                <Link className='main-section-nav-button' to={'/Forum'} state={"General Discussions and Trends"}>General Discussions and Trends</Link>
+                <Link className='main-section-nav-button' to={'/Forum'} state={"News"}>News</Link>
             </div>
         </div>
 

@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
+import { useLocation } from 'react-router-dom';
 import PostContext from './context/PostContext';
 import ForumBar from "./ForumBar";
 import ForumComment from "./ForumComment";
@@ -25,6 +26,7 @@ const Forum = () => {
     const [flairFilter, setFlairFilter] = useState("");
 
     const postContext = useContext(PostContext);
+    const info = useLocation();
 
     function forumPost(title, flair, username, date, description, upvotes, comments, media){
         this.title = title;
@@ -130,6 +132,13 @@ const Forum = () => {
         else
             return null;
     }
+
+    useEffect(()=>{
+        console.log("flair filter preset:" + info.state);
+        if(info.state!=null){
+            setFlairFilter(info.state);
+        }
+    },[info.state])
 
 
     return(

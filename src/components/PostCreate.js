@@ -34,11 +34,6 @@ function PostCreate() {
         navigate("/Forum");
     }
 
-    const systemBuilderOpen={
-        "Rate My Build":(
-            <SystemBuilder></SystemBuilder>
-        )
-    }
 
     return (
         <div className='content-store-review-post'>
@@ -64,7 +59,6 @@ function PostCreate() {
                         <span className='store-review-post-user'>{username}</span>
                         <span className='store-review-post-date'>{date.toDateString().substring(4)}</span>
                     </div>
-                {systemBuilderOpen[flair]}
                 <div className='store-review-post-description'>
                     <span>Description:</span>
                     <textarea className='store-review-post-description-input' type={'textarea'} value={description} placeholder={"..."} onChange={(e)=>setDescription(e.target.value)}></textarea>

@@ -1505,6 +1505,11 @@ button.star-checked, button.star-unchecked{
     100%{transform: translateY(-2px);box-shadow: 0 0 15px gray;}
 }
 
+@keyframes focusFont {
+  0%{transform:scale3d(1,1,1)}
+  100%{transform: scale3d(1.1,1.2,1.1);}
+}
+
 /* Home.js contents*/
 
 .sub-container {
@@ -1535,18 +1540,27 @@ button.star-checked, button.star-unchecked{
 
 }
 
-.main-section-content {
-  background-color: #5C5252;
-  color: white;
+.main-section-text {
+  background-color: var(--accent);
   display: flex;
   gap: 50px;
-  padding: 20px 20px;
-  border-radius: 10px;
-  block-size: 30px;
+  border-radius: var(--radius);
+  block-size: 20px;
   align-items: center;
-  font: 'Segoe UI', 'Times New Roman';
-  font-size: 24px;
+  padding: 20px;
+}
 
+.main-section-nav-button{
+  color: white;
+  font-size: 20px;
+}
+
+.main-section-nav-button:hover{
+  color: white;
+  animation-name: focusFont;
+  animation-iteration-count: 1;
+  animation-duration: 0.2s;
+  animation-fill-mode: forwards;
 }
 
 .pcguro-build-guide-container{
