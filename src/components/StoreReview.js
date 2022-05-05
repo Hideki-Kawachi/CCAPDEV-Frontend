@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext, useRef } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import StoreReviewBar from './StoreReviewBar';
 import { Link } from 'react-router-dom';
 import Login from './Login';
@@ -65,7 +65,6 @@ function StoreReview() {
             tempList.push(<StoreReviewBar key={index} title={review.title} description={review.description} date={review.date} rating={review.rating} username={review.username}></StoreReviewBar>)
         })
         setReviewList(tempList);
-        console.log("SET");
     },[sort,isSortReverse])
 
     useEffect(()=>{
@@ -74,21 +73,18 @@ function StoreReview() {
                 tempList.push(<StoreReviewBar key={index} title={review.title} description={review.description} date={review.date} rating={review.rating} username={review.username}></StoreReviewBar>)
             })
             setReviewList(tempList);
-            console.log("SET");
     },[reviews])
 
     function sortDateClick()
     {
         setSort("Date posted");
         setIsSortReverse(!isSortReverse);
-        console.log("DATE CLICKED " + isSortReverse);
     }
 
     function sortRatingClick()
     {
         setSort("User rating");
         setIsSortReverse(!isSortReverse);
-        console.log("USER CLICKED " + isSortReverse);
     }
 
     function directionDate(){

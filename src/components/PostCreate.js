@@ -1,9 +1,7 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import UserContext from './context/UserContext';
-import Login from './Login';
 import PostContext from './context/PostContext';
-import SystemBuilder from './SystemBuilder';
 
 function PostCreate() {
     const user = useContext(UserContext);
@@ -12,9 +10,9 @@ function PostCreate() {
     const [title, setTitle] = useState("");
     const [date, setDate] = useState(new Date());
     const [description, setDescription] = useState("");
-    const [images, setImages] = useState("");
+    //const [images, setImages] = useState("");
     const [username, setUsername] = useState(user.username);
-    const [flair, setFlair] = useState("");
+    const [flair, setFlair] = useState("Technical Issues");
     
 
     const navigate = useNavigate();
@@ -30,7 +28,10 @@ function PostCreate() {
         postContext.setPostDate(date);
         postContext.setPostDescription(description);
         postContext.setFlair(flair);
-        //postContext.setImages(images);
+        /*postContext.setImages(images);
+        console.log("this is the description:" + description);
+        console.log("flair is:" + flair);
+        */
         navigate("/Forum");
     }
 

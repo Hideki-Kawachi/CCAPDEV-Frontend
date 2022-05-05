@@ -695,7 +695,7 @@ li{
 
 .forum-post-text{
   font-size: large;
-  
+  white-space: pre-line;
 }
 
 .forum-post-comment{
@@ -1056,7 +1056,8 @@ li{
     font-size: 100%;
     font-family: 'Noto Sans', sans-serif;
     padding: 5px;
-    border: 1px solid var(--primary-highlight)
+    border: 1px solid var(--primary-highligh);
+    white-space: pre-line;
   }
 
   .store-review-post-submit{
@@ -1229,9 +1230,6 @@ button.star-checked, button.star-unchecked{
 }
 
 /*USER PROFILE*/
-.content-user-profile{
-
-}
 
 .user-profile-container{
   min-width: fit-content;
@@ -1528,7 +1526,8 @@ button.star-checked, button.star-unchecked{
   block-size: 100px;
   padding: 30px;
   font-size: 64px;
-  font: "Segoe UI";
+  font-weight: 600;
+  font-family: 'Noto Sans', sans-serif;
 }
 
 .main-section-container{
@@ -1815,8 +1814,8 @@ button.star-checked, button.star-unchecked{
 }
 
 .delete-button-user-builds-view{
-  display: block;
-  margin-left: -440px;
+  position: absolute;
+  top: 550px;
   width: min-content;
   height: min-content;
   padding: 10px;

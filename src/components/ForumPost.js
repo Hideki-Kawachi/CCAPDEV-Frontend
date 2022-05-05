@@ -1,9 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import ForumComment from "./ForumComment";
-import { Link, useNavigate } from 'react-router-dom';
-import { useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import UserContext from './context/UserContext';
-import CommentContext from './context/CommentContext';
 import PostContext from './context/PostContext';
 import Login from './Login';
 
@@ -11,21 +9,20 @@ const ForumPost = () => {
     
     const navigate = useNavigate();
     const user = useContext(UserContext);
-    const commentContext = useContext(CommentContext);
+    //const commentContext = useContext(CommentContext);
     const postContext = useContext(PostContext);
 
-
+/*
     const [title, setTitle] = useState(postContext.postTitle);
     const [description, setDescription] = useState(postContext.postDescription);
     const [flair, setFlair] = useState(postContext.flair);
     const [media, setMedia] = useState(postContext.postMedia);
     const [date, setDate] = useState(postContext.postDate);
     const [username, setUsername] = useState(postContext.postUsername);
+*/
     const [upvotes, setUpvotes] = useState(postContext.postUpvotes);
 
     const [isLoggedOpen, setIsLoggedOpen] = useState(false);
-
-    const [comments, setComments] = useState([]);
 
     const [profilePic, setProfilePic] = useState(user.profilePic);
     const [newComment, setNewComment] = useState("");
@@ -58,8 +55,7 @@ const ForumPost = () => {
         if(postContext.postTitle.length>0){ 
             postContext.postComments.forEach((comment,index)=>{
                 tempList.push(<ForumComment key={index} username={comment.username} date={comment.date} upvotes={comment.upvotes} comment={comment.comment}></ForumComment>)
-            })
-            console.log("temp list is: "+ tempList);
+            });
             setCommentList(tempList);
         }
             
@@ -69,7 +65,6 @@ const ForumPost = () => {
         if(user.username.length==0 && !user.isLoggedIn){
             navigate("/Login");
         }
-        console.log("this is new comment: " + newComment);
         postContext.setPostComments(oldComments=>[new forumComment(newComment,user.username,new Date(),0),...oldComments]);
         setNewComment("");
     }

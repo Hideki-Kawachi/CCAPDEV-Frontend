@@ -18,11 +18,11 @@ function UserBuildsView() {
     const pcCase = info.state.pcCase.split("---");
     const powerSupply = info.state.powerSupply.split("---");
 
-    console.log("info here" + info);
+    //console.log("info here" + info);
 
     function back(){
         navigate("/UserBuilds");
-    };
+    }
 
     function deleteBuild(){
         if(user.userBuilds.length>1){
@@ -53,6 +53,7 @@ function UserBuildsView() {
 
     return ( 
         <div className='content-user-builds-view'>
+            <button className='delete-button-user-builds-view' onClick={deleteBuild}>Delete</button>
             <div className='user-builds-view-container'>
                 <div className='user-builds-view-header'>
                     <span className='user-builds-view-title'>Build: {info.state.build}</span>
@@ -78,7 +79,6 @@ function UserBuildsView() {
                         <p>₱ {pcCase[1]}</p>
                         <p>₱ {powerSupply[1]}</p>
                         <span className='user-builds-view-total'>Total: ₱ {info.state.total}</span>
-                        <button className='delete-button-user-builds-view' onClick={deleteBuild}>Delete</button>
                     </div>
                 </div>
             </div>

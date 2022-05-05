@@ -1,7 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import ForumComment from './ForumComment';
 import PostContext from './context/PostContext';
 
 const ForumBar = (props) => {
@@ -17,8 +15,6 @@ const ForumBar = (props) => {
 
     const postContext = useContext(PostContext);
 
-    const navigate = useNavigate();
-
     useEffect(()=>{
         setTitle(props.title);
         setDescription(props.description);
@@ -31,7 +27,6 @@ const ForumBar = (props) => {
     },[props])
     
     function sendPost(){
-        console.log("title is when pressing bar: " + title);
         postContext.setPostComments(comments);
         postContext.setPostTitle(title);
         postContext.setPostDescription(description);

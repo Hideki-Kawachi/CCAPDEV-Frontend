@@ -1,7 +1,6 @@
 import React, { useEffect, useContext, useState } from 'react';
 import UserContext from './context/UserContext';
 import UserBuildsBar from './UserBuildsBar';
-import UserBuildsView from './UserBuildsView';
 
 function UserBuilds() {
     let tempList = [];
@@ -11,7 +10,7 @@ function UserBuilds() {
     const [isEmpty, setIsEmpty] = useState(false);
 
     useEffect(()=>{     //listing post to display
-        console.log(user.userBuilds);
+        //console.log(user.userBuilds);
 
         if(user.userBuilds[0].cpu!=="default---0"){
             user.userBuilds.forEach((currentBuild, index)=>{
