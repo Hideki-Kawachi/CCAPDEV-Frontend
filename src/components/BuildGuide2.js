@@ -3,17 +3,17 @@ import PCcomponent from './PCcomponent';
 
 const BuildGuide2 =()=> {
     return (
-        <div classNameName="content-">
+        <div className="content-">
             <div className='sub-container'>Guide</div>
             <div className='header-container'>Mid-Range Build</div>
             <div className='img-container'>
-                <div class='img-block'> <img className='cmpnt-img' src={require('../media/3600.jpeg')} />               </div>
-                <div class='img-block'> <img className='cmpnt-img' src={require('../media/msi-b550m-wifi.png')} />     </div>
-                <div class='img-block'> <img className='cmpnt-img' src={require('../media/vulcan-tuf-16gb.jpg')} />      </div>
-                <div class='img-block'> <img className='cmpnt-img' src={require('../media/kingston-nv1-500gb.jpg')} />   </div>
-                <div class='img-block'>    <img className='cmpnt-img' src={require('../media/gigabyte-1650oc.jpeg')} /> </div>
-                <div class='img-block'> <img className='cmpnt-img' src={require('../media/fd-meshify2.jpg')} />         </div>
-                <div class='img-block'> <img className='cmpnt-img' src={require('../media/msi-a650bn.jpeg')} />       </div>
+                <div className='img-block'> <img className='cmpnt-img' src={require('../media/3600.jpeg')} />               </div>
+                <div className='img-block'> <img className='cmpnt-img' src={require('../media/msi-b550m-wifi.png')} />     </div>
+                <div className='img-block'> <img className='cmpnt-img' src={require('../media/vulcan-tuf-16gb.jpg')} />      </div>
+                <div className='img-block'> <img className='cmpnt-img' src={require('../media/kingston-nv1-500gb.jpg')} />   </div>
+                <div className='img-block'>    <img className='cmpnt-img' src={require('../media/gigabyte-1650oc.jpeg')} /> </div>
+                <div className='img-block'> <img className='cmpnt-img' src={require('../media/fd-meshify2.jpg')} />         </div>
+                <div className='img-block'> <img className='cmpnt-img' src={require('../media/msi-a650bn.jpeg')} />       </div>
             </div>
             <div className='description-container'>
                 <PCcomponent name='CPU' desc="Ryzen 5 3600, The 3rd Gen CPU of AMD provides enough power to its desired user and multi-core performance. It's perfect for streaming

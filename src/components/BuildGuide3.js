@@ -3,18 +3,18 @@ import PCcomponent from './PCcomponent';
 
 const BuildGuide3 =()=> {
     return (
-        <div classNameName="content-">
+        <div className="content-">
             <div className='sub-container'>Guide</div>
             <div className='header-container'>Kinda High-End Build</div>
             <div className='img-container'>
-                <div class='img-block'> <img className='cmpnt-img' src={require('../media/5800x.jpg')} />               </div>
-                <div class='img-block'> <img className='cmpnt-img' src={require('../media/cm-ml240l.jpg')} />               </div>
-                <div class='img-block'> <img className='cmpnt-img' src={require('../media/aoruspro-b550.jpg')} />     </div>
-                <div class='img-block'> <img className='cmpnt-img' src={require('../media/vulcan-tuf-16gb.jpg')} />      </div>
-                <div class='img-block'> <img className='cmpnt-img' src={require('../media/kingston-nv1-500gb.jpg')} />   </div>
-                <div class='img-block'> <img className='cmpnt-img' src={require('../media/3060ti-ocv1.jpg')} />         </div>
-                <div class='img-block'> <img className='cmpnt-img' src={require('../media/fd-meshify2.jpg')} />         </div>
-                <div class='img-block'> <img className='cmpnt-img' src={require('../media/ss-titanium850.jpg')} />       </div>
+                <div className='img-block'> <img className='cmpnt-img' src={require('../media/5800x.jpg')} />               </div>
+                <div className='img-block'> <img className='cmpnt-img' src={require('../media/cm-ml240l.jpg')} />               </div>
+                <div className='img-block'> <img className='cmpnt-img' src={require('../media/aoruspro-b550.jpg')} />     </div>
+                <div className='img-block'> <img className='cmpnt-img' src={require('../media/vulcan-tuf-16gb.jpg')} />      </div>
+                <div className='img-block'> <img className='cmpnt-img' src={require('../media/kingston-nv1-500gb.jpg')} />   </div>
+                <div className='img-block'> <img className='cmpnt-img' src={require('../media/3060ti-ocv1.jpg')} />         </div>
+                <div className='img-block'> <img className='cmpnt-img' src={require('../media/fd-meshify2.jpg')} />         </div>
+                <div className='img-block'> <img className='cmpnt-img' src={require('../media/ss-titanium850.jpg')} />       </div>
             </div>
             <div className='description-container'>
                 <PCcomponent name='CPU' desc='AMD Ryzen 7 5800X has 8 cores and 12 threads, enough for CPU-intensive tasks and even FPS Gaming (Could probably get you more than 300FPS in Valorant :D)'></PCcomponent>

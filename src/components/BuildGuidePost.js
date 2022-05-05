@@ -4,16 +4,16 @@ import PCcomponent from './PCcomponent';
 const BuildGuidePost =()=> {
     return (
         
-        <div classNameName="content-">
+        <div className="content-">
             <div className='sub-container'>Guide</div>
             <div className='header-container'>Entry-Level Build</div>
             <div className='img-container'>
-                <div class='img-block'> <img className='cmpnt-img' src={require('../media/5600g.jpg')} />               </div>
-                <div class='img-block'> <img className='cmpnt-img' src={require('../media/b450-mortar-max.jpg')} />     </div>
-                <div class='img-block'> <img className='cmpnt-img' src={require('../media/vulcan-tuf-16gb.jpg')} />      </div>
-                <div class='img-block'> <img className='cmpnt-img' src={require('../media/kingston-nv1-500gb.jpg')} />   </div>
-                <div class='img-block'> <img className='cmpnt-img' src={require('../media/rakk-haliya.jpg')} />         </div>
-                <div class='img-block'> <img className='cmpnt-img' src={require('../media/corsair-cv550.jpg')} />       </div>
+                <div className='img-block'> <img className='cmpnt-img' src={require('../media/5600g.jpg')} />               </div>
+                <div className='img-block'> <img className='cmpnt-img' src={require('../media/b450-mortar-max.jpg')} />     </div>
+                <div className='img-block'> <img className='cmpnt-img' src={require('../media/vulcan-tuf-16gb.jpg')} />      </div>
+                <div className='img-block'> <img className='cmpnt-img' src={require('../media/kingston-nv1-500gb.jpg')} />   </div>
+                <div className='img-block'> <img className='cmpnt-img' src={require('../media/rakk-haliya.jpg')} />         </div>
+                <div className='img-block'> <img className='cmpnt-img' src={require('../media/corsair-cv550.jpg')} />       </div>
             </div>
             <div className='description-container'>
                 <PCcomponent name='CPU' desc='The Ryzen 5 5600G is known for its decent performance without discrete graphics'></PCcomponent>
