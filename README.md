@@ -1,5 +1,8 @@
 # CCAPDEV
 
+To run react app:
+npm start
+
 1. Install NodeJS LTS
 
 Creating a React App
