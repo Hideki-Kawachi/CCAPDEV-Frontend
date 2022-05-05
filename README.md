@@ -3,6 +3,13 @@
 To run react app:
 npm start
 
+Test accounts:
+Username: Default
+Password: \*any
+
+Username: User1
+Password: \*any
+
 1. Install NodeJS LTS
 
 Creating a React App

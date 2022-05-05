@@ -534,6 +534,11 @@ h4{
   margin-right: 10px;
   margin-left: 20px;
 }
+
+.post-title:hover{
+  text-decoration: underline;
+}
+
 .post-user-text{
   color: rgb(54, 54, 54);
   font-size:small;
@@ -635,6 +640,7 @@ a:hover{
   background-color: rgb(255, 245, 245);
   border: 1px solid gray;
   box-shadow: 10%;
+  padding: 5px;
   margin: 2px;
   display: flex;
   max-width: auto;
@@ -868,13 +874,13 @@ li{
 
 .upvotes-count{
   margin-bottom: 5px;
-  margin-left: 6px;
+  margin-left: 10px;
   font-size: large;
   display: inline-block;
 }
 
 .upvotes-count-comm{
-  font-size: xx-small;
+  font-size: small;
   margin-top: 5px;
   display: inline-block;
 }

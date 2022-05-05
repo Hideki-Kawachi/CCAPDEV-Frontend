@@ -15,7 +15,7 @@ import StoreReviewPost from './components/StoreReviewPost';
 import StoreReviewContext, { StoreReviewProvider } from './components/context/StoreReviewContext';
 import SystemBuilder from './components/SystemBuilder';
 import { SystemBuilderProvider } from './components/context/SystemBuilderContext';
-import PostContext, { InitialPostContext, PostProvider } from './components/context/PostContext';
+import PostContext, { PostProvider } from './components/context/PostContext';
 import ForumPost from './components/ForumPost'
 import ForumComment from './components/ForumComment'
 import BuildGuidePost from './components/BuildGuidePost';
