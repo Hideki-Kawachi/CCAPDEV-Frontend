@@ -149,7 +149,7 @@ const Forum = () => {
                 <input type={"search"} id='store-review-search' placeholder='Search a post...'></input>
                 <button id = 'store-review-search-button'>Search</button>
             </div>
-            <select className='dropdown'id='flair' defaultValue={""} onChange={(e)=>setFlairFilter(e.target.value)}>
+            <select className='dropdown'id='flair' value={flairFilter} onChange={(e)=>setFlairFilter(e.target.value)}>
                 <option value="">All</option>
                 <option value="Technical Issues">Technical Issues</option>
                 <option value="Rate My Build">Rate My Build</option>
