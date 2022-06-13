@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import pc from '../media/pc-image.png';
 
 const Home =()=> {
     return (
@@ -35,7 +36,7 @@ const Home =()=> {
                             <div> <span className='title-text'>P30,000</span>   </div>  
                         </div>
                         <div className='pic-container'>
-                            <img className="pc-image" src={require('../media/pc-image.png')} alt="pic" />
+                            <img className="pc-image" src={pc} alt="pic" />
                         </div>
                     </Link>
                 </div>
@@ -47,7 +48,7 @@ const Home =()=> {
                             <div> <span className='title-text'>P50,000</span>   </div>  
                         </div>
                         <div className='pic-container'>
-                            <img className="pc-image" src={require('../media/pc-image.png')} alt="pic" />
+                            <img className="pc-image" src={pc} alt="pic" />
                         </div>
                     </Link>
                 </div>
@@ -59,7 +60,7 @@ const Home =()=> {
                             <div> <span className='title-text'>P70,000</span>   </div>  
                         </div>
                         <div className='pic-container'>
-                            <img className="pc-image" src={require('../media/pc-image.png')} alt="pic" />
+                            <img className="pc-image" src={pc} alt="pic" />
                         </div>
                     </Link>
                 </div>
