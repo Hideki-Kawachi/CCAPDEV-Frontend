@@ -41,8 +41,12 @@ function PostCreate() {
             <form>
                     <div  className='store-review-post-header'>
                     <button className='back-button' onClick={back}></button>
+                        <div className='title-flair-container'>
                         <span>Title: </span>
                         <input type={'text'} value={title} onChange={(e)=>setTitle(e.target.value)}></input>
+                        </div>
+
+                        <div className='title-flair-container'>
                         <span>Flair: </span>
                         <span className ='dropdown-border'>
                         <select className='dropdown'id='flair' onChange={(e)=>setFlair(e.target.value)}>
@@ -52,8 +56,10 @@ function PostCreate() {
                             <option value="Tips and Tricks">Tips and Tricks</option>
                             <option value="General Discussion and Trends">General Discussion and Trends</option>
                             <option value="News">News</option>
-                      </select>
-                      </span>
+                        </select>
+                        </span>
+                        </div>
+
                     </div>
                     <div className='store-review-post-sub-header'>
                         <span>posted by: </span>
