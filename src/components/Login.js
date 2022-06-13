@@ -11,30 +11,45 @@ const Login=(props)=>{
 
     const navigate = useNavigate();
 
-    let validateForm=()=>{
+    let validateForm=(res)=>{
+        var errors = 0;
         setError("");
-        if(password.length==0 && username.length==0){
-            setError("both");
-        }
-        else if(password.length==0){
+        if(res==="invalid password"){
             setError("password");
+            errors++;
         }
-        else if(username.length==0 || username!=="default"|| username!=="user1"){
+        else if(res==="invalid username"){
             setError("username");
+            errors++
         }
-        return (password.length>0 && username.length>0 && (username=="default" || username=="user1"));
+        
+        if(errors===0){
+            return true;
+        }
+        return false;
     };
  
     const sendLogin=(e)=>{
         e.preventDefault();
-        if(validateForm()){
-            setError("");
-            console.log("valid");
-            navigate('/');
-            user.setUsername(username);
-            user.setIsLoggedIn(!user.isLoggedIn);
-            user.setProfilePic(findProfPic(username));
-        }
+
+        fetch("/Login",{
+            method: "GET",
+            headers: {
+                username: username,
+                password: password
+            }
+        }).then(res=>res.json())
+        .then(data=>{
+            console.log("response is:" + data);
+            if(validateForm(data)){
+                console.log("exit from login");
+                setError("");
+                navigate("/");
+                user.setUsername(username);
+                user.setIsLoggedIn(true);
+                user.setProfilePic(findProfPic(username));
+            }
+        })
     }
 
     const findProfPic=(name)=>{
@@ -58,9 +73,6 @@ const Login=(props)=>{
         ),
         "username": (
             <span className='login-error'>Invalid Username!</span>
-        ),
-        "both": (
-            <span className='login-error'>Invalid Username and Password!</span>
         )
     }
 
