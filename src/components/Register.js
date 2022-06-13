@@ -60,7 +60,21 @@ const Register = () => {
             user.setEmail(email);
             user.setProfilePic("/profilePictures/default.jpg");
             user.setIsLoggedIn(true);
-            user.setBio("Hello World! :)")
+            user.setBio("Hello World! :)");
+            fetch("/Register",{
+                method: "POST",
+                body: JSON.stringify({
+                    username: username,
+                    email: email,
+                    password: password
+                }),
+                headers:{
+                    'Content-Type': 'application/json'
+                }
+            }).then(res=>res.json)
+            .then(data=>{
+                console.log("response is:" + data);
+            })
             navigate("/");
         }
     }
