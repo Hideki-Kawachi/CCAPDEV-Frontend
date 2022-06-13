@@ -62,16 +62,13 @@ const Register = () => {
             user.setIsLoggedIn(true);
             user.setBio("Hello World! :)");
             fetch("/Register",{
-                method: "POST",
-                body: JSON.stringify({
+                method: "GET",
+                headers: {
                     username: username,
                     email: email,
                     password: password
-                }),
-                headers:{
-                    'Content-Type': 'application/json'
-                }
-            }).then(res=>res.json)
+                },
+            }).then(res=>res.json())
             .then(data=>{
                 console.log("response is:" + data);
             })
