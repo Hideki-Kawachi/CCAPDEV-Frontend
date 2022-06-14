@@ -74,7 +74,20 @@ function SystemBuilder() {
     }
 
     function sendPost(){
-        currentBuild = {build: build, date: date, cpu: cpu,cpuCooler: cpuCooler,motherboard: motherboard,ram: ram,storage: storage,gpu: gpu,pcCase: pcCase,powerSupply: powerSupply, total: total};
+        currentBuild = {build: build, date: date.toDateString().substring(4), cpu: cpu,cpuCooler: cpuCooler,motherboard: motherboard,ram: ram,storage: storage,gpu: gpu,pcCase: pcCase,powerSupply: powerSupply, total: total};
+        fetch("/SystemBuilder", {
+            method: "POST",
+            body: JSON.stringify(currentBuild),
+            headers : {
+                'Content-type' : 'application/json',
+                'username' : username
+            }
+        }).then(res=>res.json())
+        .then(data=>{
+            console.log("response from front is:" + data);
+        })
+
+
         if(user.userBuilds.length==1 && user.userBuilds[0].cpu=="default---0"){
             user.setUserBuilds([currentBuild]);
         }

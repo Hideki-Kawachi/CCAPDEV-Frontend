@@ -9,20 +9,28 @@ function UserBuilds() {
     const [buildList, setBuildList] = useState([]);
     const [isEmpty, setIsEmpty] = useState(false);
 
-    useEffect(()=>{     //listing post to display
-        //console.log(user.userBuilds);
-
-        if(user.userBuilds[0].cpu!=="default---0"){
-            user.userBuilds.forEach((currentBuild, index)=>{
-                tempList.push(<UserBuildsBar key={index} build={currentBuild.build} date={currentBuild.date} cpu={currentBuild.cpu} cpuCooler={currentBuild.cpuCooler} motherboard={currentBuild.motherboard} ram={currentBuild.ram} storage={currentBuild.storage} gpu={currentBuild.gpu} pcCase={currentBuild.pcCase} powerSupply={currentBuild.powerSupply} total={currentBuild.total}></UserBuildsBar>)
-            });
-            setBuildList(tempList);
-            setIsEmpty(false);
-        }
-        else{
-            setIsEmpty(true);
-        }
-    },[user.userBuilds])
+    useEffect(()=>{
+        fetch("/UserBuilds",{
+            method : "GET",
+            headers: {
+                username: user.username
+            }
+        }).then(res=>res.json())
+        .then(data=>{
+            if(data.userBuilds.length<=0){
+                setIsEmpty(true);
+                console.log("empty");
+            }
+            else{
+                data.userBuilds.forEach((currentBuild, index) => {
+                    tempList.push(<UserBuildsBar key={index} build={currentBuild.build} date={currentBuild.date} cpu={currentBuild.cpu} cpuCooler={currentBuild.cpuCooler} motherboard={currentBuild.motherboard} ram={currentBuild.ram} storage={currentBuild.storage} gpu={currentBuild.gpu} pcCase={currentBuild.pcCase} powerSupply={currentBuild.powerSupply} total={currentBuild.total}></UserBuildsBar>)
+                });
+                setBuildList(tempList);
+                setIsEmpty(false);
+                console.log(data.userBuilds);
+            }
+        })
+    },[])
 
     const showEmpty={
         true: (

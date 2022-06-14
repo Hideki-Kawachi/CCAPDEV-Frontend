@@ -9,7 +9,7 @@ function UserBuildsBar(props) {
                 <span className='user-builds-bar-name'>Build: {props.build}</span>
             </Link>
             
-            <span className='user-builds-bar-date'>Date Posted: {props.date.toDateString().substring(4)}</span>
+            <span className='user-builds-bar-date'>Date Posted: {props.date}</span>
             <span>Total: ₱ {props.total}</span>
         </div>
      );
