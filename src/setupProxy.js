@@ -41,5 +41,29 @@ module.exports = function(app) {
     })
   );
 
+  app.use(
+    '/PUserBuilds',
+    createProxyMiddleware({
+      target: 'http://localhost:8080',
+      changeOrigin: true,
+    })
+  );
+
+  app.use(
+    '/PToken',
+    createProxyMiddleware({
+      target: 'http://localhost:8080',
+      changeOrigin: true,
+    })
+  );
+
+  app.use(
+    '/PUserBuildsDelete',
+    createProxyMiddleware({
+      target: 'http://localhost:8080',
+      changeOrigin: true,
+    })
+  );
+
   
 };

@@ -9,6 +9,7 @@ function UserHeader(props) {
     const navigate = useNavigate();
 
     const logOut=()=>{
+        localStorage.removeItem('token');
         setIsOpen(false);
         user.setEmail("");
         user.setIsLoggedIn(false);

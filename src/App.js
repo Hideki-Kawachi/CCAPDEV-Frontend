@@ -67,6 +67,30 @@ const App = () =>{
     const systemBuild = {build,setBuild,username,setUsername,buildDate,setBuildDate,cpu,setCpu,cpuCooler,setCpuCooler,motherboard,setMotherboard,ram,setRam,storage,setStorage,
                         gpu,setGpu,pcCase,setPcCase,powerSupply,setPowerSupply,total,setTotal};
 
+    useEffect(()=>{
+        let token = localStorage.getItem('token');
+        if(token!==null){
+            console.log("TOKEN HERE:" + token);
+            fetch("/PToken",{
+                method: "GET",
+                headers: {
+                    token: token
+                }
+            }).then(res=>res.json())
+            .then(data=>{
+                console.log("token found for user:" + data.username);
+                user.setIsLoggedIn(true);
+                user.setUsername(data.username);
+                user.setBio(data.bio);
+                user.setEmail(data.email);
+                user.setUserBuilds(data.userBuilds);
+            })
+        }
+        else{
+            console.log("no token:" + token);
+        }
+    },[])
+
     return(
         <Router>
             <UserProvider value = {user}>

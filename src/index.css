@@ -1745,7 +1745,7 @@ button.star-checked, button.star-unchecked{
 .content-user-builds-view{
   display: flex;
   justify-content: center;
-  background-color: aqua;
+  background-color: var(--primary-highligh);
 }
 
 .user-builds-view-title{

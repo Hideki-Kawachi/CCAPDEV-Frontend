@@ -78,8 +78,8 @@ const Register = () => {
                     user.setEmail(email);
                     user.setProfilePic("/profilePictures/default.jpg");
                     user.setIsLoggedIn(true);
-                    user.setBio("Hello World! :)");
-                    
+                    user.setBio("This is bio");
+                    localStorage.setItem('token',data);
                     setPassword("");
                     setConfirmPassword("");
     

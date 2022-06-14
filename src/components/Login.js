@@ -40,8 +40,9 @@ const Login=(props)=>{
             }
         }).then(res=>res.json())
         .then(data=>{
-            console.log("response is:" + data);
+            console.log("response from login is:" + data);
             if(validateForm(data)){
+                localStorage.setItem('token',data);
                 console.log("exit from login");
                 setError("");
                 navigate("/");

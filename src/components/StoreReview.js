@@ -66,10 +66,10 @@ function StoreReview() {
         }
         else{
             if(!isSortReverse){
-                reviews.sort((a, b)=>new Date(b.date) - new Date(a.date));
+                reviews.sort((a, b)=>b.rating - a.rating);
             }
             else{
-                reviews.sort((a, b)=>new Date(a.date) - new Date(b.date));
+                reviews.sort((a, b)=>a.rating - b.rating);
             }
         }
         tempList = [];
