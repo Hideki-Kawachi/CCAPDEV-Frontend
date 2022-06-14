@@ -32,7 +32,7 @@ const Login=(props)=>{
     const sendLogin=(e)=>{
         e.preventDefault();
 
-        fetch("/Login",{
+        fetch("/PLogin",{
             method: "GET",
             headers: {
                 username: username,

@@ -23,7 +23,7 @@ function StoreReviewView() {
                 </div>
                 <div className='store-review-view-sub-header'>
                     <span>posted by: </span>
-                    <span className='store-review-view-user'> {info.state.user}</span>
+                    <span className='store-review-view-user'> {info.state.username}</span>
                     <span className='store-review-view-date'>{info.state.date}</span>
                 </div>
             </>

@@ -62,7 +62,7 @@ const Register = () => {
         setError("");
         console.log("FIRST NAME HERE:" + firstName);
         if(validateForm()){     //form complete checking
-            fetch("/Register",{
+            fetch("/PRegister",{
                 method: "GET",
                 headers: {
                     first: firstName,

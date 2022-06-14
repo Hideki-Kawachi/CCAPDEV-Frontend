@@ -7,6 +7,7 @@ import StoreReviewContext from './context/StoreReviewContext';
 
 function StoreReview() {
     let tempList=[];
+    /*
     let reviewPost1 = new reviewPost("PC EXPRESS", "Great shop, flawless customer service but there are too many customers", new Date('April 28, 2022 15:47:00'), 4, "Hideki123");
     let reviewPost2 = new reviewPost("PC CORNER", "Product availability is a bit rough and staff are underprepared", new Date('April 25, 2022 14:32:00'), 3, "CarloC");
     let reviewPost3 = new reviewPost("Desktop Workshop", "This shop is good! Excellent service.", new Date('Febuary 22, 2022 2:45:00'), 5, "MartinA");
@@ -14,12 +15,13 @@ function StoreReview() {
     let reviewPost5 = new reviewPost("EasyPc", "Great online service.  Fast delivery and cheap prices.  A win for me!", new Date('December 25, 2021 23:31:00'), 4, "SirN");
     let reviewPost6 = new reviewPost("Eazzy", "This shop is bad...I don't know what else to say", new Date('October 12, 2020 23:31:00'), 2, "SirN");
     let reviewPost7 = new reviewPost("Octagon", "You will find everything you need here.  Will definitely go again", new Date('January 25, 2021 23:31:00'), 5, "SirN");
+    */
 
     const [search, setSearch] = useState("");
     const [sort, setSort] = useState("Date posted");
     const [isSortReverse, setIsSortReverse] = useState(false);
     const [reviewList, setReviewList] = useState([]);
-    const [reviews, setReviews] = useState([reviewPost1,reviewPost2,reviewPost3,reviewPost4,reviewPost5,reviewPost6,reviewPost7]);
+    const [reviews, setReviews] = useState([]);
     const [isLoggedOpen, setIsLoggedOpen] = useState(false);
 
     const user = useContext(UserContext);
@@ -34,8 +36,18 @@ function StoreReview() {
         this.username = username;
     }
 
-    
-    
+    useEffect(()=>{
+        fetch("/PStoreReview",{
+            method: "GET"
+        }).then(res=>res.json())
+        .then(data=>{
+            data.forEach((review, index) => {
+                console.log("date is:" + review.date);
+                setReviews(oldReviews=>[new reviewPost(review.title, review.description, review.date, review.rating, review.username),...oldReviews]);
+            });
+        })
+    },[])
+
     useEffect(()=>{
         if(storeReview.reviewTitle.length>0 && storeReview.reviewDescription.length>0 && storeReview.reviewUsername.length>0){
             setReviews(oldReviews=>[new reviewPost(storeReview.reviewTitle, storeReview.reviewDescription, storeReview.reviewDate, storeReview.rating, storeReview.reviewUsername),...oldReviews])
@@ -46,18 +58,18 @@ function StoreReview() {
         if(sort=="Date posted")
         {
             if(!isSortReverse){
-                reviews.sort((a, b)=>b.date - a.date);
+                reviews.sort((a, b)=>new Date(b.date) - new Date(a.date));
             }
             else{
-                reviews.sort((a, b)=>a.date - b.date);
+                reviews.sort((a, b)=>new Date(a.date) - new Date(b.date));
             }
         }
         else{
             if(!isSortReverse){
-                reviews.sort((a, b)=>b.rating - a.rating);
+                reviews.sort((a, b)=>new Date(b.date) - new Date(a.date));
             }
             else{
-                reviews.sort((a, b)=>a.rating - b.rating);
+                reviews.sort((a, b)=>new Date(a.date) - new Date(b.date));
             }
         }
         tempList = [];

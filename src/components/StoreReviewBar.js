@@ -14,7 +14,7 @@ function StoreReviewBar(props) {
     let finalDate;
 
     useEffect(()=>{
-        setDatePosted(props.date);
+        setDatePosted(new Date(props.date));
         setTitle(props.title);
         setDescription(props.description);
         setRating(props.rating);

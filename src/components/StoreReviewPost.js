@@ -15,6 +15,7 @@ function StoreReviewPost() {
     const [rating, setRating] = useState(0);
     const [media, setMedia] = useState("");
     const [username, setUsername] = useState(user.username);
+    const [isDisabled, setIsDisabled] = useState(true);
     
 
     const navigate = useNavigate();
@@ -22,8 +23,39 @@ function StoreReviewPost() {
     const back=()=>{
         navigate("/StoreReview");
     }
+
+    useEffect(()=>{
+        validatePost();
+    },[title,description,rating])
+
+    function validatePost(){
+        if(title.length==0 || description.length==0 || rating==0)
+        {
+            setIsDisabled(true);
+        }
+        else{
+            setIsDisabled(false);
+        }
+    }
     
     function sendPost(){
+        fetch("/PStoreReviewPost",{
+            method: 'POST',
+            body: JSON.stringify({
+                username: username,
+                title: title,
+                description: description,
+                date: date,
+                rating: rating
+            }),
+            headers: {
+                'Content-Type' : 'application/json'
+            }
+        }).then(res=>res.json())
+        .then(data=>{
+            console.log("from review post:" + data);
+        })
+
         storeReview.setReviewTitle(title);
         storeReview.setReviewUsername(username);
         storeReview.setReviewDate(date);
@@ -31,7 +63,16 @@ function StoreReviewPost() {
         storeReview.setRating(rating);
         //storeReview.setReviewMedia(media);
         navigate("/StoreReview");
-    }
+    };
+
+    const buttonDisabled = {
+        true: (
+            <span className='store-review-post-submit' style={{backgroundColor: "gray"}}>Post Review</span>
+        ),
+        false: (
+            <button className='store-review-post-submit' type={'button'} onClick={()=>sendPost()} disabled={isDisabled}>Post Review</button>
+        )
+    };
 
     return (
         <div className='content-store-review-post'>
@@ -39,7 +80,7 @@ function StoreReviewPost() {
                 <>
                     <div  className='store-review-post-header'>
                     <button className='back-button' onClick={back}></button>
-                        <span>Title: </span>
+                        <span>Store: </span>
                         <input className='store-review-post-title' type={'text'} value={title} onChange={(e)=>setTitle(e.target.value)}></input>
                         <StarRating setRating = {setRating} edit = {true}></StarRating>  
                     </div>
@@ -53,7 +94,7 @@ function StoreReviewPost() {
                     <span>Description:</span>
                     <textarea className='store-review-post-description-input' type={'textarea'} value={description} placeholder={"..."} onChange={(e)=>setDescription(e.target.value)}></textarea>
                 </div>
-                <button className='store-review-post-submit' type={'button'} onClick={()=>sendPost()}>Post Review</button>
+                {buttonDisabled[isDisabled]}
             </form>
         </div>
         );
