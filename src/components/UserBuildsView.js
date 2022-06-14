@@ -17,7 +17,8 @@ function UserBuildsView() {
     const gpu = info.state.gpu.split("---");
     const pcCase = info.state.pcCase.split("---");
     const powerSupply = info.state.powerSupply.split("---");
-
+    const total = info.state.total;
+    const date = info.state.date;
     //console.log("info here" + info);
 
     function back(){
@@ -27,12 +28,35 @@ function UserBuildsView() {
     function deleteBuild(){
         if(user.userBuilds.length>1){
             user.userBuilds.forEach((currentBuild, index)=>{
-                if(currentBuild.build == build){
+                if(currentBuild.build == build && currentBuild.date == date){
+                    fetch("/PUserBuildsDelete",{
+                        method: "POST",
+                        body: JSON.stringify(currentBuild),
+                        headers: {
+                            'Content-Type' : 'application/json',
+                            username : user.username
+                        }
+                    }).then(res=>res.json())
+                    .then(data=>{
+                        console.log("data is:" + data);
+                    })
                     user.userBuilds.pop(index);
                 }
             });
         }
         else{
+            fetch("/PUserBuildsDelete",{
+                method: "POST",
+                body: JSON.stringify(user.userBuilds[0]),
+                headers: {
+                    'Content-Type' : 'application/json',
+                    username : user.username
+                }
+            }).then(res=>res.json())
+            .then(data=>{
+                console.log("data is:" + data);
+            })
+
             user.userBuilds.forEach((currentBuild)=>{
                 currentBuild.cpu = "default---0";
                 currentBuild.cpuCooler = "default---0";
@@ -47,7 +71,6 @@ function UserBuildsView() {
                 currentBuild.total = 0;
             });
         }
-       
         navigate("/UserBuilds");
     }
 

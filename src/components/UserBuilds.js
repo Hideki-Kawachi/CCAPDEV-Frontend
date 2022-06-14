@@ -10,14 +10,14 @@ function UserBuilds() {
     const [isEmpty, setIsEmpty] = useState(false);
 
     useEffect(()=>{
-        fetch("/UserBuilds",{
+        fetch("/PUserBuilds",{
             method : "GET",
             headers: {
                 username: user.username
             }
         }).then(res=>res.json())
         .then(data=>{
-            if(data.userBuilds.length<=0){
+            if(data.userBuilds==false || data.userBuilds==undefined){
                 setIsEmpty(true);
                 console.log("empty");
             }
