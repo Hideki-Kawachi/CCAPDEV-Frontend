@@ -8,10 +8,14 @@ const ForumBar = (props) => {
     const [description, setDescription] = useState(props.description);
     const [flair, setFlair] = useState(props.flair);
     const [media, setMedia] = useState(props.media);
-    const [date, setDate] = useState(props.date);
+    const [datePosted, setDate] = useState(props.date);
     const [username, setUsername] = useState(props.username);
     const [upvotes, setUpvotes] = useState(props.upvotes);
     const [comments, setComments] = useState(props.comments);
+    const [dateShow, setDateShow] = useState("");
+
+    const currentDate = new Date();
+    let finalDate;
 
     const postContext = useContext(PostContext);
 
@@ -25,6 +29,57 @@ const ForumBar = (props) => {
         setUpvotes(props.upvotes);
         setComments(props.comments);
     },[props])
+
+    useEffect(()=>{
+        if(currentDate.getFullYear()===datePosted.getFullYear()){
+            if(currentDate.getMonth()===datePosted.getMonth()){
+                if(currentDate.getDate()===datePosted.getDate()){
+                    if(currentDate.getHours()===datePosted.getHours()){
+                        if(currentDate.getMinutes()===datePosted.getMinutes()){
+                            finalDate = currentDate.getSeconds() - datePosted.getSeconds();
+                            if(finalDate==1)
+                                setDateShow(finalDate + " second ago");
+                            else
+                                setDateShow(finalDate + " seconds ago");
+                        }
+                        else{
+                            finalDate = currentDate.getMinutes() - datePosted.getMinutes();
+                            if(finalDate==1)
+                                setDateShow(finalDate + " minute ago");
+                            else
+                                setDateShow(finalDate + " minutes ago");
+                        }
+                        
+                    }
+                    else{
+                        finalDate = currentDate.getHours() - datePosted.getHours();
+                        if(finalDate==1)
+                            setDateShow(finalDate + " hour ago");
+                        else
+                            setDateShow(finalDate + " hours ago");
+                    }
+                    
+                }
+                else{
+                    finalDate = currentDate.getDate() - datePosted.getDate();
+                    if(finalDate==1)
+                        setDateShow(finalDate + " day ago");
+                    else
+                        setDateShow(finalDate + " days ago");
+                }
+                
+            }
+            else{
+                finalDate = datePosted.toDateString().substring(4);
+                setDateShow(finalDate);
+            }
+        }
+        else{
+            finalDate = datePosted.toDateString().substring(4);
+            setDateShow(finalDate);
+        }
+        
+    },[currentDate]);
     
     function sendPost(){
         postContext.setPostComments(comments);
@@ -32,7 +87,7 @@ const ForumBar = (props) => {
         postContext.setPostDescription(description);
         postContext.setFlair(flair);
         postContext.setPostMedia(media);
-        postContext.setPostDate(date);
+        postContext.setPostDate(datePosted);
         postContext.setPostUpvotes(upvotes);
         postContext.setPostUsername(username);
     }
@@ -56,7 +111,7 @@ const ForumBar = (props) => {
 
 
             <div className='store-review-bar-right'>
-                <span className='forum-bar-date'>{props.date.toDateString().substring(4)}</span>
+                <span className='forum-bar-date'>{dateShow}</span>
                 <span className='forum-bar-upvotes' >{props.upvotes}</span>
                 </div>
             </div>

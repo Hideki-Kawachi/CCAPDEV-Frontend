@@ -58,8 +58,9 @@ const UserProfile =()=>{
             setProfilePic(URL.createObjectURL(e.target.files[0]));
             fetch("/PUploadProfPic",{
                 method: "POST",
-                body: formData,
+                body: JSON.stringify(formData),
                 headers: {
+                    username : user.username,
                     filename : e.target.files[0].name
                 }
             }).then(res=>res.json())
