@@ -74,6 +74,14 @@ module.exports = function(app) {
   );
 
   app.use(
+    '/PUploadProfPic',
+    createProxyMiddleware({
+      target: 'http://localhost:8080',
+      changeOrigin: true,
+    })
+  );
+
+  app.use(
     '/PPostCreate',
     createProxyMiddleware({
       target: 'http://localhost:8080',
