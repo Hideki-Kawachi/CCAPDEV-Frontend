@@ -7,17 +7,21 @@ const ForumBar = (props) => {
     const [description, setDescription] = useState(props.description);
     const [flair, setFlair] = useState(props.flair);
     const [media, setMedia] = useState(props.media);
-    const [date, setDate] = useState(props.date);
+    const [datePosted, setDatePosted] = useState(props.date);
+    const [dateShow, setDateShow] = useState("");
     const [username, setUsername] = useState(props.username);
     const [upvotes, setUpvotes] = useState(props.upvotes);
     const [comments, setComments] = useState(props.comments);
+
+    const currentDate = new Date();
+    let finalDate;
 
     useEffect(()=>{
         setTitle(props.title);
         setDescription(props.description);
         setFlair(props.flair);
         setMedia(props.media);
-        setDate(props.date);
+        setDatePosted(props.date);
         setUsername(props.username);
         setUpvotes(props.upvotes);
         setComments(props.comments);
@@ -93,7 +97,7 @@ const ForumBar = (props) => {
 
 
             <div className='store-review-bar-right'>
-                <span className='forum-bar-date'>{props.date.toDateString().substring(4)}</span>
+                <span className='forum-bar-date'>{dateShow}</span>
                 <span className='forum-bar-upvotes' >{props.upvotes}</span>
                 </div>
             </div>

@@ -5,7 +5,7 @@ import ForumBar from "./ForumBar";
 
 const Forum = () => {
     let tempList=[];
-
+/*
     let comment1Post1 = new forumComment("If you’re coming from the 2019 i9 MBP I feel for you, those things are nut roasters :D What software do you use for editing OP? That’ll play a factor.", "BrownKeycappin", new Date('April 28, 2022 15:47:00'), 2);
     let comment2Post1 = new forumComment("I think a GPU upgrade to something like a 5700XT would serve you well if you wanna go 1440p ultrawide. That should be enough", "PerpMan123", new Date('April 28, 2022 15:47:00'), 5);
     let commentListPost1 = new Array(comment1Post1,comment2Post1);
@@ -16,7 +16,7 @@ const Forum = () => {
     let forumPost4 = new forumPost("New install of Windows 10 and missing drivers?", "Tips and Tricks", "genesheehee", new Date('April 24, 2022 15:47:00'), "Yo, so you’ve just completed a new install of Windows 10 on your new PC, did the required updates, but you go into Device Manager and see that the drivers that should have been installed with the updates, are not. Just do the update again and click on “Optional Updates”, then “Hardware Updates”. In almost all cases, the missing drivers will be there. For whatever reason, hardware that doesn’t have a driver at all, shows up as optional updates in Windows.", 4, commentListPost1,"");
     let forumPost5 = new forumPost("Consider undervolting your GPU.", "General Discussion and Trends", "Cotriii", new Date('April 23, 2022 15:47:00'), "Modern cards keep trying to boost as high as possible, generate a bunch of unnecessary heat, ramp the fans up to dissipate that heat, and end up clocking down slightly when they heat up to equilibrium.With a modest undervolt the performance of your GPU should not change significantly (provided you don't overdo it), and you can significantly reduce heat output by reducing power draw, which in turn makes your fans spin slower, which means a quieter card.TL;DR: Lower power draw = less heat generated = lower fan RPM = less noise. Take 20-30 minutes to dial in a stable undervolt", 2, commentListPost1,"");
     let forumPost6 = new forumPost("GPU update for April 2022.", "News", "waka8888", new Date('May 23, 2020 15:47:00'), "There are no new GPU launches for this month after a bit of activity like the RTX 3050 and RX 6500 XT releases from Nvidia and AMD, respectively. There are however a few upcoming products, hopefully by the end of this year.The GeForce RTX 3090 was announced back at CES, but hasn’t materialized just yet. We’re expecting to hear more about that shortly. On the AMD side, there are rumors of a mid-cycle RDNA2 refresh before RDNA3 launches.", 1, commentListPost1,"");
-
+*/
 
     const [sort, setSort] = useState("Date posted");
     const [isSortReverse, setIsSortReverse] = useState(false);
@@ -27,7 +27,7 @@ const Forum = () => {
     const postContext = useContext(PostContext);
     const info = useLocation();
 
-    function forumPost(title, flair, username, date, description, upvotes, comments){
+    function forumPost(title, flair, username, date, description, upvotes, comments, media){
         this.title = title;
         this.flair = flair;
         this.description = description;
@@ -35,7 +35,7 @@ const Forum = () => {
         this.upvotes = upvotes;
         this.username = username;
         this.comments = comments;
-        //this.media = media;
+        this.media = media;
     }
 
     function forumComment(comment, username, date, upvotes){
@@ -45,16 +45,19 @@ const Forum = () => {
         this.upvotes = upvotes;
     }
 
-    useEffect(()=>{     //listing post to display
-        fetch("/PForum",{
+    useEffect(()=>{
+        fetch("/PForum",
+        {
             method: "GET"
         }).then(res=>res.json())
-        .then(data=>{   
-        data.forEach((post,index)=>{
-                //console.log("Forum Comments" + post.comments[1].comment);
-                setPosts(oldPosts=>[new forumPost( post.title, post.flair, post.description, post.date, post.upvotes, post.username, post.comments),...oldPosts])
-            });
+        .then(data=>{
+            data.forEach((post,index)=>{
+                setPosts(oldPosts=>[new forumPost(post.title, post.flair, post.username, new Date(post.date), post.description,  post.upvotes, post.comments, post.media ),...oldPosts])
+                tempList.push(<ForumBar key={index} title={post.title} flair={post.flair} username={post.username} date={new Date(post.date)} description={post.description} upvotes={post.upvotes} comments={post.comments} media={post.media}></ForumBar>)
+            })
+            setPostList(tempList);
         })
+
     },[])
 
     useEffect(()=>{     //post appending
@@ -69,10 +72,10 @@ const Forum = () => {
         if(sort=="Date posted")
         {
             if(!isSortReverse){
-                posts.sort((a, b)=>b.date - a.date);
+                posts.sort((a, b)=>new Date(b.date) -  new Date(a.date));
             }
             else{
-                posts.sort((a, b)=>a.date - b.date);
+                posts.sort((a, b)=>new Date(a.date) -  new Date(b.date));
             }
         }
         else{
@@ -94,7 +97,7 @@ const Forum = () => {
                 }
             })
             setPostList(tempList);
-    },[sort,isSortReverse,flairFilter])
+    },[sort,isSortReverse,flairFilter,posts])
 
     function sortDateClick()
     {
