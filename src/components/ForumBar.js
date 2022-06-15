@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import PostContext from './context/PostContext';
 
 const ForumBar = (props) => {
 
@@ -13,8 +12,6 @@ const ForumBar = (props) => {
     const [upvotes, setUpvotes] = useState(props.upvotes);
     const [comments, setComments] = useState(props.comments);
 
-    const postContext = useContext(PostContext);
-
     useEffect(()=>{
         setTitle(props.title);
         setDescription(props.description);
@@ -25,23 +22,63 @@ const ForumBar = (props) => {
         setUpvotes(props.upvotes);
         setComments(props.comments);
     },[props])
-    
-    function sendPost(){
-        postContext.setPostComments(comments);
-        postContext.setPostTitle(title);
-        postContext.setPostDescription(description);
-        postContext.setFlair(flair);
-        postContext.setPostMedia(media);
-        postContext.setPostDate(date);
-        postContext.setPostUpvotes(upvotes);
-        postContext.setPostUsername(username);
-    }
+
+    useEffect(()=>{
+        if(currentDate.getFullYear()===datePosted.getFullYear()){
+            if(currentDate.getMonth()===datePosted.getMonth()){
+                if(currentDate.getDate()===datePosted.getDate()){
+                    if(currentDate.getHours()===datePosted.getHours()){
+                        if(currentDate.getMinutes()===datePosted.getMinutes()){
+                            finalDate = currentDate.getSeconds() - datePosted.getSeconds();
+                            if(finalDate==1)
+                                setDateShow(finalDate + " second ago");
+                            else
+                                setDateShow(finalDate + " seconds ago");
+                        }
+                        else{
+                            finalDate = currentDate.getMinutes() - datePosted.getMinutes();
+                            if(finalDate==1)
+                                setDateShow(finalDate + " minute ago");
+                            else
+                                setDateShow(finalDate + " minutes ago");
+                        }
+                        
+                    }
+                    else{
+                        finalDate = currentDate.getHours() - datePosted.getHours();
+                        if(finalDate==1)
+                            setDateShow(finalDate + " hour ago");
+                        else
+                            setDateShow(finalDate + " hours ago");
+                    }
+                    
+                }
+                else{
+                    finalDate = currentDate.getDate() - datePosted.getDate();
+                    if(finalDate==1)
+                        setDateShow(finalDate + " day ago");
+                    else
+                        setDateShow(finalDate + " days ago");
+                }
+                
+            }
+            else{
+                finalDate = datePosted.toDateString().substring(4);
+                setDateShow(finalDate);
+            }
+        }
+        else{
+            finalDate = datePosted.toDateString().substring(4);
+            setDateShow(finalDate);
+        }
+        
+    },[currentDate]);
 
     return(
 
             <div className='forum-bar-container'>
                 <div className='store-review-bar-left'>
-                    <Link className='store-review-bar-top-container' to={'/ForumPost'} onClick={sendPost}>
+                    <Link className='store-review-bar-top-container' to={'/ForumPost'} state={{title: title, description: description, flair: flair, dateShow: dateShow, upvotes: upvotes, username: username, comments: comments, media: media}}>
                     <span className='post-title'>{props.title}</span>
                     </Link>
                     <br></br>

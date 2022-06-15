@@ -4,23 +4,18 @@ import { useNavigate } from 'react-router-dom';
 import UserContext from './context/UserContext';
 import PostContext from './context/PostContext';
 import Login from './Login';
+import { useLocation } from 'react-router-dom';
 
 const ForumPost = () => {
+
+    const info = useLocation();
     
     const navigate = useNavigate();
     const user = useContext(UserContext);
     //const commentContext = useContext(CommentContext);
     const postContext = useContext(PostContext);
 
-/*
-    const [title, setTitle] = useState(postContext.postTitle);
-    const [description, setDescription] = useState(postContext.postDescription);
-    const [flair, setFlair] = useState(postContext.flair);
-    const [media, setMedia] = useState(postContext.postMedia);
-    const [date, setDate] = useState(postContext.postDate);
-    const [username, setUsername] = useState(postContext.postUsername);
-*/
-    const [upvotes, setUpvotes] = useState(postContext.postUpvotes);
+    const [upvotes, setUpvotes] = useState(info.state.upvotes);
 
     const [isLoggedOpen, setIsLoggedOpen] = useState(false);
 
@@ -81,6 +76,24 @@ const ForumPost = () => {
         )
     };
 
+    useEffect(()=>{
+        fetch("/PPostUpdate",{
+            method: "POST",
+            body: JSON.stringify({
+                title: info.state.title,
+                description: info.state.description,
+                upvotes: upvotes,
+                comments: commentList,
+            }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }).then(res=>res.json())
+        .then(data=>{
+            console.log("data from post" + data);
+        })
+    },[upvotes, commentList, newComment])
+
     return (
         
     <div className='content-post-view'>
@@ -92,8 +105,8 @@ const ForumPost = () => {
         <div className='content-forum-post'>
             <div className = "forum-post-left">
                 <div className = "below-post-section"> 
-                    <img className="upvote-post" onClick={()=>postContext.setPostUpvotes(upvotes + 1)} src={require('../media/upvote-icon.png')} alt="Comments"/> 
-                    <p className = 'upvotes-count'>{postContext.postUpvotes}</p><img className="downvote-post" onClick={()=>postContext.setPostUpvotes(upvotes - 1)} src={require('../media/upvote-icon.png')} alt="Comments"/> 
+                    <img className="upvote-post" onClick={()=>{setUpvotes(info.state.upvotes+1)}} src={require('../media/upvote-icon.png')} alt="Comments"/> 
+                    <p className = 'upvotes-count'>{upvotes}</p><img className="downvote-post" onClick={()=>{setUpvotes(info.state.upvotes-1)}} src={require('../media/upvote-icon.png')} alt="Comments"/> 
                 </div>
                 </div>
             <div  className='store-review-view-header'>
@@ -102,17 +115,17 @@ const ForumPost = () => {
 
             <div className = "forum-post-right">
             <button className='back-button-forum' onClick={back}></button>
-                <div className='store-review-view-title'>{postContext.postTitle}</div>  
-                <div className ="forum-post-flair">{postContext.flair}</div>
+                <div className='store-review-view-title'>{info.state.title}</div>  
+                <div className ="forum-post-flair">{info.state.flair}</div>
 
                 <div className='forum-view-description'>
                 <div className='store-review-view-sub-header'>
                         <img src={profilePic} id='post-user-profile-pic'></img> 
-                        <span className='forum-post-view-user'>{postContext.postUsername}</span>
-                        <p className='forum-post-date'>{postContext.postDate.toDateString().substring(4)}</p>
+                        <span className='forum-post-view-user'>{info.state.username}</span>
+                        <p className='forum-post-date'>{info.state.dateShow}</p>
                     </div>
                     <p className= 'forum-post-text'>
-                        {postContext.postDescription}
+                        {info.state.description}
                     </p>
                     </div>
                     <p><img className="icon" src={require('../media/comments-icon.png')} alt="Comments"/> Leave a Comment: </p>
