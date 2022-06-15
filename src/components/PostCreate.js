@@ -23,16 +23,32 @@ function PostCreate() {
     
     function sendPost(){
         console.log(flair);
-        postContext.setPostTitle(title);
-        postContext.setPostUsername(username);
-        postContext.setPostDate(date);
-        postContext.setPostDescription(description);
-        postContext.setFlair(flair);
         /*postContext.setImages(images);
         console.log("this is the description:" + description);
         console.log("flair is:" + flair);
         */
-        navigate("/Forum");
+
+        fetch("/PPostCreate", {
+            method: "GET",
+            headers : {
+                title : title,
+                description : category,
+                category : flair,
+                date : date,
+                username : username
+            }
+        }).then(res=>res.json())
+        .then(data=>{
+            console.log("response from front is:" + data);
+            postContext.setPostTitle(title);
+            postContext.setPostUsername(username);
+            postContext.setPostDate(date);
+            postContext.setPostDescription(description);
+            postContext.setFlair(flair);
+            navigate("/Forum");
+        })
+        
+    
     }
 
 
@@ -70,7 +86,7 @@ function PostCreate() {
                     <span>Description:</span>
                     <textarea className='store-review-post-description-input' type={'textarea'} value={description} placeholder={"..."} onChange={(e)=>setDescription(e.target.value)}></textarea>
                 </div>
-                <button className='store-review-post-submit' type={'button'} onClick={()=>sendPost()}>Create Post</button>
+                <button className='store-review-post-submit' type={'button'} onClick={sendPost}>Create Post</button>
             </form>
         </div>
         );
