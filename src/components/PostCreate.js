@@ -29,13 +29,16 @@ function PostCreate() {
         */
 
         fetch("/PPostCreate", {
-            method: "GET",
-            headers : {
+            method: "POST",
+            body : JSON.stringify({
                 title : title,
-                description : category,
+                body : description,
                 category : flair,
                 date : date,
                 username : username
+            }),
+            headers : {
+                'Content-Type' : 'application/json'
             }
         }).then(res=>res.json())
         .then(data=>{
