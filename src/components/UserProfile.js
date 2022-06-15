@@ -22,6 +22,29 @@ const UserProfile =()=>{
         user.setBio(bio);
         setEditOpen(false);
         setSaveOpen(true);
+
+        fetch('\PUpdateBio', {
+            method: 'POST',
+            body: JSON.stringify({
+                username: user.username,
+                bio: bio
+            }),
+            headers: {
+                'Content-Type': "application/json" 
+            }
+        }).then(res => {
+            return res.json();
+        })
+        .then (data => { 
+            if (data){
+                window.location.reload();
+            }
+
+            console.log("none");
+        })
+        .catch( (error)=>
+            console.log(error)
+        );
     }
 
     function discardChanges(){
