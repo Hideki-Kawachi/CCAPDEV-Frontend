@@ -23,7 +23,7 @@ const UserProfile =()=>{
         setEditOpen(false);
         setSaveOpen(true);
 
-        fetch('\PUpdateBio', {
+        fetch('/PUpdateBio', {
             method: 'POST',
             body: JSON.stringify({
                 username: user.username,
