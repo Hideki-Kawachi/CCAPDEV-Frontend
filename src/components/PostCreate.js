@@ -32,10 +32,11 @@ function PostCreate() {
             method: "POST",
             body : JSON.stringify({
                 title : title,
-                body : description,
-                category : flair,
+                description : description,
+                flair : flair,
                 date : date,
-                username : username
+                username : username,
+                comments : []
             }),
             headers : {
                 'Content-Type' : 'application/json'
