@@ -21,13 +21,13 @@ const Forum = () => {
     const [sort, setSort] = useState("Date posted");
     const [isSortReverse, setIsSortReverse] = useState(false);
     const [postList, setPostList] = useState([]);
-    const [posts, setPosts] = useState([forumPost1,forumPost2,forumPost3,forumPost4,forumPost5,forumPost6]);
+    const [posts, setPosts] = useState([]); //forumPost1,forumPost2,forumPost3,forumPost4,forumPost5,forumPost6
     const [flairFilter, setFlairFilter] = useState("");
 
     const postContext = useContext(PostContext);
     const info = useLocation();
 
-    function forumPost(title, flair, username, date, description, upvotes, comments, media){
+    function forumPost(title, flair, username, date, description, upvotes, comments){
         this.title = title;
         this.flair = flair;
         this.description = description;
@@ -35,7 +35,7 @@ const Forum = () => {
         this.upvotes = upvotes;
         this.username = username;
         this.comments = comments;
-        this.media = media;
+        //this.media = media;
     }
 
     function forumComment(comment, username, date, upvotes){
@@ -45,19 +45,25 @@ const Forum = () => {
         this.upvotes = upvotes;
     }
 
+    useEffect(()=>{     //listing post to display
+        fetch("/PForum",{
+            method: "GET"
+        }).then(res=>res.json())
+        .then(data=>{   
+        data.forEach((post,index)=>{
+                //console.log("Forum Comments" + post.comments[1].comment);
+                setPosts(oldPosts=>[new forumPost( post.title, post.flair, post.description, post.date, post.upvotes, post.username, post.comments),...oldPosts])
+            });
+        })
+    },[])
+
     useEffect(()=>{     //post appending
         if(postContext.postTitle.length>0 && postContext.postDescription.length>0 && postContext.postUsername.length>0){
             setPosts(oldPosts=>[new forumPost(postContext.postTitle, postContext.flair, postContext.postUsername, postContext.postDate, postContext.postDescription,  postContext.postUpvotes, postContext.postComments, postContext.postMedia ),...oldPosts])
         }
     },[postContext]);
 
-    useEffect(()=>{     //listing post to display
-            posts.forEach((post,index)=>{
-                //console.log("Forum Comments" + post.comments[1].comment);
-                tempList.push(<ForumBar key={index} title={post.title} flair={post.flair} username={post.username} date={post.date} description={post.description} upvotes={post.upvotes} comments={post.comments} media={post.media}></ForumBar>)
-            })
-            setPostList(tempList);
-    },[posts])
+
 
     useEffect(()=>{
         if(sort=="Date posted")
@@ -84,7 +90,7 @@ const Forum = () => {
                     tempList.push(<ForumBar key={index} title={post.title} flair={post.flair} username={post.username} date={post.date} description={post.description} upvotes={post.upvotes} comments={post.comments} media={post.media}></ForumBar>)
                 }
                 else if(flairFilter==""){
-                    tempList.push(<ForumBar key={index} title={post.title} flair={post.flair} username={post.username} date={post.date} description={post.description} upvotes={post.upvotes} comments={post.comments} media={post.media}></ForumBar>)
+                    tempList.push(<ForumBar key={index} title={post.title} flair={post.flair} username={post.username} date={post.date} description={post.description} upvotes={post.upvotes} comments={post.comments}></ForumBar>)
                 }
             })
             setPostList(tempList);

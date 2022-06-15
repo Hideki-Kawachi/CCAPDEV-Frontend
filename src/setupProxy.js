@@ -81,5 +81,12 @@ module.exports = function(app) {
     })
   );
 
+  app.use(
+    '/PForum',
+    createProxyMiddleware({
+      target: 'http://localhost:8080',
+      changeOrigin: true,
+    })
+  );
   
 };
