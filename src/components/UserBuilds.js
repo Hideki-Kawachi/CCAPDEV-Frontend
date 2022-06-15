@@ -30,7 +30,7 @@ function UserBuilds() {
                 console.log(data.userBuilds);
             }
         })
-    },[])
+    },[user])
 
     const showEmpty={
         true: (

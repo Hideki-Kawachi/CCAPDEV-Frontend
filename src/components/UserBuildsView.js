@@ -45,19 +45,18 @@ function UserBuildsView() {
             });
         }
         else{
-            fetch("/PUserBuildsDelete",{
-                method: "POST",
-                body: JSON.stringify(user.userBuilds[0]),
-                headers: {
-                    'Content-Type' : 'application/json',
-                    username : user.username
-                }
-            }).then(res=>res.json())
-            .then(data=>{
-                console.log("data is:" + data);
-            })
-
             user.userBuilds.forEach((currentBuild)=>{
+                fetch("/PUserBuildsDelete",{
+                    method: "POST",
+                    body: JSON.stringify(currentBuild),
+                    headers: {
+                        'Content-Type' : 'application/json',
+                        username : user.username
+                    }
+                }).then(res=>res.json())
+                .then(data=>{
+                    console.log("data is:" + data);
+                })
                 currentBuild.cpu = "default---0";
                 currentBuild.cpuCooler = "default---0";
                 currentBuild.motherboard = "default---0";
