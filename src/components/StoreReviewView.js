@@ -12,14 +12,14 @@ function StoreReviewView() {
         navigate(-1);
         console.log("EXIT FROM LOGIN");
     }
-
+    console.log("rating:" + info.state.rating);
     return (
         <div className='content-store-review-view'>
             <>
                 <div  className='store-review-view-header'>
                 <button className='back-button' onClick={back}></button>
                     <span className='store-review-view-title'>{info.state.title}</span>
-                    <StarRating rating = {info.state.rating}></StarRating>
+                    <StarRating rating = {info.state.rating} edit = {false}></StarRating>
                 </div>
                 <div className='store-review-view-sub-header'>
                     <span>posted by: </span>

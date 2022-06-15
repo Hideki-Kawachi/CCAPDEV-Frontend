@@ -42,7 +42,6 @@ function StoreReview() {
         }).then(res=>res.json())
         .then(data=>{
             data.forEach((review, index) => {
-                console.log("date is:" + review.date);
                 setReviews(oldReviews=>[new reviewPost(review.title, review.description, review.date, review.rating, review.username),...oldReviews]);
             });
         })

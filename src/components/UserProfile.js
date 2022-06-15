@@ -23,7 +23,7 @@ const UserProfile =()=>{
         setEditOpen(false);
         setSaveOpen(true);
 
-        fetch('\PUpdateBio', {
+        fetch('/PUpdateBio', {
             method: 'POST',
             body: JSON.stringify({
                 username: user.username,
@@ -36,11 +36,7 @@ const UserProfile =()=>{
             return res.json();
         })
         .then (data => { 
-            if (data){
-                window.location.reload();
-            }
-
-            console.log("none");
+            console.log("bio update result is:" + data);
         })
         .catch( (error)=>
             console.log(error)
@@ -59,10 +55,6 @@ const UserProfile =()=>{
             setProfilePic(URL.createObjectURL(e.target.files[0]));
         }
     }
-    
-    useEffect(()=>{
-        console.log(profilePic + "asdadsadasdas");
-    })
 
     const saved={
         true:(
@@ -70,7 +62,9 @@ const UserProfile =()=>{
         )
     }
 
-    console.log("profile pic is==" + profilePic);
+    useEffect(()=>{
+        setBio(user.bio);
+    },[user])
 
     if(editOpen){
         if(modalOpen){
