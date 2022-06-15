@@ -97,5 +97,30 @@ module.exports = function(app) {
     })
   );
 
+  app.use(
+    '/PCommentUpdate',
+    createProxyMiddleware({
+      target: 'http://localhost:8080',
+      changeOrigin: true,
+    })
+  );
+
+  app.use(
+    '/PForumPost',
+    createProxyMiddleware({
+      target: 'http://localhost:8080',
+      changeOrigin: true,
+    })
+  );
+
+  app.use(
+    '/PCommentGet',
+    createProxyMiddleware({
+      target: 'http://localhost:8080',
+      changeOrigin: true,
+    })
+  );
+
+
   
 };

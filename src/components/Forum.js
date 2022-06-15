@@ -59,13 +59,13 @@ const Forum = () => {
         })
 
     },[])
-
+/*
     useEffect(()=>{     //post appending
         if(postContext.postTitle.length>0 && postContext.postDescription.length>0 && postContext.postUsername.length>0){
             setPosts(oldPosts=>[new forumPost(postContext.postTitle, postContext.flair, postContext.postUsername, postContext.postDate, postContext.postDescription,  postContext.postUpvotes, postContext.postComments, postContext.postMedia ),...oldPosts])
         }
     },[postContext]);
-
+*/
 
 
     useEffect(()=>{

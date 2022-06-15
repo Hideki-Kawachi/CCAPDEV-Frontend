@@ -22,8 +22,7 @@ const ForumPost = () => {
     const [profilePic, setProfilePic] = useState(user.profilePic);
     const [newComment, setNewComment] = useState("");
     const [commentList, setCommentList] = useState([]);
-
-    
+    const [comments, setComments] = useState(info.state.comments);
 
     function forumComment(comComment, comUsername, comDate, comUpvotes){
         this.comment = comComment;
@@ -45,22 +44,51 @@ const ForumPost = () => {
     }
 
     useEffect(()=>{
-        console.log("comments in context are: "+ postContext.postComments);
+        fetch("/PForumPost",{
+            method: "GET",
+            headers:{
+                title: info.state.title,
+                description: info.state.description
+            }
+        }).then(res=>res.json())
+        .then(data=>{
+            if(data.length>0){
+                setComments(data[0].comments);
+            }
+        })
+    },[])
+
+    useEffect(()=>{
         let tempList = [];
-        if(postContext.postTitle.length>0){ 
-            postContext.postComments.forEach((comment,index)=>{
-                tempList.push(<ForumComment key={index} username={comment.username} date={comment.date} upvotes={comment.upvotes} comment={comment.comment}></ForumComment>)
+        if(comments.length>0){ 
+            comments.forEach((comment,index)=>{
+                tempList.push(<ForumComment key={index} commentStore={comments} title = {info.state.title} description={info.state.description} username={comment.username} date={new Date(comment.date)} upvotes={comment.upvotes} comment={comment.comment}></ForumComment>)
             });
             setCommentList(tempList);
         }
-            
-    },[postContext.postComments])
+            //console.log("PUSHING IN FORUM POST");
+            fetch("/PPostUpdate",{
+                method: "POST",
+                body: JSON.stringify({
+                    title: info.state.title,
+                    description: info.state.description,
+                    upvotes: upvotes,
+                    comments: comments,
+                }),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }).then(res=>res.json())
+            .then(data=>{
+                //console.log("data from comment:" + data);
+            })
+    },[comments])
 
     function postComment(){
         if(user.username.length==0 && !user.isLoggedIn){
             navigate("/Login");
         }
-        postContext.setPostComments(oldComments=>[new forumComment(newComment,user.username,new Date(),0),...oldComments]);
+        setComments(oldComments=>[new forumComment(newComment,user.username,new Date(),0),...oldComments]);
         setNewComment("");
     }
 
@@ -77,22 +105,24 @@ const ForumPost = () => {
     };
 
     useEffect(()=>{
-        fetch("/PPostUpdate",{
-            method: "POST",
-            body: JSON.stringify({
-                title: info.state.title,
-                description: info.state.description,
-                upvotes: upvotes,
-                comments: commentList,
-            }),
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        }).then(res=>res.json())
-        .then(data=>{
-            console.log("data from post" + data);
-        })
-    },[upvotes, commentList, newComment])
+        if(upvotes!==info.state.upvotes){
+            fetch("/PPostUpdate",{
+                method: "POST",
+                body: JSON.stringify({
+                    title: info.state.title,
+                    description: info.state.description,
+                    upvotes: upvotes,
+                    comments: comments,
+                }),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }).then(res=>res.json())
+            .then(data=>{
+                console.log("data from post:" + data);
+            })
+        }
+    },[upvotes])
 
     return (
         
