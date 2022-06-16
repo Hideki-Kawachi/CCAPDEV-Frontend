@@ -51,8 +51,21 @@ const UserProfile =()=>{
     }
 
     function picChange(e){
+        const formData = new FormData();
+        //console.log("name:" + e.target.files[0])
+        formData.append("image", e.target.files[0]);
+        formData.append("name", e.target.files[0].name);
         if(e.target.value.length>0){
-            setProfilePic(URL.createObjectURL(e.target.files[0]));
+            fetch("/PImage", {
+                method: "POST",
+                body: formData,
+                headers: {
+                    'username' : user.username
+                }
+            }).then(res=>res.json)
+            .then(data=>{
+                console.log("response from image upload:" + data);
+            })
         }
     }
 

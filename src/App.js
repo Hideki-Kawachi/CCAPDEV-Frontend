@@ -78,12 +78,13 @@ const App = () =>{
                 }
             }).then(res=>res.json())
             .then(data=>{
-                console.log("token found for user:" + data.username);
+                console.log("profile pic is:" + data.profilePic);
                 user.setIsLoggedIn(true);
                 user.setUsername(data.username);
                 user.setBio(data.bio);
                 user.setEmail(data.email);
                 user.setUserBuilds(data.userBuilds);
+                user.setProfilePic(data.profilePic);
             })
         }
         else{
