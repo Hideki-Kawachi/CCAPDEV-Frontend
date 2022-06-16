@@ -82,7 +82,7 @@ const ForumBar = (props) => {
 
             <div className='forum-bar-container'>
                 <div className='store-review-bar-left'>
-                    <Link className='store-review-bar-top-container' to={'/ForumPost'} state={{title: title, description: description, flair: flair, dateShow: dateShow, upvotes: upvotes, username: username, comments: comments, media: media}}>
+                    <Link className='store-review-bar-top-container' to={'/ForumPost'} state={{title: title, description: description, flair: flair, dateShow: dateShow, datePosted: datePosted, upvotes: upvotes, username: username, comments: comments, media: media}}>
                     <span className='post-title'>{props.title}</span>
                     </Link>
                     <br></br>

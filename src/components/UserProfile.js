@@ -36,7 +36,7 @@ const UserProfile =()=>{
             return res.json();
         })
         .then (data => { 
-            console.log("bio update result is:" + data);
+            //console.log("bio update result is:" + data);
         })
         .catch( (error)=>
             console.log(error)

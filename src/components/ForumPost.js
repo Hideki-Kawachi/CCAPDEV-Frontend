@@ -15,9 +15,17 @@ const ForumPost = () => {
     //const commentContext = useContext(CommentContext);
     const postContext = useContext(PostContext);
 
-    const [upvotes, setUpvotes] = useState(info.state.upvotes);
+    
 
     const [isLoggedOpen, setIsLoggedOpen] = useState(false);
+
+    const [title, setTitle] = useState(info.state.title);
+    const [description, setDescription] = useState(info.state.description);
+    const [upvotes, setUpvotes] = useState(info.state.upvotes);
+    const [flair, setFlair] = useState(info.state.flair);
+    const [dateShow, setDateShow] = useState(info.state.dateShow);
+    const [datePosted, setDatePosted] = useState(info.state.datePosted);
+    const [username, setUsername] = useState(info.state.username);
 
     const [profilePic, setProfilePic] = useState(user.profilePic);
     const [newComment, setNewComment] = useState("");
@@ -30,6 +38,7 @@ const ForumPost = () => {
         this.date = comDate;
         this.upvotes = comUpvotes;
     }
+
 
     const back=()=>{
         postContext.setPostComments([]);
@@ -44,29 +53,40 @@ const ForumPost = () => {
     }
 
     useEffect(()=>{
+        //console.log("getting post from db");
         fetch("/PForumPost",{
             method: "GET",
             headers:{
-                title: info.state.title,
-                description: info.state.description
+                username: username,
+                title: title,
+                flair: flair
             }
         }).then(res=>res.json())
         .then(data=>{
-            if(data.length>0){
-                setComments(data[0].comments);
+            if(data!==null && data!==undefined){
+                //console.log("data here inside:" + data);
+                setTitle(data.title);
+                setDescription(data.description);
+                setFlair(data.flair);
+                setUsername(data.username);
+                setDatePosted(new Date(data.date).toDateString().substring(4))
+                setUpvotes(data.upvotes);
+                setComments(data.comments);
             }
         })
     },[])
 
+//new comment
     useEffect(()=>{
+        //console.log("comment effect");
         let tempList = [];
         if(comments.length>0){ 
             comments.forEach((comment,index)=>{
-                tempList.push(<ForumComment key={index} commentStore={comments} title = {info.state.title} description={info.state.description} username={comment.username} date={new Date(comment.date)} upvotes={comment.upvotes} comment={comment.comment}></ForumComment>)
+                tempList.push(<ForumComment key={index} commentStore={comments} setCommentStore={setComments}title = {title} description={description} username={username} userComment={comment.username} flair={flair} date={new Date(comment.date)} upvotes={comment.upvotes} comment={comment.comment}></ForumComment>)
             });
             setCommentList(tempList);
-        }
-            //console.log("PUSHING IN FORUM POST");
+        
+            //console.log("POSTING COMMENTS TO DB");
             fetch("/PPostUpdate",{
                 method: "POST",
                 body: JSON.stringify({
@@ -80,8 +100,9 @@ const ForumPost = () => {
                 }
             }).then(res=>res.json())
             .then(data=>{
-                //console.log("data from comment:" + data);
+                //console.log("DONE PUSHING:" + data);
             })
+        }
     },[comments])
 
     function postComment(){
@@ -91,6 +112,7 @@ const ForumPost = () => {
         setComments(oldComments=>[new forumComment(newComment,user.username,new Date(),0),...oldComments]);
         setNewComment("");
     }
+//
 
     const forumPostRoute = {
         true: (
@@ -145,7 +167,7 @@ const ForumPost = () => {
 
             <div className = "forum-post-right">
             <button className='back-button-forum' onClick={back}></button>
-                <div className='store-review-view-title'>{info.state.title}</div>  
+                <div className='store-review-view-title'>{title}</div>  
                 <div className ="forum-post-flair">{info.state.flair}</div>
 
                 <div className='forum-view-description'>
