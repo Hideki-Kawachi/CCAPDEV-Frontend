@@ -23,6 +23,7 @@ import UserBuilds from './components/UserBuilds';
 import UserBuildsView from './components/UserBuildsView';
 import BuildGuide2 from './components/BuildGuide2';
 import BuildGuide3 from './components/BuildGuide3';
+import { Buffer } from 'buffer';
 
 
 const App = () =>{
@@ -30,7 +31,7 @@ const App = () =>{
     const [isLoggedIn,setIsLoggedIn] = useState(false);
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
-    const [profilePic, setProfilePic] = useState("/profilePictures/default.jpg");
+    const [profilePic, setProfilePic] = useState("");
     const [bio,setBio] = useState("This is the standard bio");
     const [userBuilds, setUserBuilds] = useState([{build: "", date: new Date, cpu: "default---0",cpuCooler: "default---0", motherboard: "default---0", ram: "default---0", storage: "default---0", gpu: "default---0", pcCase: "default---0", powerSupply: "default---0", total: 0}]);
     const user = {isLoggedIn,setIsLoggedIn,username,setUsername,profilePic,setProfilePic,email,setEmail,bio,setBio,userBuilds,setUserBuilds};
@@ -69,8 +70,9 @@ const App = () =>{
 
     useEffect(()=>{
         let token = localStorage.getItem('token');
+        var picId = "";
         if(token!==null){
-            console.log("TOKEN HERE:" + token);
+            //console.log("TOKEN HERE:" + token);
             fetch("/PToken",{
                 method: "GET",
                 headers: {
@@ -78,14 +80,27 @@ const App = () =>{
                 }
             }).then(res=>res.json())
             .then(data=>{
-                console.log("profile pic is:" + data.profilePic);
+                //console.log("profile pic is:" + data.profilePic);
                 user.setIsLoggedIn(true);
                 user.setUsername(data.username);
                 user.setBio(data.bio);
                 user.setEmail(data.email);
                 user.setUserBuilds(data.userBuilds);
-                user.setProfilePic(data.profilePic);
+                picId = data.profilePic;
+                fetch("/PImageGet", {
+                method: "GET",
+                headers:{
+                    id : picId,
+                }
+            }).then(res=>res.json())
+            .then(data=>{
+                const bin = data.data.data;
+                const encoded = Buffer.from(bin, 'utf8').toString('base64');
+                setProfilePic('data:image/jpeg;base64,' + encoded);
             })
+            })
+
+            
         }
         else{
             console.log("no token:" + token);

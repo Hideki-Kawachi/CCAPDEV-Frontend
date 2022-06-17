@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import UserContext from './context/UserContext'
+import { Buffer } from 'buffer';
 
 
 const Login=(props)=>{
@@ -30,6 +31,7 @@ const Login=(props)=>{
     };
  
     const sendLogin=(e)=>{
+        let picId="";
         e.preventDefault();
 
         fetch("/PLogin",{
@@ -42,22 +44,30 @@ const Login=(props)=>{
         .then(data=>{
             console.log("response from login is:" + data);
             if(validateForm(data)){
-                localStorage.setItem('token',data);
+                localStorage.setItem('token',data.token);
                 console.log("exit from login");
                 setError("");
                 navigate("/");
                 user.setUsername(username);
                 user.setIsLoggedIn(true);
-                user.setProfilePic(findProfPic(username));
+                //console.log("data is:" + data.body.profilePic);
+                picId = data.body.profilePic;
+
+                fetch("/PImageGet", {
+                    method: "GET",
+                    headers:{
+                        id : picId,
+                    }
+                }).then(res=>res.json())
+                .then(data=>{
+                    const bin = data.data.data;
+                    const encoded = Buffer.from(bin, 'utf8').toString('base64');
+                    user.setProfilePic('data:image/jpeg;base64,' + encoded);
+                })
             }
         })
-    }
 
-    const findProfPic=(name)=>{
-        let path = "/profilePictures/";
-        path = path.concat(name);
-        path = path.concat(".jpg");
-        return path;
+        
     }
 
     

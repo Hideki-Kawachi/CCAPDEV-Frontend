@@ -1,11 +1,10 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { useLocation } from 'react-router-dom';
 import UserContext from './context/UserContext';
+import { Buffer } from 'buffer';
 
 const ForumComment = (props) => {
     const user = useContext(UserContext); 
-    const [profilePic, setProfilePic] = useState(user.profilePic);
+    const [profilePic, setProfilePic] = useState("");
     const [upvotes, setUpvotes] = useState(props.upvotes)
     
     function forumComment(comComment, comUsername, comDate, comUpvotes){
@@ -63,6 +62,18 @@ const ForumComment = (props) => {
         .then(data=>{
             //console.log('upvotes for comments ' + currentComment + ':'+ data);
             setUpvotes(data);
+        })
+
+        fetch("/PProfPicGet", {
+            method: "GET",
+            headers: {
+                username: props.username
+            }
+        }).then(res=>res.json())
+        .then(data=>{
+            const num1 = data.data.data;
+            let encoded = Buffer.from(num1, 'utf8').toString('base64');
+            setProfilePic('data:image/jpeg;base64,' + encoded);
         })
     },[])
 

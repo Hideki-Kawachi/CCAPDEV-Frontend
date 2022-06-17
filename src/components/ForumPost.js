@@ -5,6 +5,7 @@ import UserContext from './context/UserContext';
 import PostContext from './context/PostContext';
 import Login from './Login';
 import { useLocation } from 'react-router-dom';
+import { Buffer } from 'buffer';
 
 const ForumPost = () => {
 
@@ -27,7 +28,7 @@ const ForumPost = () => {
     const [datePosted, setDatePosted] = useState(info.state.datePosted);
     const [username, setUsername] = useState(info.state.username);
 
-    const [profilePic, setProfilePic] = useState(user.profilePic);
+    const [profilePic, setProfilePic] = useState("");
     const [newComment, setNewComment] = useState("");
     const [commentList, setCommentList] = useState([]);
     const [comments, setComments] = useState(info.state.comments);
@@ -72,6 +73,18 @@ const ForumPost = () => {
                 setDatePosted(new Date(data.date).toDateString().substring(4))
                 setUpvotes(data.upvotes);
                 setComments(data.comments);
+
+                fetch("/PProfPicGet", {
+                    method: "GET",
+                    headers: {
+                        username: data.username
+                    }
+                }).then(res=>res.json())
+                .then(data=>{
+                    const num1 = data.data.data;
+                    let encoded = Buffer.from(num1, 'utf8').toString('base64');
+                    setProfilePic('data:image/jpeg;base64,' + encoded);
+                })
             }
         })
     },[])

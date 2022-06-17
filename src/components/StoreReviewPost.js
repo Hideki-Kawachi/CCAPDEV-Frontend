@@ -54,15 +54,16 @@ function StoreReviewPost() {
         }).then(res=>res.json())
         .then(data=>{
             console.log("from review post:" + data);
+            navigate("/StoreReview");
         })
-
+        /*
         storeReview.setReviewTitle(title);
         storeReview.setReviewUsername(username);
         storeReview.setReviewDate(date);
         storeReview.setReviewDescription(description);
         storeReview.setRating(rating);
+        */
         //storeReview.setReviewMedia(media);
-        navigate("/StoreReview");
     };
 
     const buttonDisabled = {

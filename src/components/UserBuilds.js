@@ -17,7 +17,7 @@ function UserBuilds() {
             }
         }).then(res=>res.json())
         .then(data=>{
-            if(data.userBuilds==false || data.userBuilds==undefined){
+            if(data=="none found" || data== "error" || data==null){
                 setIsEmpty(true);
                 console.log("empty");
             }
@@ -27,10 +27,10 @@ function UserBuilds() {
                 });
                 setBuildList(tempList);
                 setIsEmpty(false);
-                console.log(data.userBuilds);
+                //console.log(data.userBuilds);
             }
         })
-    },[user])
+    },[user.userBuilds])
 
     const showEmpty={
         true: (
