@@ -65,8 +65,30 @@ const UserProfile =()=>{
             }).then(res=>res.json)
             .then(data=>{
                 console.log("response from image upload:" + data);
+                getPic(); //prob not the right placemnet
             })
+            .catch( (error)=>
+            console.log(error)
+            );
         }
+    }
+
+    function getPic(){
+        fetch("/PGetImage", {
+            method: "GET",
+            //body: formData,
+            headers: {
+                'username' : user.username
+            }
+        }).then(res=>res.json)
+        .then(data=>{
+            console.log("the pic received is:" + data);
+            user.profilePic = `data:image/jpeg;base64,${data}`;
+        })
+        .catch( (error)=>
+        console.log(error)
+        );
+
     }
 
     const saved={
