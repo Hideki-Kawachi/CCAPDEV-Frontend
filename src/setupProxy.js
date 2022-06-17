@@ -129,6 +129,14 @@ module.exports = function(app) {
     })
   );
 
+  app.use(
+    '/PImageGet',
+    createProxyMiddleware({
+      target: 'http://localhost:8080',
+      changeOrigin: true,
+    })
+  );
+
 
   
 };
