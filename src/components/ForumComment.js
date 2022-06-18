@@ -53,7 +53,7 @@ const ForumComment = (props) => {
         fetch("/PCommentGet",{
             method: "GET",
             headers:{
-                username: props.username,
+                username: props.userComment,
                 title: props.title,
                 flair: props.flair,
                 index: currentComment
@@ -67,7 +67,7 @@ const ForumComment = (props) => {
         fetch("/PProfPicGet", {
             method: "GET",
             headers: {
-                username: props.username
+                username: props.userComment
             }
         }).then(res=>res.json())
         .then(data=>{
