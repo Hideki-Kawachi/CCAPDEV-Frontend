@@ -853,11 +853,27 @@ li{
   margin-top: 0px;
 }
 
+.upvote-post-disabled{
+  width: 30px;
+  height: 30px;
+  margin-bottom: -25px;
+  margin-top: 0px;
+  opacity: 20%;
+}
+
 .downvote-post{
   width: 30px;
   height: 30px;
   transform: rotate(180deg);
   margin-top: -7px;
+}
+
+.downvote-post-disabled{
+  width: 30px;
+  height: 30px;
+  transform: rotate(180deg);
+  margin-top: -7px;
+  opacity: 20%;
 }
 
 .upvote-comment{
@@ -890,6 +906,12 @@ li{
 .downvote-comment:hover, .upvote-comment:hover,.upvote-post:hover,.downvote-post:hover{
   opacity: 20%;
   cursor: pointer;
+}
+
+.disable-upvote{
+  opacity: 20%;
+  cursor: pointer;
+  background-color: yellow;
 }
 
 /*STORE REVIEW BAR*/

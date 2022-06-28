@@ -27,6 +27,8 @@ const ForumPost = () => {
     const [dateShow, setDateShow] = useState(info.state.dateShow);
     const [datePosted, setDatePosted] = useState(info.state.datePosted);
     const [username, setUsername] = useState(info.state.username);
+    const [style, setStyle] = useState("upvote-post");
+    const [style2, setStyles] = useState("downvote-post");
 
     const [profilePic, setProfilePic] = useState("");
     const [newComment, setNewComment] = useState("");
@@ -39,6 +41,7 @@ const ForumPost = () => {
         this.date = comDate;
         this.upvotes = comUpvotes;
     }
+
 
 
     const back=()=>{
@@ -139,6 +142,18 @@ const ForumPost = () => {
         )
     };
 
+    function upVote(){
+        setUpvotes(info.state.upvotes+1);
+        setStyle("upvote-post-disabled");
+        setStyles("downvote-post");
+    }
+
+    function downVote(){
+        setUpvotes(info.state.upvotes-1);
+        setStyles("downvote-post-disabled");
+        setStyle("upvote-post");
+    }
+
     useEffect(()=>{
         if(upvotes!==info.state.upvotes){
             fetch("/PPostUpdate",{
@@ -170,8 +185,8 @@ const ForumPost = () => {
         <div className='content-forum-post'>
             <div className = "forum-post-left">
                 <div className = "below-post-section"> 
-                    <img className="upvote-post" onClick={()=>{setUpvotes(info.state.upvotes+1)}} src={require('../media/upvote-icon.png')} alt="Comments"/> 
-                    <p className = 'upvotes-count'>{upvotes}</p><img className="downvote-post" onClick={()=>{setUpvotes(info.state.upvotes-1)}} src={require('../media/upvote-icon.png')} alt="Comments"/> 
+                    <img className={style} onClick={()=>{upVote()}} src={require('../media/upvote-icon.png')} alt="Comments"/> 
+                    <p className = 'upvotes-count'>{upvotes}</p><img className={style2} onClick={()=>{downVote()}} src={require('../media/upvote-icon.png')} alt="Comments"/> 
                 </div>
                 </div>
             <div  className='store-review-view-header'>
