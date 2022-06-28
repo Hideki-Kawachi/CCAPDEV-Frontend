@@ -133,8 +133,10 @@ const Forum = () => {
         let searchName = document.querySelector('#store-review-search').value
 
         posts.forEach((post,index)=>{
-            //console.log("Forum Comments" + post.comments[1].comment);
-            if(post.title.toLowerCase() == searchName.toLowerCase()){
+
+            //console.log( (post.title.toLowerCase()).substr(0, searchName.length) );
+
+            if( (post.title.toLowerCase()).substr(0, searchName.length) == searchName.toLowerCase() ){
                 tempList.push(<ForumBar key={index} title={post.title} flair={post.flair} username={post.username} date={post.date} description={post.description} upvotes={post.upvotes} comments={post.comments} media={post.media}></ForumBar>)
             }
             else if (searchName == ""){
