@@ -6,6 +6,8 @@ const ForumComment = (props) => {
     const user = useContext(UserContext); 
     const [profilePic, setProfilePic] = useState("");
     const [upvotes, setUpvotes] = useState(props.upvotes)
+    const [style, setStyle] = useState("upvote-comment");
+    const [style2, setStyles] = useState("downvote-comment");
     
     function forumComment(comComment, comUsername, comDate, comUpvotes){
         this.comment = comComment;
@@ -18,6 +20,19 @@ const ForumComment = (props) => {
         return (comment.comment == props.comment && comment.username == props.userComment);
     }
 
+    
+    function upVote(){
+        setUpvotes(props.upvotes + 1);
+        setStyle("upvote-comment-disabled");
+        setStyles("downvote-comment");
+    }
+
+    function downVote(){
+        setUpvotes(props.upvotes - 1);
+        setStyles("downvote-comment-disabled");
+        setStyle("upvote-comment");
+    }
+    
     useEffect(()=>{
         if(props.upvotes != upvotes){
             let currentComment = props.commentStore.findIndex(isCurrentComment);
@@ -85,9 +100,9 @@ return (
                     <span className='forum-post-view-user'>{props.userComment}</span>
                     <p className='forum-post-date'> {props.date.toDateString().substring(4)}</p>
                 <p className= 'forum-post-commeent'>{props.comment}</p>
-            <img className="upvote-comment" onClick={()=>setUpvotes(props.upvotes + 1)} src={require('../media/upvote-icon.png')} alt="Comments" /> 
+            <img className={style} onClick={()=>upVote()} src={require('../media/upvote-icon.png')} alt="Comments" /> 
             <span className = 'upvotes-count-comm'>{props.upvotes}</span>
-            <img className="downvote-comment" onClick={()=>setUpvotes(props.upvotes - 1)} src={require('../media/upvote-icon.png')} alt="Comments"/> 
+            <img className={style2} onClick={()=>downVote()} src={require('../media/upvote-icon.png')} alt="Comments"/> 
             </div>
 
         </div>

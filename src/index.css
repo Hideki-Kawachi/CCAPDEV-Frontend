@@ -883,12 +883,30 @@ li{
   margin-bottom: -3px;
 }
 
+.upvote-comment-disabled{
+  width: 20px;
+  height: 20px;
+  display: inline;
+  margin-bottom: -3px;
+  opacity: 20%;
+}
+
+
 .downvote-comment{
   width: 20px;
   height: 20px;
   transform: rotate(180deg);
   display: inline;
   margin-bottom: -3px;
+}
+
+.downvote-comment-disabled{
+  width: 20px;
+  height: 20px;
+  transform: rotate(180deg);
+  display: inline;
+  margin-bottom: -3px;
+  opacity: 20%;
 }
 
 .upvotes-count{
