@@ -74,6 +74,7 @@ const Forum = () => {
                 posts.sort((a, b)=>a.upvotes - b.upvotes);
             }
         }
+
         tempList = [];
             posts.forEach((post,index)=>{
                 //console.log("Forum Comments" + post.comments[1].comment);
@@ -81,8 +82,9 @@ const Forum = () => {
                     tempList.push(<ForumBar key={index} title={post.title} flair={post.flair} username={post.username} date={post.date} description={post.description} upvotes={post.upvotes} comments={post.comments} media={post.media}></ForumBar>)
                 }
                 else if(flairFilter==""){
-                    tempList.push(<ForumBar key={index} title={post.title} flair={post.flair} username={post.username} date={post.date} description={post.description} upvotes={post.upvotes} comments={post.comments}></ForumBar>)
+                   tempList.push(<ForumBar key={index} title={post.title} flair={post.flair} username={post.username} date={post.date} description={post.description} upvotes={post.upvotes} comments={post.comments}></ForumBar>)
                 }
+
             })
             setPostList(tempList);
     },[sort,isSortReverse,flairFilter,posts])
@@ -126,6 +128,23 @@ const Forum = () => {
             return null;
     }
 
+    function postsSearch(){
+
+        let searchName = document.querySelector('#store-review-search').value
+
+        posts.forEach((post,index)=>{
+            //console.log("Forum Comments" + post.comments[1].comment);
+            if(post.title.toLowerCase() == searchName.toLowerCase()){
+                tempList.push(<ForumBar key={index} title={post.title} flair={post.flair} username={post.username} date={post.date} description={post.description} upvotes={post.upvotes} comments={post.comments} media={post.media}></ForumBar>)
+            }
+            else if (searchName == ""){
+                tempList.push(<ForumBar key={index} title={post.title} flair={post.flair} username={post.username} date={post.date} description={post.description} upvotes={post.upvotes} comments={post.comments} media={post.media}></ForumBar>)
+            }
+            setPostList(tempList);
+        })
+
+    }
+
     useEffect(()=>{
         if(info.state!=null){
             setFlairFilter(info.state);
@@ -143,8 +162,8 @@ const Forum = () => {
         <div className  ="store-review-container">
             
             <div id='store-review-search-container'>
-                <input type={"search"} id='store-review-search' placeholder='Search a post...'></input>
-                <button id = 'store-review-search-button'>Search</button>
+                <input type={"search"} id='store-review-search' placeholder='Search a post...' onChange={postsSearch}  ></input>
+                <button id = 'store-review-search-button' onClick={postsSearch}>Search</button>
             </div>
             <select className='dropdown'id='flair' value={flairFilter} onChange={(e)=>setFlairFilter(e.target.value)}>
                 <option value="">All</option>
