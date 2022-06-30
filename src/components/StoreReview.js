@@ -148,6 +148,25 @@ function StoreReview() {
         )
     }
 
+    function reviewSearch(){
+
+        let searchName = document.querySelector('#store-review-search').value
+
+        reviews.forEach((review,index)=>{
+
+            //console.log( (post.title.toLowerCase()).substr(0, searchName.length) );
+
+            if( (review.title.toLowerCase()).search(searchName.toLowerCase()) != -1){
+                tempList.push(<StoreReviewBar key={index} title={review.title} description={review.description} date={review.date} rating={review.rating} username={review.username}></StoreReviewBar>)
+            }
+            else if (searchName == ""){
+                tempList.push(<StoreReviewBar key={index} title={review.title} description={review.description} date={review.date} rating={review.rating} username={review.username}></StoreReviewBar>)
+            }
+            setReviewList(tempList);
+        })
+
+    }
+
     return (
         <div className='content-store-review'>
             {openLogin[isLoggedOpen]}
@@ -157,7 +176,7 @@ function StoreReview() {
 
                 <div id='store-review-container'>
                     <div id='store-review-search-container'>
-                        <input type={"search"} id='store-review-search' placeholder='Search...'></input>
+                        <input type={"search"} id='store-review-search' placeholder='Search...' onChange={reviewSearch}></input>
                         <button id = 'store-review-search-button'>Search</button>
                     </div>
                 
