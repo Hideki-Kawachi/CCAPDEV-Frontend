@@ -39,7 +39,7 @@ function StoreReviewPost() {
     }
     
     function sendPost(){
-        fetch("/PStoreReviewPost",{
+        fetch("https://pcguro-backend.herokuapp.com/PStoreReviewPost",{
             method: 'POST',
             body: JSON.stringify({
                 username: username,

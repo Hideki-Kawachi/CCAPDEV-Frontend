@@ -62,7 +62,7 @@ const Register = () => {
         setError("");
         console.log("FIRST NAME HERE:" + firstName);
         if(validateForm()){     //form complete checking
-            fetch("/PRegister",{
+            fetch("https://pcguro-backend.herokuapp.com/PRegister",{
                 method: "GET",
                 headers: {
                     first: firstName,

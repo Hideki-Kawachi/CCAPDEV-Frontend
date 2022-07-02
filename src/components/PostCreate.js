@@ -28,7 +28,7 @@ function PostCreate() {
         console.log("flair is:" + flair);
         */
 
-        fetch("/PPostCreate", {
+        fetch("https://pcguro-backend.herokuapp.com/PPostCreate", {
             method: "POST",
             body : JSON.stringify({
                 title : title,

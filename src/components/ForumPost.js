@@ -58,7 +58,7 @@ const ForumPost = () => {
 
     useEffect(()=>{
         //console.log("getting post from db");
-        fetch("/PForumPost",{
+        fetch("https://pcguro-backend.herokuapp.com/PForumPost",{
             method: "GET",
             headers:{
                 username: username,
@@ -77,7 +77,7 @@ const ForumPost = () => {
                 setUpvotes(data.upvotes);
                 setComments(data.comments);
 
-                fetch("/PProfPicGet", {
+                fetch("https://pcguro-backend.herokuapp.com/PProfPicGet", {
                     method: "GET",
                     headers: {
                         username: data.username
@@ -103,7 +103,7 @@ const ForumPost = () => {
             setCommentList(tempList);
         
             //console.log("POSTING COMMENTS TO DB");
-            fetch("/PPostUpdate",{
+            fetch("https://pcguro-backend.herokuapp.com/PPostUpdate",{
                 method: "POST",
                 body: JSON.stringify({
                     title: info.state.title,
@@ -156,7 +156,7 @@ const ForumPost = () => {
 
     useEffect(()=>{
         if(upvotes!==info.state.upvotes){
-            fetch("/PPostUpdate",{
+            fetch("https://pcguro-backend.herokuapp.com/PPostUpdate",{
                 method: "POST",
                 body: JSON.stringify({
                     title: info.state.title,

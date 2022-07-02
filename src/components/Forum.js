@@ -34,7 +34,7 @@ const Forum = () => {
     }
 
     useEffect(()=>{
-        fetch("/PForum",
+        fetch("https://pcguro-backend.herokuapp.com/PForum",
         {
             method: "GET"
         }).then(res=>res.json())

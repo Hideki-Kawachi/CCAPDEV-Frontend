@@ -1,1 +1,0 @@
-<hr className='store-review-bar-line'></hr>

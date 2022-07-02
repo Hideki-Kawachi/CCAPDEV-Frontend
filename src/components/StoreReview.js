@@ -37,7 +37,7 @@ function StoreReview() {
     }
 
     useEffect(()=>{
-        fetch("/PStoreReview",{
+        fetch("https://pcguro-backend.herokuapp.com/PStoreReview",{
             method: "GET"
         }).then(res=>res.json())
         .then(data=>{

@@ -10,7 +10,7 @@ function UserBuilds() {
     const [isEmpty, setIsEmpty] = useState(false);
 
     useEffect(()=>{
-        fetch("/PUserBuilds",{
+        fetch("https://pcguro-backend.herokuapp.com/PUserBuilds",{
             method : "GET",
             headers: {
                 username: user.username

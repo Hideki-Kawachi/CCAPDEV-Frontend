@@ -34,7 +34,7 @@ const Login=(props)=>{
         let picId="";
         e.preventDefault();
 
-        fetch("/PLogin",{
+        fetch("https://pcguro-backend.herokuapp.com/PLogin",{
             method: "GET",
             headers: {
                 username: username,
@@ -53,7 +53,7 @@ const Login=(props)=>{
                 //console.log("data is:" + data.body.profilePic);
                 picId = data.body.profilePic;
 
-                fetch("/PImageGet", {
+                fetch("https://pcguro-backend.herokuapp.com/PImageGet", {
                     method: "GET",
                     headers:{
                         id : picId,

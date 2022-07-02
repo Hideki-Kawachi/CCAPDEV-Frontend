@@ -29,7 +29,7 @@ function UserBuildsView() {
         if(user.userBuilds.length>1){
             user.userBuilds.forEach((currentBuild, index)=>{
                 if(currentBuild.build == build && currentBuild.date == date){
-                    fetch("/PUserBuildsDelete",{
+                    fetch("https://pcguro-backend.herokuapp.com/PUserBuildsDelete",{
                         method: "POST",
                         body: JSON.stringify(currentBuild),
                         headers: {
@@ -46,7 +46,7 @@ function UserBuildsView() {
         }
         else{
             user.userBuilds.forEach((currentBuild)=>{
-                fetch("/PUserBuildsDelete",{
+                fetch("https://pcguro-backend.herokuapp.com/PUserBuildsDelete",{
                     method: "POST",
                     body: JSON.stringify(currentBuild),
                     headers: {

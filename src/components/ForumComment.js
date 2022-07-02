@@ -38,7 +38,7 @@ const ForumComment = (props) => {
             let currentComment = props.commentStore.findIndex(isCurrentComment);
             //console.log("index:" + currentComment);
             props.commentStore[currentComment].upvotes = upvotes;
-            fetch("/PCommentUpdate",{
+            fetch("https://pcguro-backend.herokuapp.com/PCommentUpdate",{
                 method: "POST",
                 body: JSON.stringify({
                     username: props.username,
@@ -65,7 +65,7 @@ const ForumComment = (props) => {
     useEffect(()=>{
         var currentComment = props.commentStore.findIndex(isCurrentComment);
         //console.log("comment upvote");
-        fetch("/PCommentGet",{
+        fetch("https://pcguro-backend.herokuapp.com/PCommentGet",{
             method: "GET",
             headers:{
                 username: props.userComment,
@@ -79,7 +79,7 @@ const ForumComment = (props) => {
             setUpvotes(data);
         })
 
-        fetch("/PProfPicGet", {
+        fetch("https://pcguro-backend.herokuapp.com/PProfPicGet", {
             method: "GET",
             headers: {
                 username: props.userComment

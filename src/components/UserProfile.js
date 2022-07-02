@@ -46,7 +46,7 @@ const UserProfile =()=>{
         
         if(profilePic != user.profilePic){
             //update prof pic in DB
-            fetch("/PImage", {
+            fetch("https://pcguro-backend.herokuapp.com/PImage", {
                 method: "POST",
                 body: form,
                 headers: {
@@ -73,7 +73,7 @@ const UserProfile =()=>{
     useEffect(()=>{
         if(!profilePic.startsWith("data") && !user.profilePic.startsWith("data") && user.username.length>0){
             //console.log("username here:" + user.username);
-            fetch("/PProfPicGet", {
+            fetch("https://pcguro-backend.herokuapp.com/PProfPicGet", {
                 method: "GET",
                 headers: {
                     username: user.username

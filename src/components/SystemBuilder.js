@@ -75,7 +75,7 @@ function SystemBuilder() {
 
     function sendPost(){
         currentBuild = {build: build, date: date.toDateString().substring(4), cpu: cpu,cpuCooler: cpuCooler,motherboard: motherboard,ram: ram,storage: storage,gpu: gpu,pcCase: pcCase,powerSupply: powerSupply, total: total};
-        fetch("/PSystemBuilder", {
+        fetch("https://pcguro-backend.herokuapp.com/PSystemBuilder", {
             method: "POST",
             body: JSON.stringify(currentBuild),
             headers : {
