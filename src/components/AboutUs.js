@@ -5,9 +5,37 @@ const AboutUs =()=> {
     return (
         <div className="content-">
             <div className='sub-container'>About Us</div>
-            <div className='header-container'>PCGuro is an online forum focused on providing relevant and
-            accurate information about everything a PC builder/enthusiast in the Philippines
-            needs to know.</div>
+            <div className='aboutus'>
+                <div> <img className='about-logo' src={require('../media/logo.png')} /> </div>
+        </div>
+        <div className = 'divbg'>
+        <div className = "post-header">
+            <p className = "post-header-text"> What is PCGuro? </p>
+        </div>
+                <div className = "about-us-div">
+                <div className = 'about-us-description'>
+                <p className="post-header-text">What is PC Guro?</p> 
+                
+                <p className = "aboutus-desc"> The idea of creating a space dedicated to certain interests or hobbies is not a
+                new or revolutionary idea. With the rise of the internet, people have made ways of
+                adapting this idea in an online environment, thus giving birth to online forums.
+                Online forums provide great opportunities for people of different upbringings and
+                experiences to share their ideas and thoughts to other people. Most of the time, this is
+                seen as a good thing, but in some instances this may be problematic. Some popular
+                websites that people commonly go to have its shortcomings in the Philippine setting,
+                one of which are computer building/buying forums. </p>
+                <p className = "aboutus-desc">
+                Our group noticed that forums, specifically computer building/buying forums
+                are mostly irrelevant for people living in the Philippines. What’s readily available in
+                other countries is not necessarily always accessible in our country. Similarly, prices
+                of computer parts also differ from country to country. With this in mind, we have
+                decided to create, PCGuro, an online forum focused on providing relevant and
+                accurate information about everything a PC builder/enthusiast in the Philippines
+                needs to know.
+                </p>
+                </div>
+        </div>
+        </div>
             <div className='sub-container'>
                 <h1> Backend Packages </h1>
             </div>
