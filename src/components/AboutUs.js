@@ -1,36 +1,65 @@
 import React from 'react';
 import PCcomponent from './PCcomponent';
 
-const BuildGuide2 =()=> {
+const AboutUs =()=> {
     return (
         <div className="content-">
-            <div className='sub-container'>Guide</div>
-            <div className='header-container'>Mid-Range Build</div>
-            <div className='img-container'>
-                <div className='img-block'> <img className='cmpnt-img' src={require('../media/3600.jpeg')} />               </div>
-                <div className='img-block'> <img className='cmpnt-img' src={require('../media/msi-b550m-wifi.png')} />     </div>
-                <div className='img-block'> <img className='cmpnt-img' src={require('../media/vulcan-tuf-16gb.jpg')} />      </div>
-                <div className='img-block'> <img className='cmpnt-img' src={require('../media/kingston-nv1-500gb.jpg')} />   </div>
-                <div className='img-block'>    <img className='cmpnt-img' src={require('../media/gigabyte-1650oc.jpeg')} /> </div>
-                <div className='img-block'> <img className='cmpnt-img' src={require('../media/fd-meshify2.jpg')} />         </div>
-                <div className='img-block'> <img className='cmpnt-img' src={require('../media/msi-a650bn.jpeg')} />       </div>
+            <div className='sub-container'>About Us</div>
+            <div className='header-container'>PCGuro is an online forum focused on providing relevant and
+            accurate information about everything a PC builder/enthusiast in the Philippines
+            needs to know.</div>
+            <div className='sub-container'>
+                <h1> Backend Packages </h1>
             </div>
-            <div className='description-container'>
-                <PCcomponent name='CPU' desc="Ryzen 5 3600, The 3rd Gen CPU of AMD provides enough power to its desired user and multi-core performance. It's perfect for streaming
-                and gaming on the go. PCGuro recommends this as a better choice than the 5600G, if you want to utilize a card that uses PCIE 4.0"></PCcomponent>
-                <PCcomponent name='Motherboard' desc='MSI MAG B550M PRO-VHD WIFI is a basic motherboard that allows you to plug n play without worrying
-                for a BIOS update and also provides WIFI, if the user wants a cableless experience'></PCcomponent>
-                <PCcomponent name='RAM' desc='We think that the Team Elite Vulcan TUF 16GB 2x8 3200mhz has enough power to match
-                    the 5000 series CPU, even though that most users think that 3600mhz handles 5600G
-                    in most applications and because Ryzen CPUs perform better in higher frequency.'></PCcomponent>
-                <PCcomponent name='Storage' desc="SSDs or Solid State Drives are much more faster than your normal hard disk drives. 
-                    In most cases 128 or 256gb isn't enough, so we mostly recommend getting in atleast 500GB 
-                    or higher depending on your needs. The Kingston NV1 500GB NVME is a great option for budget
-                    users and can be a great starter especially for bootup times"></PCcomponent>
-                <PCcomponent name='GPU' desc='The GTX 1650 OC is a great combo with the 3600 as it can play 60fps for most e-sport titles'></PCcomponent>
-                <PCcomponent name='PC Case' desc='The Fractal Design Meshify 2 Compact is easy to build into as it is more suited for PC builders that change components overtime '></PCcomponent>
-                <PCcomponent name='PSU' desc="The MSI MAG-A650BN, 650W 80+ Bronze has enough power for both the CPU AND GPU as it holds less than 500W and is enough for a
-                GPU upgrade such as an RTX 3060"></PCcomponent>   
+            <div style={{
+                     display: 'flex',
+                     alignItems: 'center',
+                     justifyContent: 'center',
+     
+                }}>
+                <ul style={{
+                    display: 'inline-block',
+                    alignItems: 'left'
+                }}>
+                        <li> "bcrypt": "^5.0.1"  </li>
+                        <li> "body-parser": "^1.20.0" </li>
+                        <li> "cors": "^2.8.5"</li>
+                        <li> "dotenv": "^16.0.1" </li>
+                        <li> "express": "^4.18.1" </li>
+                        <li> "jsonwebtoken": "^8.5.1" </li>
+                        <li> "mongodb": "^4.6.0" </li>
+                        <li>"mongoose": "^6.3.5"</li>
+                        <li>"mongoose-int32": "^0.6.0"</li>
+                        <li>"multer": "^1.4.2"</li>
+                        <li>"multer-gridfs-storage": "^5.0.2"</li>
+                    </ul>
+            </div>
+            <div className='sub-container'>
+                <h1>Frontend Packages </h1>
+            </div>
+            <div style={{
+                     display: 'flex',
+                     alignItems: 'center',
+                     justifyContent: 'center',
+     
+                }}>
+                <ul style={{
+                    display: 'inline-block',
+                    alignItems: 'left'
+                }}>
+                        <li> @testing-library/jest-dom": "^5.16.4 </li>
+                        <li> @testing-library/react": "^13.0.1" </li>
+                        <li>  "@testing-library/user-event": "^13.5.0", </li>
+                        <li> "base-64": "^1.0.0", </li>
+                        <li> "buffer": "^6.0.3", </li>
+                        <li> "http-proxy-middleware": "^2.0.6", </li>
+                        <li> "react": "^18.0.0", </li>
+                        <li>"react-dom": "^18.0.0", </li>
+                        <li>"react-router-dom": "^6.3.0", </li>
+                        <li>""react-scripts": "5.0.1", </li>
+                        <li>""react-scripts": "5.0.1","</li>
+                        <li> "xlsx": "^0.18.5"</li>
+                    </ul>
             </div>
 
         </div>
@@ -38,4 +67,4 @@ const BuildGuide2 =()=> {
     );
 }
 
-export default BuildGuide2;
+export default AboutUs;
