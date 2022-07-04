@@ -23,6 +23,7 @@ import UserBuilds from './components/UserBuilds';
 import UserBuildsView from './components/UserBuildsView';
 import BuildGuide2 from './components/BuildGuide2';
 import BuildGuide3 from './components/BuildGuide3';
+import AboutUs from './components/AboutUs';
 import { Buffer } from 'buffer';
 
 
@@ -131,6 +132,7 @@ const App = () =>{
                                 <Route path="/BuildGuidePost" element={<BuildGuidePost></BuildGuidePost>}></Route>
                                 <Route path="/BuildGuide2" element={<BuildGuide2></BuildGuide2>}></Route>
                                 <Route path="/BuildGuide3" element={<BuildGuide3></BuildGuide3>}></Route>
+                                <Route path="/AboutUs" element={<AboutUs></AboutUs>}></Route>
                             </Routes>
                             <footer>
                                     <div className="contact-container">

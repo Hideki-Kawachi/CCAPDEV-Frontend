@@ -77,6 +77,7 @@ const NavBar = () =>{
                 {createPostRoute[user.isLoggedIn]}
                 <Link id="headerStoreReview" className='nav-button' to={'/StoreReview'}>Store Reviews</Link>
                 {systemBuilderRoute[user.isLoggedIn]}
+                <Link id="headerAboutUs" className='nav-button' to ={'/AboutUS'}>About Us</Link>
             </div>
             
             <Link id="headerHome" to={'/'}></Link>
